@@ -1,0 +1,52 @@
+<div class="sub_page_email_comfirm">
+  <div class="sub_email_comfirm">
+    <div class="logo"><img src="https://420.com.vn/themes/420Hospitality/assets/pic/logo.png"></div>
+    <div class="title_notification">
+      Thông báo có yêu cầu đặt tour mới
+    <div class="title_hotel">Dưới đây là thông tin đặt tour</div>
+    <div class="lst_criteria">
+      <div class="lst_item">
+        <span class="fotb">Tên tour:</span> {{tour_name}}
+      </div>
+
+      <div class="lst_item">
+        <span class="fotb">Điểm đến:</span> {{tour_location}}
+      </div>
+
+      <div class="lst_item">
+        <span class="fotb">Thời gian khởi hành:</span> {{date|date("d/m/Y")}}
+      </div>
+
+      <div class="lst_item">
+        <span class="fotb">Số lượng đặt trước:</span> {{adults}} người lớn, {{children}} người trẻ em và {{baby}} trẻ nhỏ
+      </div>
+
+    </div>
+    <div class="lst_image_hotel">
+      <div class="item_image_hotel">
+        <img alt="" src="{{img1}}" />
+      </div>
+      <div class="item_image_hotel">
+        <img alt="" src="{{img2}}" />
+      </div>
+    </div>
+    <div class="title_hotel">Thông tin của khách hàng</div>
+    <div class="lst_criteria">
+      <div class="lst_item">
+        <span class="fotb">Họ tên:</span> {{name}}
+      </div>
+      <div class="lst_item">
+        <span class="fotb">Số điện thoại:</span> {{phone}}
+      </div>
+      <div class="lst_item">
+        <span class="fotb">Email:</span> {{email}}
+      </div>
+      <div class="lst_item">
+        <span class="fotb">Ghi chú:</span> {{content}}
+      </div>
+    </div>
+    <div class="note">
+      Xin cảm ơn!
+    </div>
+  </div>
+</div>

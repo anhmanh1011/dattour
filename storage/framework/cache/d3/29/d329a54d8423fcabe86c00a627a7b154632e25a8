@@ -1,0 +1,155 @@
+1558413233a:1:{s:15:"productList.htm";a:13:{s:8:"fileName";s:15:"productList.htm";s:7:"content";s:2581:"title = "Danh sách sản phẩm"
+url = "/list/:slug"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ProductList]
+
+[search]
+==
+<?php
+use Web\Hotel\Models\Event;
+use Web\Hotel\Models\EventType;
+use Web\Hotel\Models\Location;
+use Web\Hotel\Models\FoodBeverage;
+use Web\Hotel\Models\TypeofFoodBeverage as Food_type;
+use Web\Hotel\Models\Souvenir;
+use Web\Hotel\Models\SouvenirType;
+use Web\Hotel\Models\States as States;
+    
+	function onStart(){
+		$this->prepareVars();
+    }
+	function onFilter() {$this->prepareVars();}
+    //function onPagination() { $this->prepareVars(); }
+	function prepareVars(){
+		$slug    = $this->param('slug');
+		$options = post('Filter', []);
+		$types = [];
+		if($slug=="event"){	
+			$this['data_event'] = Event::listFrontEnd($options);
+			$this['pages'] = $this['data_event']->lastPage();
+      $this['page']  = $this['data_event']->currentPage();
+      $this['cate_id'] = 4;
+			$event_type    = EventType::get()->toArray();
+			foreach($event_type as $tyle){
+        $types[]       = $tyle;
+      }
+		}elseif($slug=="cuisine"){
+			$this['data_event'] = FoodBeverage::listFrontEnd($options);
+			$this['pages'] = $this['data_event']->lastPage();
+      $this['page']  = $this['data_event']->currentPage();
+      $this['cate_id'] = 3;
+			$food_type      = Food_type::get()->toArray();
+			foreach($food_type as $tyle){
+        $types[]        = $tyle;
+      }
+		} elseif ($slug=="service-store"){
+      $this['data_event'] = Souvenir::listFrontEnd($options);
+      $this['pages']   = $this['data_event']->lastPage();
+      $this['page']    = $this['data_event']->currentPage();
+      $this['cate_id'] = 5;
+			$souvenir_type   = SouvenirType::get()->toArray();
+		 	foreach($souvenir_type as $tyle){
+        $types[]          = $tyle;
+      }
+    }
+    $this['types'] = $types;
+    $this['states'] = States::get()->toArray();
+	}
+	function onEnd(){
+	 $this->page->meta_title = $this->cate;
+	}
+?>
+==
+<div class="sub_banner_page">
+  <img alt="" src="assets/pic/banner_duc5.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <h1>
+        <span class="title_page">{{titte_page}}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="duongdanlink">
+    <div class="container_duc">
+      <ul class="duongdan_link">
+        <li><a href="{{'home'|page}}">{{'HOME'|_}}</a></li>
+        <li class="active"><a href="javascript:void(0)">{{titte_page}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% component 'ProductList' %}";s:5:"mtime";i:1554117786;s:6:"markup";s:562:"<div class="sub_banner_page">
+  <img alt="" src="assets/pic/banner_duc5.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <h1>
+        <span class="title_page">{{titte_page}}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="duongdanlink">
+    <div class="container_duc">
+      <ul class="duongdan_link">
+        <li><a href="{{'home'|page}}">{{'HOME'|_}}</a></li>
+        <li class="active"><a href="javascript:void(0)">{{titte_page}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% component 'ProductList' %}";s:4:"code";s:1831:"
+use Web\Hotel\Models\Event;
+use Web\Hotel\Models\EventType;
+use Web\Hotel\Models\Location;
+use Web\Hotel\Models\FoodBeverage;
+use Web\Hotel\Models\TypeofFoodBeverage as Food_type;
+use Web\Hotel\Models\Souvenir;
+use Web\Hotel\Models\SouvenirType;
+use Web\Hotel\Models\States as States;
+    
+	function onStart(){
+		$this->prepareVars();
+    }
+	function onFilter() {$this->prepareVars();}
+    //function onPagination() { $this->prepareVars(); }
+	function prepareVars(){
+		$slug    = $this->param('slug');
+		$options = post('Filter', []);
+		$types = [];
+		if($slug=="event"){	
+			$this['data_event'] = Event::listFrontEnd($options);
+			$this['pages'] = $this['data_event']->lastPage();
+      $this['page']  = $this['data_event']->currentPage();
+      $this['cate_id'] = 4;
+			$event_type    = EventType::get()->toArray();
+			foreach($event_type as $tyle){
+        $types[]       = $tyle;
+      }
+		}elseif($slug=="cuisine"){
+			$this['data_event'] = FoodBeverage::listFrontEnd($options);
+			$this['pages'] = $this['data_event']->lastPage();
+      $this['page']  = $this['data_event']->currentPage();
+      $this['cate_id'] = 3;
+			$food_type      = Food_type::get()->toArray();
+			foreach($food_type as $tyle){
+        $types[]        = $tyle;
+      }
+		} elseif ($slug=="service-store"){
+      $this['data_event'] = Souvenir::listFrontEnd($options);
+      $this['pages']   = $this['data_event']->lastPage();
+      $this['page']    = $this['data_event']->currentPage();
+      $this['cate_id'] = 5;
+			$souvenir_type   = SouvenirType::get()->toArray();
+		 	foreach($souvenir_type as $tyle){
+        $types[]          = $tyle;
+      }
+    }
+    $this['types'] = $types;
+    $this['states'] = States::get()->toArray();
+	}
+	function onEnd(){
+	 $this->page->meta_title = $this->cate;
+	}";s:5:"title";s:23:"Danh sách sản phẩm";s:3:"url";s:11:"/list/:slug";s:6:"layout";s:9:"Travel365";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:11:"ProductList";a:0:{}s:6:"search";a:0:{}}}

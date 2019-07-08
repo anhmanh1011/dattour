@@ -1,0 +1,30 @@
+columns:
+    id:
+        label: STT
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: 'Tên bookup'
+        type: text
+        searchable: true
+    description:
+        label: 'Mô tả'
+        type: text
+        searchable: true
+    link:
+        label: 'Đường dẫn'
+        type: text
+    active:
+        label: 'Hiển thị'
+        type: switch
+    img_bookup:
+        label: 'Ảnh bookup'
+        type: partial
+        path: ~/plugins/web/slider/models/bookup/_bookup.htm
+    created_at:
+        label: 'Thời gian tạo'
+        type: date
+    updated_at:
+        label: 'Thời gian cập nhật'
+        type: date

@@ -1,0 +1,58 @@
+{% set data = __SELF__.tour %}
+{% set data2 = __SELF__.tour2 %}
+{% set data3 = __SELF__.tour3 %}
+
+
+{% if data|length %}
+<div class="produc_mid row_produc">
+    <div class="row">
+
+        {% for tour in data %}
+        <div class="col-md-4 col-sm-4">
+            <div class="product">
+                {% if (tour.hot == 1) %}
+                <div class="sale">
+                    <span>Hot</span>
+                </div>
+                {% endif %}
+                <div class="images">
+                    <a href="/travel/{{tour.slug}}"><img
+                            src="{{tour.image_preview| resize(263,152, { mode: 'crop', quality: '80' }) }}"
+                            title="{{tour.name}}" alt="{{tour.name}}" class="img-responsive"></a>
+                </div>
+                <div class="caption">
+                    <div class="top_caption">
+                        <h3 style="height: 60px"><a href="/travel/{{tour.slug}}">{{tour.name}}</a></h3>
+                        <p class="rating">
+
+                        </p>
+                    </div>
+                    <div class="bottom_caption">
+                        <p><i class="fas fa-map-marker-alt"></i> <span>{{tour.locations.name}}</span></p>
+                        <div class="line_2">
+                            <p style="padding-right: 0">
+                                <i class="fas fa-calendar-alt"></i> 
+                                <span> {{tour.date_number}} </span>
+                            </p>
+                            <p style="padding-right: 0;padding-left: 10px">
+                                {{'Price from'|_}}:
+                                <a href="/travel/{{tour.slug}}">{{ tour.price|number_format() }} VND</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    <div class="show_more" id="ShowMore">
+        <a href="#0">
+            <label class="gloabal_custom">{{'Show more'|_}} <i class="fas fa-angle-right"></i>
+                <input type="radio" name="Filter[state][]" value="1">
+                <span class="checkmark"></span>
+            </label>
+        </a>
+    </div>
+</div>
+{% endif %}

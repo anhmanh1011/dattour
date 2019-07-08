@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: STT
+        type: number
+        searchable: true
+        sortable: true
+    email:
+        label: Email
+        type: text
+        searchable: true
+        sortable: true

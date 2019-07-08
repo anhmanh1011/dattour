@@ -1,0 +1,68 @@
+fields:
+    title_web:
+        label: 'Tiêu đề web site'
+        span: auto
+        type: text
+        tab: 'Thông tin website'
+    description:
+        label: 'Mô tả ngắn'
+        span: auto
+        type: text
+    content:
+        label: 'Nội dung website'
+        size: small
+        span: auto
+        type: textarea
+tabs:
+    fields:
+        hotline:
+            label: Hotline
+            span: auto
+            type: text
+            tab: 'Thông tin website'
+        email:
+            label: Email
+            span: auto
+            type: text
+            tab: 'Thông tin website'
+        address:
+            label: Address
+            span: auto
+            type: text
+            tab: 'Thông tin website'
+        logo_favicon:
+            label: Favicon
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Thông tin website'
+        meta_key:
+            label: 'Meta keyword'
+            span: auto
+            type: text
+            tab: Seo
+        meta_description:
+            label: 'Meta description'
+            size: small
+            span: auto
+            type: textarea
+            tab: Seo
+        link_facebook:
+            label: 'Link facebook'
+            span: auto
+            type: text
+            tab: Link
+        link_google:
+            label: 'Link google'
+            span: auto
+            type: text
+            tab: Link
+        link_youtobe:
+            label: 'Link youtube'
+            span: auto
+            type: text
+            tab: Link

@@ -1,0 +1,470 @@
+1558413233a:1:{s:8:"home.htm";a:13:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:8041:"title = "Trang chủ"
+url = "/"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[getHome]
+
+[SliderProduct]
+==
+<!--About Section-->
+<div id="content">
+  {% set Tour = getHome.getTour %}
+  <div class="sub_travel_home up_here">
+    <div class="container_duc">
+      <div class="listcate">
+        <h2>
+          <span class="title_listcate">{{'Travel'|_}}</span>
+        </h2>
+        <div class="note_listcate">
+        	<p>
+        		{{'With 7 years specialized in this area, we have a lot of experience in organizing open tours and private tours to these places. '|_}}
+        	</p>
+        </div>
+        <a class="btn_showmore" href="/travel">{{'SHOW MORE'|_}}</a>
+      </div>
+      <div class="lst_travel_home">
+        {% for item in Tour %}
+        <div class="item_travel_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop" href="/travel/{{item.slug}}">
+              <img alt="{{item.name}}"
+                src="{{ item.image_preview | resize(370,606, { mode: 'crop', quality: '90', extension: 'jpg' }) }}" />
+            </a>
+          </div>
+          <div class="ngoaia">
+            <a class="title" href="/travel/{{item.slug}}" title="{{item.name}}">
+              {{item.name}}
+            </a>
+          </div>
+          <span class="price_travel">{{ item.price|number_format() }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="sub_secsion_one">
+    <img alt="" src="assets/pic/banner_duc1.jpg" />
+    <div class="left50">
+      <div class="lst_secsion_one">
+        <div class="deac_secsion_one">{{'20% off'|_}}</div>
+        <div class="title_secsion_one">
+          {{'Croatia Cruise Adventure'|_}}
+        </div>
+        <div class="note_secsion_one">
+          {{'Wild & wonderful Hanoi, world-heritage Halong Bay, alluring Hue & historic Ho Chi Minh: plus Phnom Penh &
+          the breathtaking temples of Angkor Wat.'|_}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% set Hotel = getHome.getHotel %}
+  <div class="sub_hotel_home">
+    <div class="container_duc ">
+      <div class="listcate">
+        <h2>
+          <span class="title_listcate">{{'Hotel'|_}}</span>
+        </h2>
+        <div class="note_listcate">
+          {{'With 7 years specialized in this area, we have a lot of<br>experience in organizing open tours and private tours to these places'|_}}
+        </div>
+        <a class="btn_showmore" href="/hotel">{{'SHOW MORE'|_}}</a>
+      </div>
+      <div class="lst_hotel_home">
+        {% for key, value in Hotel %}
+        <div class="item_hotel_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop" href="/hotels/{{value.slug}}">
+              <img alt="{{value.name}}"
+                src="{{value.image_preview|resize(565, 423, { mode: 'crop', quality: '80', extension: 'jpg' })}}" />
+            </a>
+            <div class="lst_describe_hotel">
+              <h3><a class="title" href="/hotels/{{value.slug}}">{{value.name}}</a></h3>
+              <div class="note_hotel">{{value.locationdetail}}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% set Food = getHome.getFood %}
+  <div class="sub_cuisine_home">
+    <div class="left">
+      <img alt="" src="assets/pic/hinhanh07.jpg" />
+    </div>
+    <div class="right">
+      <span class="title_cuisine">{{'Cuisine'|_}}</span>
+      <div class="note_cuisine">
+        <p>
+        	{{'Find best local Food and Beverage from our hostel such as Nada draught beer, 666 and Hoan Kiem craft beer, Smoke brandy and local food like Jerky, noodle soup'|_}}
+		</p>
+      </div>
+
+    </div>
+  </div>
+
+  {% set Event = getHome.getEvent %}
+  <div class="sub_event_home">
+    <div class="container_duc">
+      <div class="listcate">
+        <h2>
+          <span class="title_listcate">{{'Event'|_}}</span>
+        </h2>
+        <div class="note_listcate">
+          	<p>
+          		{{'We event create our own events such as Live music, picnic, Vietnamese language teaching,<br>biking in the Old Quarter. Don`t miss the special event everyday'|_}}
+			</p>
+        </div>
+        <a class="btn_showmore" href="/list/event">{{'SHOW MORE'|_}}</a>
+      </div>
+      <div class="lst_event_home">
+        {% for item in Event %}
+        <div class="item_event_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop" href="/product/4/{{item.slug}}">
+              <img alt=""
+                src="{{item.image_preview|resize(270, 313, { mode: 'crop', quality: '80', extension: 'jpg' })}}" />
+            </a>
+          </div>
+          <div class="ngoaia">
+            <h3>
+              <a class="title" href="/product/4/{{item.slug}}">{{item.name}}</a>
+            </h3>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% set Souvenir = getHome.getSouvenir %}
+  <div class="sub_souvenir_home">
+    <div class="container_duc">
+      <div class="listcate">
+        <h2>
+          <span class="title_listcate">{{'SERVICE'|_}}</span>
+        </h2>
+        <div class="note_listcate">
+          	<p>
+          		{{'We event create our own events such as Live music, picnic, Vietnamese language teaching,<br>biking in the Old Quarter. Don`t miss the special event everyday'|_}}
+			</p>
+        </div>
+        <a class="btn_showmore" href="/product/5">{{'SHOW MORE'|_}}</a>
+      </div>
+      <div class="lst_souvenir_home">
+        {% for item in Souvenir %}
+        <div class="item_souvenir_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop" href="/product/5/{{item.slug}}">
+              <img alt="{{item.name}}"
+                src="{{item.image_preview|resize(370, 554, { mode: 'crop', quality: '80', extension: 'jpg' })}}" />
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!--Portfolio Section-->
+
+  {% set Parner = getHome.getParner %}
+  <!--Test section-->
+  <div class="sub_partner_home">
+    <div class="container_duc">
+      <div class="lst_partner_home">
+        {% for item in Parner %}
+        <div class="item_partner_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop0" href="javascript:">
+              <img alt=""
+                src="{{item.image|media|resize(88, 30, { mode: 'portrait', quality: '80', extension: 'png' })}}" />
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="sub_image_footer">
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh15.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh16.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh17.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh18.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh19.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh20.jpg" />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>";s:5:"mtime";i:1557434575;s:6:"markup";s:7886:"<!--About Section-->
+<div id="content">
+  {% set Tour = getHome.getTour %}
+  <div class="sub_travel_home up_here">
+    <div class="container_duc">
+      <div class="listcate">
+        <h2>
+          <span class="title_listcate">{{'Travel'|_}}</span>
+        </h2>
+        <div class="note_listcate">
+        	<p>
+        		{{'With 7 years specialized in this area, we have a lot of experience in organizing open tours and private tours to these places. '|_}}
+        	</p>
+        </div>
+        <a class="btn_showmore" href="/travel">{{'SHOW MORE'|_}}</a>
+      </div>
+      <div class="lst_travel_home">
+        {% for item in Tour %}
+        <div class="item_travel_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop" href="/travel/{{item.slug}}">
+              <img alt="{{item.name}}"
+                src="{{ item.image_preview | resize(370,606, { mode: 'crop', quality: '90', extension: 'jpg' }) }}" />
+            </a>
+          </div>
+          <div class="ngoaia">
+            <a class="title" href="/travel/{{item.slug}}" title="{{item.name}}">
+              {{item.name}}
+            </a>
+          </div>
+          <span class="price_travel">{{ item.price|number_format() }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="sub_secsion_one">
+    <img alt="" src="assets/pic/banner_duc1.jpg" />
+    <div class="left50">
+      <div class="lst_secsion_one">
+        <div class="deac_secsion_one">{{'20% off'|_}}</div>
+        <div class="title_secsion_one">
+          {{'Croatia Cruise Adventure'|_}}
+        </div>
+        <div class="note_secsion_one">
+          {{'Wild & wonderful Hanoi, world-heritage Halong Bay, alluring Hue & historic Ho Chi Minh: plus Phnom Penh &
+          the breathtaking temples of Angkor Wat.'|_}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% set Hotel = getHome.getHotel %}
+  <div class="sub_hotel_home">
+    <div class="container_duc ">
+      <div class="listcate">
+        <h2>
+          <span class="title_listcate">{{'Hotel'|_}}</span>
+        </h2>
+        <div class="note_listcate">
+          {{'With 7 years specialized in this area, we have a lot of<br>experience in organizing open tours and private tours to these places'|_}}
+        </div>
+        <a class="btn_showmore" href="/hotel">{{'SHOW MORE'|_}}</a>
+      </div>
+      <div class="lst_hotel_home">
+        {% for key, value in Hotel %}
+        <div class="item_hotel_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop" href="/hotels/{{value.slug}}">
+              <img alt="{{value.name}}"
+                src="{{value.image_preview|resize(565, 423, { mode: 'crop', quality: '80', extension: 'jpg' })}}" />
+            </a>
+            <div class="lst_describe_hotel">
+              <h3><a class="title" href="/hotels/{{value.slug}}">{{value.name}}</a></h3>
+              <div class="note_hotel">{{value.locationdetail}}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% set Food = getHome.getFood %}
+  <div class="sub_cuisine_home">
+    <div class="left">
+      <img alt="" src="assets/pic/hinhanh07.jpg" />
+    </div>
+    <div class="right">
+      <span class="title_cuisine">{{'Cuisine'|_}}</span>
+      <div class="note_cuisine">
+        <p>
+        	{{'Find best local Food and Beverage from our hostel such as Nada draught beer, 666 and Hoan Kiem craft beer, Smoke brandy and local food like Jerky, noodle soup'|_}}
+		</p>
+      </div>
+
+    </div>
+  </div>
+
+  {% set Event = getHome.getEvent %}
+  <div class="sub_event_home">
+    <div class="container_duc">
+      <div class="listcate">
+        <h2>
+          <span class="title_listcate">{{'Event'|_}}</span>
+        </h2>
+        <div class="note_listcate">
+          	<p>
+          		{{'We event create our own events such as Live music, picnic, Vietnamese language teaching,<br>biking in the Old Quarter. Don`t miss the special event everyday'|_}}
+			</p>
+        </div>
+        <a class="btn_showmore" href="/list/event">{{'SHOW MORE'|_}}</a>
+      </div>
+      <div class="lst_event_home">
+        {% for item in Event %}
+        <div class="item_event_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop" href="/product/4/{{item.slug}}">
+              <img alt=""
+                src="{{item.image_preview|resize(270, 313, { mode: 'crop', quality: '80', extension: 'jpg' })}}" />
+            </a>
+          </div>
+          <div class="ngoaia">
+            <h3>
+              <a class="title" href="/product/4/{{item.slug}}">{{item.name}}</a>
+            </h3>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% set Souvenir = getHome.getSouvenir %}
+  <div class="sub_souvenir_home">
+    <div class="container_duc">
+      <div class="listcate">
+        <h2>
+          <span class="title_listcate">{{'SERVICE'|_}}</span>
+        </h2>
+        <div class="note_listcate">
+          	<p>
+          		{{'We event create our own events such as Live music, picnic, Vietnamese language teaching,<br>biking in the Old Quarter. Don`t miss the special event everyday'|_}}
+			</p>
+        </div>
+        <a class="btn_showmore" href="/product/5">{{'SHOW MORE'|_}}</a>
+      </div>
+      <div class="lst_souvenir_home">
+        {% for item in Souvenir %}
+        <div class="item_souvenir_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop" href="/product/5/{{item.slug}}">
+              <img alt="{{item.name}}"
+                src="{{item.image_preview|resize(370, 554, { mode: 'crop', quality: '80', extension: 'jpg' })}}" />
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!--Portfolio Section-->
+
+  {% set Parner = getHome.getParner %}
+  <!--Test section-->
+  <div class="sub_partner_home">
+    <div class="container_duc">
+      <div class="lst_partner_home">
+        {% for item in Parner %}
+        <div class="item_partner_home">
+          <div class="frame_image">
+            <a class="frame_image_Crop0" href="javascript:">
+              <img alt=""
+                src="{{item.image|media|resize(88, 30, { mode: 'portrait', quality: '80', extension: 'png' })}}" />
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="sub_image_footer">
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh15.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh16.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh17.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh18.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh19.jpg" />
+        </span>
+      </div>
+    </div>
+    <div class="item_image_footer">
+      <div class="frame_image">
+        <span class="frame_image_Crop">
+          <img alt="" src="assets/pic/hinhanh20.jpg" />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>";s:4:"code";N;s:5:"title";s:11:"Trang chủ";s:3:"url";s:1:"/";s:6:"layout";s:9:"Travel365";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:7:"getHome";a:0:{}s:13:"SliderProduct";a:0:{}}}

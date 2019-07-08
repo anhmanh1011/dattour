@@ -1,0 +1,50 @@
+<div class="produc_top row_produc">
+    <div class="title_all">
+        <h3>Filter Travel in Vietnam</h3>
+    </div> <!-- /title_all -->
+    <div class="row" id="up">
+{% if tours|length %}
+
+    {% for tour in tours %}
+        <div class="col-md-4 col-sm-6">
+            <div class="product">
+                {% if (tour.hot == 1) %}
+                <div class="sale">
+                    <span>Hot</span>
+                </div> <!-- /sale -->
+                {% endif %}
+                <div class="images">
+                    <a href="/travel/{{tour.slug}}"><img src="{{ tour.image_preview | resize(251,152, { mode: 'crop', quality: '80' }) }} " alt="" class="img-responsive"></a>
+                </div> <!-- /images -->
+                <div class="caption">
+                    <div class="top_caption">
+                        <h3 style="height: 60px"><a href="/travel/{{tour.slug}}">{{tour.name}}</a></h3>
+                        <p class="rating">
+                        
+                        </p>
+                    </div> <!-- /top_caption -->
+                    <div class="bottom_caption">
+                        <div class="line_1" >
+                            <p><i class="fas fa-map-marker-alt"></i> <span>{{tour.locations.name}}</span></p>
+                        </div> <!-- /line_1 -->
+                        <div class="line_2">
+                            <p style="padding-right: 0"><i class="fas fa-calendar-alt"></i> <span> {{tour.date_number}}</span></p>
+                            <p style="padding-right: 0;padding-left: 10px">Price from: <a href="/travel/{{tour.slug}}">{{ tour.price|number_format() }} VND</a></p>
+                        </div> <!-- /line_2 -->
+                    </div> <!-- /bottom_caption -->
+                </div> <!-- /caption -->
+            </div> <!-- /product -->
+        </div> <!-- /col -->
+    {% endfor %}
+
+
+{% else %}
+
+    <div class="ui message text-center">
+        <p>
+            There are no tours that match the criteria.
+        </p>
+    </div>
+    </div> <!-- /row -->
+{% endif %}
+

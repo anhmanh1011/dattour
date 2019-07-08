@@ -1,0 +1,4 @@
+title: Location
+modelClass: Web\Hotel\Models\Location
+toolbar:
+    buttons: reorder_toolbar

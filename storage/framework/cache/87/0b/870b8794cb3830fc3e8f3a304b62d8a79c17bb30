@@ -1,0 +1,28 @@
+1558413353a:1:{s:10:"navbar.htm";a:6:{s:8:"fileName";s:10:"navbar.htm";s:7:"content";s:410:"[viewBag]
+
+==
+<div id="banner_home">
+  <img alt="" src="assets/pic/banner_duc1.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <div class="note_banner">
+        <h1>Wellcome to 420 Hospitality</h1>
+      </div>
+      <div class="ngoaiibtn">
+        <a class="btn_domere" href="javascript:">DO MORE WHAT CAN MAKE YOU HAPPY</a>
+      </div>
+    </div>
+  </div>
+</div>";s:5:"mtime";i:1553655246;s:6:"markup";s:393:"<div id="banner_home">
+  <img alt="" src="assets/pic/banner_duc1.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <div class="note_banner">
+        <h1>Wellcome to 420 Hospitality</h1>
+      </div>
+      <div class="ngoaiibtn">
+        <a class="btn_domere" href="javascript:">DO MORE WHAT CAN MAKE YOU HAPPY</a>
+      </div>
+    </div>
+  </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

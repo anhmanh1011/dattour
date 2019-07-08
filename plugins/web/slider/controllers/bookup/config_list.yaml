@@ -1,0 +1,12 @@
+title: Bookup
+modelClass: Web\Slider\Models\Bookup
+list: $/web/slider/models/bookup/columns.yaml
+recordUrl: 'web/slider/bookup/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

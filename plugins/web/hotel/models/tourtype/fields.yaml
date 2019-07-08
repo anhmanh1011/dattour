@@ -1,0 +1,16 @@
+fields:
+    active:
+        label: Active
+        span: auto
+        type: switch
+    name:
+        label: Name
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text

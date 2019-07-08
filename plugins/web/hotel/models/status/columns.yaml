@@ -1,0 +1,17 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+        sortable: true
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    color:
+        label: color
+        type: partial
+        path: ~/plugins/web/hotel/controllers/zcolumn/_color.htm
+        sortable: true
+        sortable: false

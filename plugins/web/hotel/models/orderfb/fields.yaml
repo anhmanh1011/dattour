@@ -1,0 +1,31 @@
+fields:
+    status:
+        label: Status
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    name:
+        label: Name
+        span: auto
+        disabled: 0
+        type: text
+    email:
+        label: Email
+        span: auto
+        disabled: 0
+        type: text
+    phone:
+        label: Phone
+        span: auto
+        disabled: 0
+        type: text
+    fb_title:
+        label: 'Food & Beverage'
+        span: auto
+        type: text
+    content:
+        label: Content
+        span: auto
+        size: small
+        type: textarea

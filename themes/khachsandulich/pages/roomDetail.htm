@@ -1,0 +1,162 @@
+title = "chi tiết phòng"
+url = "/hotels/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[DetailRoom]
+
+[search]
+==
+<?php
+function onEnd(){
+ $this->page->meta_title     = $this->meta_title;
+ $this->page->meta_description = $this->meta_description;
+ $this->page->meta_keyword   = $this->meta_keyword;
+ $this->page->robot_follow   = $this->robot_follow;
+ $this->page->robot_index    = $this->robot_index;
+}
+?>
+==
+<div class="content">
+<div class="wrap_pagination_top">
+	<div class="container">
+		<div class="info">
+			<ul class="list-inline">
+				<li><a href="/">HOME</a></li>
+				<li><a href="/accommodation">ACCOMMODATION</a></li>
+				<li><a href="{{'Home'|page}}/hotel/{{hotel_cate.slug}}">{{hotel_cate.name}}</a></li>
+				<li class="active"><a href="javascript:void(0)">{{meta_title}}</a></li>
+			</ul>
+		</div> 
+	</div> 
+</div> 
+<div class="wrap_main_travel_booktour">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-sm-12">
+				<div class="post_travel_booktour">
+					<div class="title_post">
+						<h2>{{room_detail.name}}</h2>
+						<span>Price from: {{room_detail.price|number_format()}} VND</span>
+					</div> 
+					<div class="post_index">
+						<div class="line">
+							<p>{{room_detail.content|raw}}</p>
+						</div> 
+
+						<div class="line_images_post">
+							<img src="images/blog_10.png" alt="" class="img-responsive">
+						</div> 
+
+						<div class="line_images_post">
+							<img src="images/blog_11.png" alt="" class="img-responsive">
+						</div> 
+						
+					</div> 
+
+					<div class="post_review">
+						<div class="top">
+							<h5 class="title">Reviews</h5>
+							<div class="rate_star">
+							<div class="rateit" id="checkstar" data-cate="6" data-id="{{room_detail.id}}" data-rateit-mode="font"  data-rateit-value="4.5" ></div>
+							<span>4.0/5 (<span class="addStar" style="padding: 0">{{room_detail.star_4 + room_detail.star_5}}</span>) vote</span>
+							</div> 
+						</div> 
+					</div> 
+
+					<div class="post_comment_facebook">
+						<div class="info">
+							<div class="fb-comments" data-href="https://dulich.techlab.vn/hotels/{{room_detail.slug}}" data-width="auto" data-numposts="10"></div>
+						</div> 
+					</div> 
+				</div> 
+			</div>
+			<div class="col-md-4 col-sm-12">
+				<div class="side_bar sidebar_book">
+					<div class="top_sidebar">
+						<div class="form_book_tour custom_accomdetion_3">
+							{% component 'DetailRoom' %}
+						</div> 
+					</div> 
+
+					<div class="bottom_sidebar">
+						{%if hot_room%}
+						<h3>Hotel Hot</h3>
+							{%for value in hot_room%}
+							<div class="product">
+								<div class="images_info">
+									<a href="/hotels/{{value.slug}}">
+										<img src="{{value.image_preview.path|resize(338,189,{ mode: 'crop', quality: '55', extension: 'auto' })}}" title="{{value.name}}" alt="{{value.name}}" class="img-responsive">
+									</a>
+									{% if value.star==5%}
+				                    <p class="rating">
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                    </p>
+				                    {%elseif(value.star == 4)%}
+				                     <p class="rating">
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                    </p>
+				                    {%elseif(value.star==3)%}
+				                    <p class="rating">
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                    </p>
+				                    {%elseif(value.star == 2)%}
+				                     <p class="rating">
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                    </p>
+				                    {%elseif(value.star == 1)%}
+				                     <p class="rating">
+				                      <span><i class="fas fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                      <span><i class="far fa-star"></i></span>
+				                    </p>
+				                     {%else%}
+					                     <p class="rating">
+					                      <span><i class="far fa-star"></i></span>
+					                      <span><i class="far fa-star"></i></span>
+					                      <span><i class="far fa-star"></i></span>
+					                      <span><i class="far fa-star"></i></span>
+					                      <span><i class="far fa-star"></i></span>
+					                    </p>
+				                {%endif%}
+								</div>
+								<div class="caption_info">
+									<h3><a href="/hotels/{{value.slug}}">{{value.name}}</a></h3>
+									<p>	{{value.description}}</p>
+									{%if value.new_price >0%}
+										<span>Price <a href="javascript:void(0)">{{value.new_price|number_format()}} VND</a></span>
+										<span class="sele">Original price : <b>{{value.price|number_format()}} VND</b></span>
+									 {%else%}
+									 <span>Price <a href="javascript:void(0)">{{value.price|number_format()}} VND</a></span>
+									{%endif%}
+								</div>
+							</div> 
+							{%endfor%}
+						{%endif%}
+					</div> 
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+</div> 
+</div>

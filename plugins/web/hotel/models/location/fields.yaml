@@ -1,0 +1,15 @@
+fields:
+    name:
+        label: 'Name location'
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: small
+        span: full
+        type: textarea
+    content:
+        label: Content
+        size: large
+        span: full
+        type: richeditor

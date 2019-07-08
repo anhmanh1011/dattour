@@ -1,0 +1,73 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+        sortable: true
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: description
+        type: text
+        searchable: true
+        invisible: true
+        sortable: true
+    start_date:
+        label: start_date
+        type: date
+        format: d/m/Y
+        invisible: true
+        ignoreTimezone: 'true'
+        searchable: true
+        sortable: true
+    end_date:
+        label: end_date
+        type: date
+        format: d/m/Y
+        invisible: true
+        ignoreTimezone: 'true'
+        searchable: true
+        sortable: true
+    price:
+        label: price
+        type: number
+        searchable: true
+        sortable: true
+    location_id:
+        label: location
+        type: text
+        select: name
+        relation: locations
+        searchable: true
+        sortable: true
+    discount:
+        label: discount
+        type: number
+        searchable: true
+        sortable: true
+    price_new:
+        label: 'price new'
+        type: number
+        searchable: true
+        sortable: true
+    active:
+        label: Active
+        type: partial
+        sortable: true
+        path: ~/plugins/web/hotel/controllers/zcolumn/_status.htm
+    hot:
+        label: Hot
+        type: partial
+        sortable: true
+        path: ~/plugins/web/hotel/controllers/zcolumn/_hot.htm
+    created_at:
+        label: created_at
+        type: datetime
+        invisible: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        invisible: true

@@ -1,0 +1,22 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: small
+        span: full
+        type: textarea
+    content:
+        label: Content
+        size: large
+        span: full
+        type: richeditor

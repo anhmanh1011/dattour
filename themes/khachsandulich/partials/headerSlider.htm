@@ -1,0 +1,44 @@
+[viewBag]
+
+[SliderProduct]
+[staticMenu staticMenu2]
+code = "menu-header"
+==
+<div class="header">
+	<div class="wrap_header">
+		<div class="container">
+			<div class="wrap_total_trigger">
+				<div class="trigger_menu">
+				<span class="toggle_0"><i class="fa fa-bars" aria-hidden="true"></i></span>
+				<span class="toggle_1"><i class="fa fa-times" aria-hidden="true"></i></span>
+				</div> <!-- /trigger_menu -->
+				<div class="logo">
+					<a href="{{'home'|page}}"><img src="{{logo.path}}" alt="logo" class="img-responsive"></a>
+				</div> <!-- /logo -->
+				<div class="wrap_menu">
+					<div class="menu">
+						<nav class="navbar">
+							{% component 'staticMenu' %}
+						</nav>
+					</div> <!-- menu -->
+				</div> <!-- /wrap_menu -->
+
+				<div class="wrap_seach">
+					<div class="seach">
+						<a href="#0" class="btn click_seach"><i class="fas fa-search"></i></a>
+					</div>
+					{% component 'search' %}
+					<div class="md-overlay"></div>
+					<div class="language">
+						<a href="{{'home'|page}}"><img src="{{'assets/images/language.png'|theme}}"  alt="" class="img-responsive"></a>
+					</div> <!-- /language -->
+				</div> <!-- /wrap_seach -->
+			</div> <!-- /wrap_total_trigger -->
+		</div> <!-- /container -->
+	</div> <!-- /wrap_header -->
+	
+   {% component 'SliderProduct' %}
+	<div class="menu_responsive">
+		{% component 'staticMenu2' %}
+	</div> 
+</div> 

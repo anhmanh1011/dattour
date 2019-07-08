@@ -1,0 +1,52 @@
+﻿/*================Các thông số mặc định để ở phần khung ảnh================*/
+.frame_image{position:relative;z-index:1}
+.frame_image:before{content:"";display:block;}
+.frame_image_Crop,
+.frame_image_Crop0{overflow:hidden;text-align:center;display:inline-block;position:absolute;z-index:1;top:0;left:0;width:100%;height:100%}
+
+
+/*================Trường hợp ảnh lọt trong khung================*/
+.frame_image_Crop0 img{max-width:100%;max-height:100%;position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%)}
+.frame_image_Crop0 img{
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%)
+}
+/*transform phải viết thêm cho các trình duyệt cũ*/
+
+/*================Trường hợp ảnh tràn lề khi chưa gắn class xác định ảnh dạng ngang hay dọc================*/
+.frame_image_Crop img{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%)}
+.frame_image_Crop img{
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%)
+}
+
+/*Ảnh ngang (width > height) --> gắn height 100%, width sẽ bị lấp hai bên*/
+.frame_image_Crop img.wide{height:100%;max-width:none}
+
+/*Ảnh dọc (width < height) --> gắn width 100%, height sẽ bị lấp phần trên dưới*/
+.frame_image_Crop img.tall{width:100%;max-height:none}
+
+
+/*================Hiệu ứng zoom ảnh khi hover================*/
+.frame_image_Crop img,
+.frame_image_Crop0 img{-moz-transition:all 0.5s ease 0s;-o-transition:all 0.5s ease 0s;-webkit-transition:all 0.5s ease 0s;transition:all 0.5s ease 0s}
+
+.frame_image_Crop:hover img{transform:translate(-50%,-50%) scale(1.1)}
+.frame_image_Crop:hover img{
+    -webkit-transform:translate(-50%,-50%) scale(1.1);
+    -moz-transform:translate(-50%,-50%) scale(1.1);
+    -o-transform:translate(-50%,-50%) scale(1.1);
+    transform:translate(-50%,-50%) scale(1.1)
+}
+
+.frame_image_Crop0:hover img{transform:translateY(-50%) scale(1.1)}
+.frame_image_Crop0:hover img{
+    -webkit-transform:translate(-50%,-50%) scale(1.1);
+    -moz-transform:translate(-50%,-50%) scale(1.1);
+    -o-transform:translate(-50%,-50%) scale(1.1);
+    transform:translate(-50%,-50%) scale(1.1)
+}

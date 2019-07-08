@@ -1,0 +1,5 @@
+{% if search|length %}
+    {% for tour in search %}
+    	<a href="/travel/{{tour.slug}}" title="{{tour.name}}"><li>{{tour.name}}</li></a>
+    {% endfor %}
+{% endif %}

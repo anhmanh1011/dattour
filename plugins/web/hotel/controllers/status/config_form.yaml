@@ -1,0 +1,10 @@
+name: Status
+form: $/web/hotel/models/status/fields.yaml
+modelClass: Web\Hotel\Models\Status
+defaultRedirect: web/hotel/status
+create:
+    redirect: 'web/hotel/status/update/:id'
+    redirectClose: web/hotel/status
+update:
+    redirect: web/hotel/status
+    redirectClose: web/hotel/status

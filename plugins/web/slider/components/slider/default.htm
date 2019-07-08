@@ -1,0 +1,11 @@
+{% set sliders = __SELF__.slider %}
+<div class="content">
+    <div class="overlay"></div>
+	<div class="owl-carousel owl-theme custom_owl_1">
+	{% for key,value in sliders %}
+	    <div class="item">
+	    	<img src="{{value.img_slider.path|resize(1920,1080,{ mode: 'crop', quality: '80', extension: 'jpg' })}}" alt="" class="img-responsive">
+	    </div>
+	 {%endfor%}
+	</div>
+</div> <!-- /content -->

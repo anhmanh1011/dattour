@@ -1,0 +1,159 @@
+
+<div class="content up_here">
+    {{ form_ajax('onFilter',{ update: { 'product/product': '#listProduct','product/pagination': '#Pagination'}}) }}
+
+    <div class="wrap_main_accommodation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <div class="side_bar" id="Filter">
+                        <div class="top_sidebar">
+                            <div class="info">
+                                <h3 class="click_colapse">{{'Location'|_}}</h3>
+
+                                <div class="open_colapse">
+                                    {% for state in states %}
+                                    <label class="gloabal_custom">{{ state.name }}
+                                        <input type="checkbox" name="Filter[state][]" value="{{ state.id }}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h3 class="click_colapse">{{'Type'|_}} </h3>
+
+                                <div class="open_colapse">
+                                    {%if types%}
+                                    {%for value in types%}
+                                    <label class="gloabal_custom">{{value.name}}
+                                        <input type="checkbox" name="Filter[type][]" value="{{value.id}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    {%endfor%}
+                                    {%endif%}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom_sidebar">
+                            {%if data_percent%}
+                            <h3 class="click_colapse">{{'Promotion'|_}}</h3>
+                            <div class="open_colapse">
+                                {%for value in data_percent%}
+                                <div class="product">
+                                    <div class="images_info">
+                                        <a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}"><img
+                                                src="{{value.image_preview.path|resize(263, 159,{ mode: 'crop', quality: '80', extension: 'jpg' })}}"
+                                                alt="" class="img-responsive"></a>
+                                        {% if value.star_4 > value.star_5%}
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                        </p>
+                                        {%elseif(value.star_4 < value.star_5)%}
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                        {%elseif(value.star_4 =="" and value.star_5 =="")%}
+                                        <p class="rating">
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                            <span><i class="far fa-star"></i></span>
+                                        </p>
+                                        {%elseif(value.star_4 == value.star_5)%}
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                        {%endif%}
+                                    </div>
+                                    <div class="caption_info">
+                                        <h3>
+                                            <a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}">{{value.name}}</a>
+                                        </h3>
+                                        <p>
+                                            {{html_limit(value.description, 80)}}
+                                        </p>
+                                        <span>{{'Price'|_}} <a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}">{{value.price_new|number_format}}VNĐ</a></span>
+                                        <span class="sele">{{'Original price'|_}} : <b>{{value.price|number_format}}
+                                                VNĐ</b></span>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                            </div>
+                            {%endif%}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-12">
+                    <div class="wrap_main_product row_produc">
+                        <div class="row" id="listProduct">
+                            {% partial 'product/product' %}
+                        </div>
+                    </div>
+                    <div class="panigation_categorie_grid" id="Pagination">
+                        {% partial 'product/pagination'%}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{ form_close() }}
+</div>
+{%put scripts %}
+<style type="text/css" media="screen">
+    #Pagination {
+        text-align: center;
+    }
+
+    .gloabal_custom {
+        padding: 6px 15px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Hide the browser's default checkbox */
+    .gloabal_custom input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+</style>
+{%endput%}
+{% put scripts %}
+<script>
+    (function ($) {
+
+        $('#Filter').on('change', 'input, select', function () {
+            $('html, body').animate({
+                scrollTop: $('.up_here').offset().top - 80
+            }, 1000);
+            var $form = $(this).closest('form');
+            $form.request();
+        });
+        $('#Pagination').on('change', 'input, select', function () {
+            $('html, body').animate({
+                scrollTop: $('.up_here').offset().top - 80
+            }, 1000);
+            var $form = $(this).closest('form');
+            $form.request();
+        });
+    })(jQuery);
+</script>
+{% endput %}

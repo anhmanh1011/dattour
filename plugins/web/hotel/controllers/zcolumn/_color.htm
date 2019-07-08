@@ -1,0 +1,7 @@
+<?php
+    if (isset($record->color)) {
+        echo '<div style="background-color: '.$value.';border-radius: 50%;color: #fff;width:20px; height:20px;"></div>' ;
+    } else
+    echo isset($value)?
+        '<div style="background-color: '.$value.';border-radius: 50%;color: #fff;width:20px; height:20px;"></div>' : '';
+?>

@@ -1,0 +1,10 @@
+name: Contact
+form: $/web/contact/models/contact/fields.yaml
+modelClass: Web\Contact\Models\Contact
+defaultRedirect: web/contact/contact
+create:
+    redirect: 'web/contact/contact/update/:id'
+    redirectClose: web/contact/contact
+update:
+    redirect: web/contact/contact
+    redirectClose: web/contact/contact

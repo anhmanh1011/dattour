@@ -1,0 +1,15 @@
+{% set bookup = __SELF__.bookup %}
+
+{%if bookup.active == 1%}
+	<div class="wrap_pop_up">
+		<div class="info">
+			<div class="right_info">
+		     	<a href="{{bookup.link}}"><img src="{{bookup.img_bookup.path|resize(600, 455)}}" alt="" class="img-responsive"></a>
+					</div> <!-- /right_info -->
+			<span class="close_popup">
+				<i class="fas fa-times"></i>
+			</span><!--  /close_popup -->
+		</div> <!-- /info -->
+	</div>
+{%endif%}
+

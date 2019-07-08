@@ -1,0 +1,128 @@
+1558413233a:1:{s:10:"header.htm";a:7:{s:8:"fileName";s:10:"header.htm";s:7:"content";s:2688:"[viewBag]
+
+[Search]
+
+==
+<div id="header">
+  <form data-request="onSearch" data-request-update="'search/result': '#searchResult'">
+    <div class="top_search">
+      <div class="container_duc">
+        <div class="hd_input_grup">
+          <span class="icon_search"><i class="fa fa-search"></i></span>
+          <input id="inputSearch" type="text" name="searchKey" placeholder="{{'SEARCH'|_}}">
+          <span class="icon_close"><i class="fa fa-times"></i></span>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12" style="position: absolute;z-index: 9">
+        <ul id="searchResult">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container_duc">
+    <div class="menu">
+      <div class="logo">
+        <a class="image_logo" href="/">
+          <img alt="{{title_web}}" src="assets/pic/logo.png" />
+        </a>
+      </div>
+      <div class="header_right">
+        <div class="mainmenu">
+          <ul>
+            <li {% if page == 'home' %}class="active" {% endif %}><a href="/">{{'HOME'|_}}</a></li>
+            <li {% if page == 'travel' %}class="active" {% endif %}><a href="/travel">{{'TRAVEL'|_}}</a></li>
+            <li {% if page == 'hotel' %}class="active" {% endif %}><a href="/hotel">{{'HOTEL'|_}}</a></li>
+            <li {% if page == 'cuisine' %}class="active" {% endif %}><a href="/list/cuisine">{{'CUISINE'|_}}</a></li>
+            <li {% if page == 'event' %}class="active" {% endif %}><a href="/list/event">{{'EVENT'|_}}</a></li>
+            <li {% if page == 'store' %}class="active" {% endif %}><a href="/list/service-store">{{'SERVICE'|_}}</a></li>
+          </ul>
+        </div>
+        <span class="icon_clsearch"><i class="fa fa-search"></i></span>
+        <div class="wrap_language">
+          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+            <img {{ 'en' == activeLocale ? 'src="assets/pic/en.jpg"' : 'src="assets/pic/vn.jpg"' }}  alt="" />
+          </button>
+          <ul class="menu_language">
+            <li>
+              <a href="javascript:" data-request="onSwitchLocale" data-request-data="locale: 'en'">
+                <img src="assets/pic/en.jpg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="javascript:" data-request="onSwitchLocale" data-request-data="locale: 'vn'">
+                <img src="assets/pic/vn.jpg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="click_close"></div>
+        <div class="chensubmenu"></div>
+      </div>
+    </div>
+  </div>
+</div>";s:5:"mtime";i:1554123844;s:6:"markup";s:2659:"<div id="header">
+  <form data-request="onSearch" data-request-update="'search/result': '#searchResult'">
+    <div class="top_search">
+      <div class="container_duc">
+        <div class="hd_input_grup">
+          <span class="icon_search"><i class="fa fa-search"></i></span>
+          <input id="inputSearch" type="text" name="searchKey" placeholder="{{'SEARCH'|_}}">
+          <span class="icon_close"><i class="fa fa-times"></i></span>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12" style="position: absolute;z-index: 9">
+        <ul id="searchResult">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container_duc">
+    <div class="menu">
+      <div class="logo">
+        <a class="image_logo" href="/">
+          <img alt="{{title_web}}" src="assets/pic/logo.png" />
+        </a>
+      </div>
+      <div class="header_right">
+        <div class="mainmenu">
+          <ul>
+            <li {% if page == 'home' %}class="active" {% endif %}><a href="/">{{'HOME'|_}}</a></li>
+            <li {% if page == 'travel' %}class="active" {% endif %}><a href="/travel">{{'TRAVEL'|_}}</a></li>
+            <li {% if page == 'hotel' %}class="active" {% endif %}><a href="/hotel">{{'HOTEL'|_}}</a></li>
+            <li {% if page == 'cuisine' %}class="active" {% endif %}><a href="/list/cuisine">{{'CUISINE'|_}}</a></li>
+            <li {% if page == 'event' %}class="active" {% endif %}><a href="/list/event">{{'EVENT'|_}}</a></li>
+            <li {% if page == 'store' %}class="active" {% endif %}><a href="/list/service-store">{{'SERVICE'|_}}</a></li>
+          </ul>
+        </div>
+        <span class="icon_clsearch"><i class="fa fa-search"></i></span>
+        <div class="wrap_language">
+          <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+            <img {{ 'en' == activeLocale ? 'src="assets/pic/en.jpg"' : 'src="assets/pic/vn.jpg"' }}  alt="" />
+          </button>
+          <ul class="menu_language">
+            <li>
+              <a href="javascript:" data-request="onSwitchLocale" data-request-data="locale: 'en'">
+                <img src="assets/pic/en.jpg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="javascript:" data-request="onSwitchLocale" data-request-data="locale: 'vn'">
+                <img src="assets/pic/vn.jpg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="click_close"></div>
+        <div class="chensubmenu"></div>
+      </div>
+    </div>
+  </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}s:6:"Search";a:0:{}}}

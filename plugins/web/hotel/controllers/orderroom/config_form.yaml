@@ -1,0 +1,10 @@
+name: OrderRoom
+form: $/web/hotel/models/orderroom/fields.yaml
+modelClass: Web\Hotel\Models\OrderRoom
+defaultRedirect: web/hotel/orderroom
+create:
+    redirect: 'web/hotel/orderroom/update/:id'
+    redirectClose: web/hotel/orderroom
+update:
+    redirect: web/hotel/orderroom
+    redirectClose: web/hotel/orderroom

@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    slug:
+        label: slug
+        type: text
+        sortable: true
+    active:
+        label: active
+        type: switch
+        sortable: true
+        path: ~/plugins/web/hotel/controllers/zcolumn/_status.htm

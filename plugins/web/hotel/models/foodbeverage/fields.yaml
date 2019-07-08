@@ -1,0 +1,95 @@
+fields:
+    active:
+        label: Active
+        span: auto
+        type: switch
+    hot:
+        label: Hot
+        span: auto
+        type: switch
+    name:
+        label: Name
+        span: left
+        type: text
+    slug:
+        label: slug
+        span: auto
+        preset:
+            field: name
+            type: slug
+        type: text
+    address:
+        label: Address
+        span: auto
+        type: text
+    location:
+        label: Location
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    kind:
+        label: Kind
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    type:
+        label: Type
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    price:
+        label: Price
+        span: left
+        type: number
+    discount:
+        label: Discount
+        span: left
+        type: number
+    price_new:
+        label: 'Price new'
+        span: left
+        type: number
+    created_at:
+        label: 'Created time'
+        span: right
+        mode: datetime
+        type: datepicker
+tabs:
+    fields:
+        image_preview:
+            label: 'Image preview'
+            mode: image
+            imageWidth: '200'
+            imageHeight: '200'
+            useCaption: 0
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Image
+        album_images:
+            label: 'Album image'
+            mode: image
+            useCaption: 0
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Image
+        description:
+            label: Description
+            size: small
+            span: full
+            type: textarea
+            tab: Content
+        content:
+            label: Content
+            size: large
+            span: full
+            type: richeditor
+            tab: Content

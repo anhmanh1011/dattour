@@ -1,0 +1,18 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        invisible: true
+        sortable: true
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: description
+        type: text
+        searchable: true
+        invisible: true
+        sortable: false

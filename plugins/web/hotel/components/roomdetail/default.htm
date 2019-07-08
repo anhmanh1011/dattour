@@ -1,0 +1,67 @@
+
+<form data-request="DetailRoom::onBookroom" data-request-validate data-request-flash class="review_form">
+  <div class="sub_from_bookroom">
+    <div class="title">{{'Your Reveration'|_}}</div>
+    <div class="lst_from_bookroom">
+      <div class="item_info_bookroom">
+        <span class="name_info_bookroom">{{'Check in'|_}}</span>
+        <input type="hidden" name="title_room" value="{{room_detail.name}}" required>
+        <input class="date_arrival" name="checkin" autocomplete="off" type="text" id='datetimepicker2' required/>
+      </div>
+      <div class="item_info_bookroom">
+        <span class="name_info_bookroom">{{'Check out'|_}}</span>
+        <input class="date_arrival" name="checkout" autocomplete="off" type="text" id='datetimepicker3' required/>
+      </div>
+      <div class="lst_age">
+        <div class="item_info_bookroom_two">
+          <span class="name_info_bookroom">{{'Rooms'|_}}</span>
+          <select name="rooms" id="Select1" required>
+            {%for i in 1..5 %}
+            <option value="{{i}}">{{i}}</option>
+            {%endfor%}
+          </select>
+        </div>
+        <div class="item_info_bookroom_two">
+          <span class="name_info_bookroom">{{'Adults'|_}}</span>
+          <select name="adults" id="Select2" required>
+            {%for i in 1..room_detail.max_people %}
+            <option value="{{i}}">{{i}}</option>
+            {%endfor%}
+          </select>
+        </div>
+        <div class="item_info_bookroom_two">
+          <span class="name_info_bookroom">{{'Children'|_}}</span>
+          <select name="children" id="Select3" required>
+            {%for i in 0..room_detail.max_people %}
+            <option value="{{i}}">{{i}}</option>
+            {%endfor%}
+          </select>
+        </div>
+      </div>
+      <div class="item_info_bookroom">
+        <span class="name_info_bookroom">{{'Name'|_}}</span>
+        <input name="name" type="text"  required/>
+      </div>
+      <div class="item_info_bookroom">
+        <span class="name_info_bookroom">{{'Email'|_}}</span>
+        <input name="email" type="email"  required/>
+      </div>
+      <div class="item_info_bookroom">
+        <span class="name_info_bookroom">{{'Phone'|_}}</span>
+        <input name="phone" type="tel" required />
+      </div>
+      <div class="item_info_bookroom">
+        <span class="name_info_bookroom">{{'Content'|_}}</span>
+        <textarea name="content" rows="2" cols="20"></textarea>
+      </div>
+      <input type="hidden" name="img1" value="{{room_detail.album_images[0]| resize(310,222, { mode: 'crop', quality: '80' }) }}"">
+      <input type="hidden" name="img2" value="{{room_detail.album_images[1]| resize(310,222, { mode: 'crop', quality: '80' }) }}"">
+      <input type="hidden" name="hotel_name" value="{{hotel.name}}">
+      <input type="hidden" name="hotel_location" value="{{hotel.locationdetail}}">
+      <input type="hidden" name="hotel_phone" value="{{hotel.phone}}">
+    </div>
+    <div class="ngoaibtn">
+      <button type="submit" class="btn_book_room"  data-attach-loading>{{'Book room'|_}}</button>
+    </div>
+  </div>
+</form>

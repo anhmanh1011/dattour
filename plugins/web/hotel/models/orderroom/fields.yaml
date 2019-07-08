@@ -1,0 +1,49 @@
+fields:
+    status:
+        label: Status
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    name:
+        label: 'Tên người đặt'
+        span: auto
+        type: text
+    email:
+        label: 'Địa chỉ Email'
+        span: auto
+        type: text
+    phone:
+        label: 'Số điện thoại'
+        span: auto
+        type: text
+        tab: 'Người nhận'
+    content:
+        label: Content
+        size: small
+        span: auto
+        type: textarea
+    check_in:
+        label: Check_in
+        span: left
+        type: text
+    check_out:
+        label: Check_out
+        span: auto
+        type: text
+    number_rooms:
+        label: 'Number rooms'
+        span: auto
+        type: number
+    adults:
+        label: 'Number Adults'
+        span: auto
+        type: number
+    children:
+        label: 'Number Children'
+        span: auto
+        type: number
+    title_room:
+        label: 'Title room'
+        span: auto
+        type: text

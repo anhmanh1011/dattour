@@ -1,0 +1,10 @@
+name: OrderEvent
+form: $/web/hotel/models/orderevent/fields.yaml
+modelClass: Web\Hotel\Models\OrderEvent
+defaultRedirect: web/hotel/orderevent
+create:
+    redirect: 'web/hotel/orderevent/update/:id'
+    redirectClose: web/hotel/orderevent
+update:
+    redirect: web/hotel/orderevent
+    redirectClose: web/hotel/orderevent

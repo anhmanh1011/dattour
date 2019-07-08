@@ -1,0 +1,10 @@
+name: Tag
+form: $/web/hotel/models/tag/fields.yaml
+modelClass: Web\Hotel\Models\Tag
+defaultRedirect: web/hotel/tag
+create:
+    redirect: 'web/hotel/tag/update/:id'
+    redirectClose: web/hotel/tag
+update:
+    redirect: web/hotel/tag
+    redirectClose: web/hotel/tag

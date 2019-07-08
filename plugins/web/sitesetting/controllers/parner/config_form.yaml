@@ -1,0 +1,10 @@
+name: Parner
+form: $/web/sitesetting/models/parner/fields.yaml
+modelClass: Web\Sitesetting\Models\Parner
+defaultRedirect: web/sitesetting/parner
+create:
+    redirect: 'web/sitesetting/parner/update/:id'
+    redirectClose: web/sitesetting/parner
+update:
+    redirect: web/sitesetting/parner
+    redirectClose: web/sitesetting/parner

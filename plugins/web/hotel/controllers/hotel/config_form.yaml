@@ -1,0 +1,10 @@
+name: Hotel
+form: $/web/hotel/models/hotel/fields.yaml
+modelClass: Web\Hotel\Models\Hotel
+defaultRedirect: web/hotel/hotel
+create:
+    redirect: 'web/hotel/hotel/update/:id'
+    redirectClose: web/hotel/hotel
+update:
+    redirect: web/hotel/hotel
+    redirectClose: web/hotel/hotel

@@ -1,0 +1,20 @@
+name: Setting
+form: $/web/sitesetting/models/settings/fields.yaml
+modelClass: Web\Sitesetting\Models\Settings
+defaultRedirect: web/sitesetting/sitesetting
+create:
+    redirect: 'web/sitesetting/sitesetting/update/:id'
+    redirectClose: web/sitesetting/sitesetting
+update:
+    redirect: web/sitesetting/sitesetting
+    redirectClose: web/sitesetting/sitesetting
+# name: Setting
+# form: $/web/setting/models/settings/fields.yaml
+# modelClass: Web\Setting\Models\Settings
+# defaultRedirect: web/setting/setting
+# create:
+#     redirect: 'web/setting/setting/update/:id'
+#     redirectClose: web/setting/setting
+# update:
+#     redirect: web/setting/setting
+#     redirectClose: web/setting/setting

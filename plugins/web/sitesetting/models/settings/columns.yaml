@@ -1,0 +1,53 @@
+columns:
+    title_web:
+        label: 'Tên website'
+        type: text
+        searchable: true
+        sortable: true
+    meta_title:
+        label: 'Tiêu đề seo'
+        type: text
+        searchable: true
+        sortable: true
+    meta_key:
+        label: 'Từ khóa web site'
+        type: text
+        searchable: true
+        sortable: true
+    meta_description:
+        label: 'Mô tả website'
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: 'Số điện thoại liên hệ'
+        type: text
+        searchable: true
+        sortable: true
+    hotline:
+        label: 'Số hotline liên hệ'
+        type: number
+        searchable: true
+        sortable: true
+    address:
+        label: 'Địa chỉ liên hệ'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'Thời gian tạo'
+        type: datetime
+        sortable: true
+    content:
+        label: 'Nội dung website'
+        type: text
+        searchable: true
+        sortable: true
+        logo:
+    label: 'Ảnh logo'
+        type: partial
+        path: ~/plugins/web/setting/models/settings/_logo.htm
+    img_favicon:
+        label: 'Ảnh favicon'
+        type: partial
+        path: ~/plugins/web/setting/models/settings/_favicon.htm

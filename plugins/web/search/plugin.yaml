@@ -1,0 +1,6 @@
+plugin:
+    name: 'web.search::lang.plugin.name'
+    description: 'web.search::lang.plugin.description'
+    author: web
+    icon: oc-icon-search
+    homepage: ''

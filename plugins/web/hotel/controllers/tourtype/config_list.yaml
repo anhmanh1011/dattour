@@ -1,0 +1,12 @@
+title: Tourtype
+modelClass: Web\Hotel\Models\TourType
+list: $/web/hotel/models/tourtype/columns.yaml
+recordUrl: 'web/hotel/tourtype/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

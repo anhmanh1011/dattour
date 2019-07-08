@@ -1,0 +1,72 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true
+        invisible: true
+    hotel_id:
+        label: Hotel
+        type: text
+        searchable: true
+        invisible: false
+        sortable: true
+        select: name
+        relation: hotels
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    price:
+        label: price
+        type: number
+        searchable: true
+        sortable: true
+    discount:
+        label: discount
+        type: number
+        searchable: true
+        sortable: true
+    new_price:
+        label: 'Giá mới'
+        type: number
+        searchable: true
+        sortable: true
+    amenities:
+        label: 'Tiện ích'
+        type: text
+        select: name
+        relation: amenities
+        searchable: true
+        sortable: true
+    acreage:
+        label: acreage
+        type: number
+        searchable: true
+        invisible: true
+        sortable: true
+    number_of_bed:
+        label: number_of_bed
+        type: number
+        searchable: true
+        invisible: true
+        sortable: true
+    max_people:
+        label: max_people
+        type: number
+        searchable: true
+        invisible: true
+        sortable: true
+    active:
+        label: active
+        type: partial
+        invisible: false
+        sortable: true
+        path: ~/plugins/web/hotel/controllers/zcolumn/_status.htm
+    hot:
+        label: Hot
+        type: partial
+        invisible: false
+        sortable: true
+        path: ~/plugins/web/hotel/controllers/zcolumn/_hot.htm

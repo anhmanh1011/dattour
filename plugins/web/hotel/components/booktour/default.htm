@@ -1,0 +1,72 @@
+<div class="form_booktour" id="popup_bt">
+  <a class="close" onclick="document.getElementById('popup_bt').style.display = 'none'"></a>
+  <div class="noidungtb">
+    <a class="closepopup" onclick="document.getElementById('popup_bt').style.display = 'none'"></a>
+    <form data-request="Booktour::onBooktour" data-request-validate data-request-flash class="review_form">
+      <div class="nenpopup">
+        <div class="title_tour">
+          {{tour_detail.name}}
+          <input type="hidden"  name="tour_title" value="{{tour_detail.name}}">
+        </div>
+        <div class="lst_info_booktour">
+          <div class="item_info_booktour">
+            <span class="name_info_booktour">{{'Date of Arrival'|_}}<span class="icon_sao">*</span></span>
+            <input class="date_arrival" required name="datepicker" autocomplete="off" type="text" id='datetimepicker1' />
+
+          </div>
+          <div class="lst_age">
+            <div class="item_info_booktour_two">
+              <span class="name_info_booktour">{{'Adults'|_}} <span class="fotnhat">(>18 {{'Age'|_}})</span></span>
+              <select id="Select1" name="adults" required>
+                {%for i in 1..12 %}
+                <option value="{{i}}">{{i}}</option>
+                {%endfor%}
+              </select>
+            </div>
+            <div class="item_info_booktour_two">
+              <span class="name_info_booktour">{{'Childrens'|_}} <span class="fotnhat">(12 - 18 {{'Age'|_}})</span> </span> 
+              <select id="Select1" name="children" required>
+                {%for i in 0..12 %}
+                <option value="{{i}}">{{i}}</option>
+                {%endfor%}?
+                </select>
+            </div>
+            <div class="item_info_booktour_two">
+              <span class="name_info_booktour">{{'Baby'|_}} <span class="fotnhat">(< 12 {{'Age'|_}})</span></span>
+              <select id="Select1" name="baby" required>
+                {%for i in 0..12 %}
+                <option value="{{i}}">{{i}}</option>
+                {%endfor%}?
+              </select>
+            </div>
+          </div>
+          <div class="item_info_booktour">
+            <span class="name_info_booktour">{{'Name'|_}} <span class="icon_sao">*</span></span>
+            <input name="name" type="text" required />
+          </div>
+          <div class="item_info_booktour">
+            <span class="name_info_booktour">{{'Phone'|_}} <span class="icon_sao">*</span></span>
+            <input type="tel" name="phone" required />
+          </div>
+          <div class="item_info_booktour">
+            <span class="name_info_booktour">{{'Email'|_}} <span class="icon_sao">*</span></span>
+            <input type="text" name="email" required />
+          </div>
+          <div class="item_info_booktour">
+            <span class="name_info_booktour">{{'Content'|_}} <span class="icon_sao">*</span></span>
+            <textarea name="content" rows="2" cols="20"></textarea>
+                            
+            <input type="hidden" name="img1" value="{{tour_detail.album[0]| resize(305,222, { mode: 'crop', quality: '80' }) }}"">
+            <input type="hidden" name="img2" value="{{tour_detail.album[1]| resize(305,222, { mode: 'crop', quality: '80' }) }}"">
+            <input type="hidden" name="tour_name" value="{{tour_detail.name}}" >
+            <input type="hidden" name="tour_location" value="{{tour_detail.location}}" >
+            <input type="hidden" name="tour_include" value="{{tour_detail.include|json_encode()}}" >
+          </div>
+        </div>
+        <div class="ngoaibtn">
+          <button type="submit" class="btn_book_tour" data-attach-loading>{{'Book tour'|_}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

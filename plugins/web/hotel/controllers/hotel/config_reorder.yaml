@@ -1,0 +1,4 @@
+title: Hotel
+modelClass: Web\Hotel\Models\Hotel
+toolbar:
+    buttons: reorder_toolbar

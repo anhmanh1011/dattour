@@ -1,0 +1,28 @@
+<style type="text/css">
+    .s2{
+        width:100% !important;
+        line-height: 40px;
+        border-radius: 3px;
+        border: none;
+        height: 38px;
+        line-height: 1.42857143;
+        padding: 8px 25px 8px 13px;
+        outline: 0;
+        color: #fff;
+    }
+    .s2 option:hover{
+        background-color: rgba(255,255,255,0.4) !important;
+    }
+</style>
+
+<select class="s2" name="<?php echo $name ?>" 
+    style=" <?php foreach($status as $key => $value): ?> 
+        <?php if ($key == $selectedValues) echo 'background-color: '.$color[$key]; ?> 
+    <?php endforeach; ?>">
+    <?php foreach($status as $key => $value): ?>
+        <option value="<?php echo $key ?>" style="background-color: #fff;color: #222"
+            <?php echo ($key == $selectedValues) ? 'selected="selected"' : '';  ?>  >
+            <?php echo $value ?>
+        </option>
+    <?php endforeach; ?>
+</select>

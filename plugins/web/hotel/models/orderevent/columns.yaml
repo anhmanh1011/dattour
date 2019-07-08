@@ -1,0 +1,59 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        invisible: true
+        sortable: true
+    status_color:
+        label: color
+        type: partial
+        path: ~/plugins/web/hotel/controllers/zcolumn/_color.htm
+        select: color
+        relation: status
+    title_event:
+        label: title_event
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        # relation: event
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: email
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: phone
+        type: text
+        searchable: true
+        sortable: true
+    content:
+        label: Content
+        type: text
+        invisible: true
+        sortable: true
+    status_id:
+        label: status
+        type: text
+        select: name
+        relation: status
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        format: 'h:m d/m/Y'
+        invisible: false
+        sortable: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        format: 'h:m d/m/Y'
+        invisible: true
+        ignoreTimezone: 'true'
+        sortable: true

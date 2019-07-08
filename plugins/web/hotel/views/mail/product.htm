@@ -1,0 +1,55 @@
+<div style="width: 100%; background-color: #D9D9D9; padding: 50px 0; color:#000">
+    <div style="margin:auto; width:500px; border-top:4px solid #00776F;border-bottom:4px solid #00776F; border-radius:10px; padding:20px;background-color: #fff">
+        <div style="text-align: center;font-size: 25px;text-transform: uppercase;font-weight: bold;padding: 24px;color: #00776f;">
+            <img src="https://420.com.vn/themes/420Hospitality/assets/pic/logo.png">
+        </div>
+        <div style="text-align: center;font-size: 25px;text-transform: uppercase;font-weight: bold;padding: 24px;color: #00776f;">
+            Bạn có một đơn hàng mới từ 420.com.vn
+        </div>
+        <div style="text-align: center;font-size: 16px;text-transform: uppercase;font-weight: bold;padding: 10px;color: #000;">
+            Thông tin đơn hàng
+        </div>
+        <table style="width:100%; border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">
+            <tr style="text-align: center; font-weight: bold">
+                <th style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">Tên sản phẩm</th>
+                <th style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">Số lượng</th>
+                <th style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">Đơn giá</th>
+                <th style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">Thành tiền</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">{{product.name}}</td>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">1</td>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">{{product.price|number_format()}}</td>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">{{product.price|number_format()}}</td>
+            </tr>
+            <tr>
+                <td colspan="3"
+                    style="text-align: center; border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px"">Tổng tiền</td>
+                                    <td style=" color:red; border: 1px solid #d9d9d9; border-collapse: collapse;
+                    padding: 5px"">{{product.price|number_format()}}</td>
+            </tr>
+        </table>
+        <div
+            style="text-align: center;font-size: 16px;text-transform: uppercase;font-weight: bold;padding: 10px;color: #000;">
+            Thông tin liên hệ với khách hàng
+        </div>
+        <table style="width:100%; border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">
+            <tr>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">Họ tên</td>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">{{name}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">Email</td>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">{{email}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">Số điện thoại</td>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">{{phone}}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">Nội dung</td>
+                <td style="border: 1px solid #d9d9d9; border-collapse: collapse; padding: 5px">{{content}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

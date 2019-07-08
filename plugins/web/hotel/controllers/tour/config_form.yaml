@@ -1,0 +1,10 @@
+name: Tour
+form: $/web/hotel/models/tour/fields.yaml
+modelClass: Web\Hotel\Models\Tour
+defaultRedirect: web/hotel/tour
+create:
+    redirect: 'web/hotel/tour/update/:id'
+    redirectClose: web/hotel/tour
+update:
+    redirect: web/hotel/tour
+    redirectClose: web/hotel/tour

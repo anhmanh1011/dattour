@@ -1,0 +1,52 @@
+title = "search"
+url = "/search"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+[search]
+==
+<div class="content">
+	<div class="wrap_main_accommodation">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div class="wrap_main_product row_produc">
+						<div class="row">
+							{%if search%}
+							 {%for value in search%}
+								<div class="col-md-3 col-sm-12">
+									<div class="product">
+										<div class="images" style="height: 150px; overflow: hidden;">
+											<a href="{%if cate_search == 1%}/travel/{{value.slug}}{%elseif(cate_search == 2)%}/hotel/{{value.slug}}{%elseif(cate_search == 3)%}/product/3/{{value.slug}}{%elseif(cate_search == 4)%}/product/4/{{value.slug}}{%elseif(cate_search == 5)%}/product/5/{{value.slug}}{%elseif(cate_search == 6)%}/hotels/{{value.slug}} {%endif%}">
+												<img src="{{value.image_preview.path|resize(250, 152)}}"  alt="" class="img-responsive">
+											</a>
+										</div> 
+										<div class="caption" style="text-align: center;display: block;">
+											<div class="rate_star">
+											</div> <!-- rate_star -->
+											<div class="title_post" style="text-align: left">
+												<h3><a href="{%if cate_search == 1%}/travel/{{value.slug}}{%elseif(cate_search == 2)%}/hotel/{{value.slug}}{%elseif(cate_search == 3)%}/product/3/{{value.slug}}{%elseif(cate_search == 4)%}/product/4/{{value.slug}}{%elseif(cate_search == 5)%}/product/5/{{value.slug}}{%elseif(cate_search == 6)%}/hotels/{{value.slug}} {%endif%}">{{value.name}}</a></h3>
+											</div> 
+											<div class="social_price" style="text-align: left">
+												<ul class="list-inline">
+												</ul>
+												<span class="price" style="text-align:left;width: 100%;font-size: 16px;">Price <a href="#0">{{value.price|number_format}} VND</a></span>
+											</div>
+										</div> 
+									</div> 
+								</div> 
+							 {%endfor%}
+							{%endif%}
+							{%if erro_search%}
+								<div class="col-md-12 col-xs-12">
+									<h4 style="margin: 100px auto; text-align:center; color: #f00"> No keywords were found!</h4>
+								</div>	
+							{%endif%}
+						</div> 
+					</div> 
+				</div> 
+			</div>
+		</div>
+	</div> 
+</div>

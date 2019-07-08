@@ -1,0 +1,4 @@
+title: Amenities
+modelClass: Web\Hotel\Models\Amenities
+toolbar:
+    buttons: reorder_toolbar

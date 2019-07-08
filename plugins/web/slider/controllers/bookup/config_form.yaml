@@ -1,0 +1,10 @@
+name: Bookup
+form: $/web/slider/models/bookup/fields.yaml
+modelClass: Web\Slider\Models\Bookup
+defaultRedirect: web/slider/bookup
+create:
+    redirect: 'web/slider/bookup/update/:id'
+    redirectClose: web/slider/bookup
+update:
+    redirect: web/slider/bookup
+    redirectClose: web/slider/bookup

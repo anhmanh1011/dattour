@@ -1,0 +1,171 @@
+1558396695a:1:{s:19:"product/product.htm";a:5:{s:8:"fileName";s:19:"product/product.htm";s:7:"content";s:3420:" {%if data_event|length %}
+ {%for value in data_event%}
+ <div class="col-md-4 col-sm-6">
+   <div class="product product_event">
+     {%if value.discount > 0 %}
+     <div class="sale new">
+       <span>'{{'Sale'|_}}</span>
+     </div>
+     {%endif%}
+     {%if value.hot == 1%}
+     <div class="sale hot">
+       <span style="color: #f00">{{'Hot'|_}}</span>
+     </div>
+     {%endif%}
+     <div class="images">
+      <a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}">
+        <img
+           src="{{value.image_preview.path|resize(263, 140, { mode: 'crop', quality: '80', extension: 'jpg' })}}" alt=""
+           class="img-responsive">
+      </a>
+       <div class="title_img">
+       </div>
+     </div>
+     <div class="caption">
+       <div class="rate_star">
+          {% if value.star_4 > value.star_5%}
+          <p class="rating">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </p>
+          {%elseif(value.star_4 == value.star_5)%}
+          <p class="rating">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </p>
+          {%elseif(value.star_4 < value.star_5)%}
+          <p class="rating">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+          </p>
+         {%elseif(value.star_4 =="" and value.star_5 =="")%}
+         <p class="rating">
+           <span><i class="far fa-star"></i></span>
+           <span><i class="far fa-star"></i></span>
+           <span><i class="far fa-star"></i></span>
+           <span><i class="far fa-star"></i></span>
+           <span><i class="far fa-star"></i></span>
+         </p>
+         {%endif%}
+       </div>
+       <div class="title_post">
+         <h3><a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}">{{value.name}}</a></h3>
+       </div>
+       <div class="price">
+         {%if cate_id == 4 %}
+         <div class="date_fix">
+           <span class="date1">{{'Start date'|_}}:{{value.start_day |date('d-m-Y') }} </span>
+           <span class="date2">{{'End date'|_}}: {{value.end_day |date('d-m-Y') }}</span>
+         </div>
+         {%endif%}
+         {%if value.discount > 0%}
+         <p style="float: left; margin: 0">{{'Price from'|_}}:<a href="{{'home'|page}}/product/{{cate_id}}/{{slug}}">
+             {{value.price_new|number_format}} VNĐ</a></p>
+         <p><span class="sele" style=" text-decoration: line-through;padding-left: 5px"> {{value.price|number_format}}
+             VNĐ</span></p>
+         {%else%}
+         <p>{{'Price from'|_}}:<a href="{{'home'|page}}/product/{{cate_id}}/{{slug}}">{{value.price|number_format}}
+             VNĐ</a></p>
+         {%endif%}
+       </div>
+     </div>
+   </div>
+ </div>
+ {%endfor%}
+ {% else %}
+ <h5>Updating ...</h5>
+ {%endif%}";s:5:"mtime";i:1554129508;s:6:"markup";s:3419:"{%if data_event|length %}
+ {%for value in data_event%}
+ <div class="col-md-4 col-sm-6">
+   <div class="product product_event">
+     {%if value.discount > 0 %}
+     <div class="sale new">
+       <span>'{{'Sale'|_}}</span>
+     </div>
+     {%endif%}
+     {%if value.hot == 1%}
+     <div class="sale hot">
+       <span style="color: #f00">{{'Hot'|_}}</span>
+     </div>
+     {%endif%}
+     <div class="images">
+      <a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}">
+        <img
+           src="{{value.image_preview.path|resize(263, 140, { mode: 'crop', quality: '80', extension: 'jpg' })}}" alt=""
+           class="img-responsive">
+      </a>
+       <div class="title_img">
+       </div>
+     </div>
+     <div class="caption">
+       <div class="rate_star">
+          {% if value.star_4 > value.star_5%}
+          <p class="rating">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </p>
+          {%elseif(value.star_4 == value.star_5)%}
+          <p class="rating">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="far fa-star"></i></span>
+          </p>
+          {%elseif(value.star_4 < value.star_5)%}
+          <p class="rating">
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+            <span><i class="fas fa-star"></i></span>
+          </p>
+         {%elseif(value.star_4 =="" and value.star_5 =="")%}
+         <p class="rating">
+           <span><i class="far fa-star"></i></span>
+           <span><i class="far fa-star"></i></span>
+           <span><i class="far fa-star"></i></span>
+           <span><i class="far fa-star"></i></span>
+           <span><i class="far fa-star"></i></span>
+         </p>
+         {%endif%}
+       </div>
+       <div class="title_post">
+         <h3><a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}">{{value.name}}</a></h3>
+       </div>
+       <div class="price">
+         {%if cate_id == 4 %}
+         <div class="date_fix">
+           <span class="date1">{{'Start date'|_}}:{{value.start_day |date('d-m-Y') }} </span>
+           <span class="date2">{{'End date'|_}}: {{value.end_day |date('d-m-Y') }}</span>
+         </div>
+         {%endif%}
+         {%if value.discount > 0%}
+         <p style="float: left; margin: 0">{{'Price from'|_}}:<a href="{{'home'|page}}/product/{{cate_id}}/{{slug}}">
+             {{value.price_new|number_format}} VNĐ</a></p>
+         <p><span class="sele" style=" text-decoration: line-through;padding-left: 5px"> {{value.price|number_format}}
+             VNĐ</span></p>
+         {%else%}
+         <p>{{'Price from'|_}}:<a href="{{'home'|page}}/product/{{cate_id}}/{{slug}}">{{value.price|number_format}}
+             VNĐ</a></p>
+         {%endif%}
+       </div>
+     </div>
+   </div>
+ </div>
+ {%endfor%}
+ {% else %}
+ <h5>Updating ...</h5>
+ {%endif%}";s:4:"code";N;}}

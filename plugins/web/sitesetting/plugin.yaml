@@ -1,0 +1,26 @@
+plugin:
+    name: 'web.sitesetting::lang.plugin.name'
+    description: 'web.sitesetting::lang.plugin.description'
+    author: web
+    icon: oc-icon-cog
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Setting
+        url: web/sitesetting/sitesetting/update/1
+        icon: icon-cog
+        permissions:
+            - 'Setting Website'
+        sideMenu:
+            side-menu-item:
+                label: Setting
+                url: web/sitesetting/sitesetting/update/1
+                icon: icon-cog
+            side-menu-item2:
+                label: Parner
+                url: web/sitesetting/parner
+                icon: icon-google-wallet
+permissions:
+    'Setting Website':
+        tab: 'Quản lý'
+        label: 'Cài đặt trang web'

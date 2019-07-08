@@ -1,0 +1,30 @@
+plugin:
+    name: 'web.slider::lang.plugin.name'
+    description: 'web.slider::lang.plugin.description'
+    author: web
+    icon: oc-icon-image
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Slider
+        url: web/slider/slider/
+        icon: icon-image
+        permissions:
+            - 'Slide manager'
+        sideMenu:
+            side-menu-item2:
+                label: Slider
+                url: web/slider/slider/
+                icon: icon-image
+            side-menu-item3:
+                label: 'Slider product'
+                url: web/slider/sliderproduct
+                icon: icon-file-picture-o
+            side-menu-item:
+                label: Bookup
+                url: web/slider/bookup
+                icon: icon-file-image-o
+permissions:
+    'Slide manager':
+        tab: 'Quản lý'
+        label: 'Quản lý Slide'

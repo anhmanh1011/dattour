@@ -1,0 +1,40 @@
+a:hover {
+    text-decoration: none;
+}
+.sub_partner_home .lst_partner_home .item_partner_home .frame_image{
+    border: none
+}
+#header .menu .header_right .icon_clsearch {
+    width: 45px;
+}
+#header.active .top_search {
+    height: 60px;
+}
+.sub_pagedetail_tour .form_booktour .noidungtb {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.sub_pagedetail_tour .form_booktour .noidungtb .nenpopup .title_tour {
+    font-size: 24px;
+}
+.sub_pagedetail_tour .form_booktour .noidungtb .nenpopup .ngoaibtn {
+    margin-bottom: 18px;
+}
+#footer .commonfootercontent .banquyen {
+    font-size: 12px;
+}
+.sub_banner_page .duongdanlink .duongdan_link li{
+    text-transform: uppercase;
+}
+.sub_pagedetail_tour .information_detail_sp .evaluate_tour_one .post_review .bottom .line .progress{
+    width: calc(100% - 500px);
+}
+.sub_pagedetail_tour .form_booktour .noidungtb .nenpopup .lst_info_booktour .name_info_booktour .fotnhat{
+    font-size: 11px;
+}
+.sale .new{
+    top:42px;
+}
+#header{
+    overflow:inherit;
+}

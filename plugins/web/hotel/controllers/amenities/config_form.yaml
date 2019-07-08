@@ -1,0 +1,10 @@
+name: Amenities
+form: $/web/hotel/models/amenities/fields.yaml
+modelClass: Web\Hotel\Models\Amenities
+defaultRedirect: web/hotel/amenities
+create:
+    redirect: 'web/hotel/amenities/update/:id'
+    redirectClose: web/hotel/amenities
+update:
+    redirect: web/hotel/amenities
+    redirectClose: web/hotel/amenities

@@ -1,0 +1,447 @@
+1558413233a:1:{s:8:"tour.htm";a:13:{s:8:"fileName";s:8:"tour.htm";s:7:"content";s:9660:"title = "Travel"
+url = "/travel"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Tour]
+
+[search]
+==
+<?php
+    use Web\Hotel\Models\Tour as Tours;
+    use Web\Hotel\Models\TourActivities as Activities;
+    use Web\Hotel\Models\TourType as TourType;
+    use Web\Hotel\Models\Location as Location;
+    use Web\Hotel\Models\States as States;
+    
+
+    function onStart(){ $this->prepareVars();}
+    function onFilterTravel() { $this->prepareVars(); }
+    function onFilterMore() { $this->prepareVars(); }
+    function onPagination() { $this->prepareVars(); }
+
+    function prepareVars() {
+        $options = post('Filter', []);
+
+        $this['tours'] = Tours::listFrontEnd($options);
+        $this['activities'] = Activities::get()->toArray();
+        $this['states'] = States::get()->toArray();
+        $this['pages'] = $this['tours']->lastPage();
+        $this['page'] = $this['tours']->currentPage();
+
+        $tours = TourType::get()->toArray();
+
+        $types = [];
+        foreach($tours as $tour){
+            $types[] = $tour;
+        }
+        $this['types'] = $types;
+    }
+
+    function onEnd(){
+        $this->page->meta_title = "Travel";
+    }
+?>
+==
+<div class="sub_banner_page">
+        <img alt="" src="assets/pic/banner_duc4.jpg" />
+        <div class="describe_banner">
+            <div class="container_duc">
+                <h1>
+                    <span class="title_page">{{'TRAVEL'|_}}</span>
+                </h1>
+            </div>
+        </div>
+        <div class="duongdanlink">
+            <div class="container_duc">
+                <ul class="duongdan_link">
+                    <li><a href="{{'home'|page}}">{{'HOME'|_}}</a></li>
+                    <li class="active"><a href="javascript:void(0)">{{'TRAVEL'|_}}</a></li>
+                </ul>
+            </div>
+        </div>
+</div>
+<section id="portfolio" class="portfolio margin-top-120">
+    <div class="content up_here" >
+
+        {{ form_ajax('onFilterTravel', { update: { 'travel/travel': '#partialTours', 'travel/pagination': '#Pagination'} }) }}
+         <!-- /wrap_pagination_top -->
+        <div class="main_content">
+        <!--
+        {% set tours = __SELF__.tours %}
+        {% set locations = __SELF__.locations %}
+-->
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3 col-sm-12">
+                    <div class="side_bar">
+                        <div class="top_sidebar">
+                            <div class="info" id="ToursFilter">
+
+                                <h3 class="click_colapse" style="margin-top: 20px;">{{'Type of tour'|_}}</h3>
+
+                                <div class="open_colapse">
+                                    {% for type in types %}
+                                    <label class="gloabal_custom">{{ type.name }}
+                                        <input type="checkbox" name="Filter[type][]" value="{{ type.id}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    {% endfor %}
+                                </div>
+
+
+                                <h3 class="click_colapse" style="margin-top: 20px;">{{'Activities'|_}}</h3>
+                                <div class="open_colapse">
+                                    {% for activity in activities %}
+                                    <label class="gloabal_custom">{{activity.name}}
+                                        <input type="checkbox" name="Filter[activity][]" value="{{activity.id}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    {% endfor %}
+                                </div>
+
+                                <h3 class="click_colapse" style="margin-top: 20px;">{{'Value Rate'|_}}</h3>
+                                <div class="open_colapse">
+                                    <div class="fillter">
+                                        <section class="range-slider" id="facet-price-range-slider" data-options='{"output":{"prefix":""},"maxSymbol":""}'>
+                                            <input name="Filter[pricemin][]" value="200000" min="0" max="30000000" step="1" type="range">
+                                            <input name="Filter[pricemax][]" value="25000000" min="0" max="30000000" step="1" type="range">
+                                        </section>
+                                        <span class="left">0 VND</span>
+                                        <span class="right">30.000.000 VND</span>
+                                    </div> <!-- /fillter -->
+                                </div> <!-- /info -->
+                            </div>
+                        <!-- </form> -->
+
+                        </div> <!-- /top_sidebar -->
+
+                        <div class="bottom_sidebar">
+                            <h3>{{'Promotion'|_}}</h3>
+                           {%if sale %}
+                                {%for value in sale%}
+                                    <div class="product">
+                                        <div class="images_info">
+                                            <a href="{{'Home'|page}}/tour/{{value.slug}}"><img src="{{value.image_preview|media|resize(240,160)}}" title="{{value.name}}" alt="" class="img-responsive"></a>
+                                            <p class="rating">
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                            </p>
+                                        </div>
+                                        <div class="caption_info">
+                                            <h3><a href="{{'Home'|page}}/tour/{{value.slug}}">{{value.name}}</a></h3>
+                                            <p>{{value.description}} </p>
+                                            <span>Price: <a href="/">{{value.price|number_format()}} VND</a></span>
+                                        </div>
+                                    </div>
+                                {%endfor%}
+                            {%endif%}
+                        </div> <!-- /bottom_sidebar -->
+                    </div> <!-- /side_bar -->
+                </div> <!-- /col -->
+                <div class="col-md-9 col-sm-12">
+                    <div class="wrap_product" id="partialTours">
+
+                        {% component 'Tour' %}
+
+                        <style>#Pagination{ display: none; }</style>
+
+                    </div> <!--  /wrap_product -->
+
+                    <style type="text/css" media="screen">
+                        #Pagination{
+                            text-align: center;
+                        }
+                        .gloabal_custom {
+                            padding: 6px 15px;
+                            cursor: pointer;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+                        }
+                        /* Hide the browser's default checkbox */
+                        .gloabal_custom input {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+                    </style>
+
+                    <div id="Pagination">
+                        {% partial 'travel/pagination' %}
+                    </div>
+
+                </div> <!-- /col -->
+            </div> <!-- /row -->
+        </div> <!-- /container -->
+
+    {{ form_close() }}
+    </div> <!-- /main_content -->
+</div> <!-- /content -->
+</section><!-- End off portfolio section -->
+
+{% put scripts %}
+<script>
+// Ajax Tour
+(function($){
+
+    $('#ToursFilter').on('change', 'input, select', function(){
+        $('html, body').animate({
+            scrollTop: $('.up_here').offset().top-80
+        }, 1000);
+        var $form = $(this).closest('form');
+        $form.request();
+    });
+    $('#ShowMore').on('change', 'input, select', function(){
+        var $form = $(this).closest('form');
+        $form.request();
+        document.getElementById("north").checked = true;
+    });
+    $('#ShowMore2').on('change', 'input, select', function(){
+        var $form = $(this).closest('form');
+        $form.request();
+        document.getElementById("central").checked = true;
+    });
+    $('#ShowMore3').on('change', 'input, select', function(){
+        var $form = $(this).closest('form');
+        $form.request();
+        document.getElementById("south").checked = true;
+    });
+    $('#Pagination').on('change', 'input, select', function(){
+        //Scroll top
+        $('html, body').animate({
+            scrollTop: $('.up_here').offset().top-80
+        }, 1000);
+
+        var $form = $(this).closest('form');
+        $form.request();
+    });
+
+
+        
+    })(jQuery);
+// End Ajax Tour
+</script>
+{% endput %}";s:5:"mtime";i:1554134914;s:6:"markup";s:8417:"<div class="sub_banner_page">
+        <img alt="" src="assets/pic/banner_duc4.jpg" />
+        <div class="describe_banner">
+            <div class="container_duc">
+                <h1>
+                    <span class="title_page">{{'TRAVEL'|_}}</span>
+                </h1>
+            </div>
+        </div>
+        <div class="duongdanlink">
+            <div class="container_duc">
+                <ul class="duongdan_link">
+                    <li><a href="{{'home'|page}}">{{'HOME'|_}}</a></li>
+                    <li class="active"><a href="javascript:void(0)">{{'TRAVEL'|_}}</a></li>
+                </ul>
+            </div>
+        </div>
+</div>
+<section id="portfolio" class="portfolio margin-top-120">
+    <div class="content up_here" >
+
+        {{ form_ajax('onFilterTravel', { update: { 'travel/travel': '#partialTours', 'travel/pagination': '#Pagination'} }) }}
+         <!-- /wrap_pagination_top -->
+        <div class="main_content">
+        <!--
+        {% set tours = __SELF__.tours %}
+        {% set locations = __SELF__.locations %}
+-->
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3 col-sm-12">
+                    <div class="side_bar">
+                        <div class="top_sidebar">
+                            <div class="info" id="ToursFilter">
+
+                                <h3 class="click_colapse" style="margin-top: 20px;">{{'Type of tour'|_}}</h3>
+
+                                <div class="open_colapse">
+                                    {% for type in types %}
+                                    <label class="gloabal_custom">{{ type.name }}
+                                        <input type="checkbox" name="Filter[type][]" value="{{ type.id}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    {% endfor %}
+                                </div>
+
+
+                                <h3 class="click_colapse" style="margin-top: 20px;">{{'Activities'|_}}</h3>
+                                <div class="open_colapse">
+                                    {% for activity in activities %}
+                                    <label class="gloabal_custom">{{activity.name}}
+                                        <input type="checkbox" name="Filter[activity][]" value="{{activity.id}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    {% endfor %}
+                                </div>
+
+                                <h3 class="click_colapse" style="margin-top: 20px;">{{'Value Rate'|_}}</h3>
+                                <div class="open_colapse">
+                                    <div class="fillter">
+                                        <section class="range-slider" id="facet-price-range-slider" data-options='{"output":{"prefix":""},"maxSymbol":""}'>
+                                            <input name="Filter[pricemin][]" value="200000" min="0" max="30000000" step="1" type="range">
+                                            <input name="Filter[pricemax][]" value="25000000" min="0" max="30000000" step="1" type="range">
+                                        </section>
+                                        <span class="left">0 VND</span>
+                                        <span class="right">30.000.000 VND</span>
+                                    </div> <!-- /fillter -->
+                                </div> <!-- /info -->
+                            </div>
+                        <!-- </form> -->
+
+                        </div> <!-- /top_sidebar -->
+
+                        <div class="bottom_sidebar">
+                            <h3>{{'Promotion'|_}}</h3>
+                           {%if sale %}
+                                {%for value in sale%}
+                                    <div class="product">
+                                        <div class="images_info">
+                                            <a href="{{'Home'|page}}/tour/{{value.slug}}"><img src="{{value.image_preview|media|resize(240,160)}}" title="{{value.name}}" alt="" class="img-responsive"></a>
+                                            <p class="rating">
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                            </p>
+                                        </div>
+                                        <div class="caption_info">
+                                            <h3><a href="{{'Home'|page}}/tour/{{value.slug}}">{{value.name}}</a></h3>
+                                            <p>{{value.description}} </p>
+                                            <span>Price: <a href="/">{{value.price|number_format()}} VND</a></span>
+                                        </div>
+                                    </div>
+                                {%endfor%}
+                            {%endif%}
+                        </div> <!-- /bottom_sidebar -->
+                    </div> <!-- /side_bar -->
+                </div> <!-- /col -->
+                <div class="col-md-9 col-sm-12">
+                    <div class="wrap_product" id="partialTours">
+
+                        {% component 'Tour' %}
+
+                        <style>#Pagination{ display: none; }</style>
+
+                    </div> <!--  /wrap_product -->
+
+                    <style type="text/css" media="screen">
+                        #Pagination{
+                            text-align: center;
+                        }
+                        .gloabal_custom {
+                            padding: 6px 15px;
+                            cursor: pointer;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+                        }
+                        /* Hide the browser's default checkbox */
+                        .gloabal_custom input {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+                    </style>
+
+                    <div id="Pagination">
+                        {% partial 'travel/pagination' %}
+                    </div>
+
+                </div> <!-- /col -->
+            </div> <!-- /row -->
+        </div> <!-- /container -->
+
+    {{ form_close() }}
+    </div> <!-- /main_content -->
+</div> <!-- /content -->
+</section><!-- End off portfolio section -->
+
+{% put scripts %}
+<script>
+// Ajax Tour
+(function($){
+
+    $('#ToursFilter').on('change', 'input, select', function(){
+        $('html, body').animate({
+            scrollTop: $('.up_here').offset().top-80
+        }, 1000);
+        var $form = $(this).closest('form');
+        $form.request();
+    });
+    $('#ShowMore').on('change', 'input, select', function(){
+        var $form = $(this).closest('form');
+        $form.request();
+        document.getElementById("north").checked = true;
+    });
+    $('#ShowMore2').on('change', 'input, select', function(){
+        var $form = $(this).closest('form');
+        $form.request();
+        document.getElementById("central").checked = true;
+    });
+    $('#ShowMore3').on('change', 'input, select', function(){
+        var $form = $(this).closest('form');
+        $form.request();
+        document.getElementById("south").checked = true;
+    });
+    $('#Pagination').on('change', 'input, select', function(){
+        //Scroll top
+        $('html, body').animate({
+            scrollTop: $('.up_here').offset().top-80
+        }, 1000);
+
+        var $form = $(this).closest('form');
+        $form.request();
+    });
+
+
+        
+    })(jQuery);
+// End Ajax Tour
+</script>
+{% endput %}";s:4:"code";s:1083:"
+    use Web\Hotel\Models\Tour as Tours;
+    use Web\Hotel\Models\TourActivities as Activities;
+    use Web\Hotel\Models\TourType as TourType;
+    use Web\Hotel\Models\Location as Location;
+    use Web\Hotel\Models\States as States;
+    
+
+    function onStart(){ $this->prepareVars();}
+    function onFilterTravel() { $this->prepareVars(); }
+    function onFilterMore() { $this->prepareVars(); }
+    function onPagination() { $this->prepareVars(); }
+
+    function prepareVars() {
+        $options = post('Filter', []);
+
+        $this['tours'] = Tours::listFrontEnd($options);
+        $this['activities'] = Activities::get()->toArray();
+        $this['states'] = States::get()->toArray();
+        $this['pages'] = $this['tours']->lastPage();
+        $this['page'] = $this['tours']->currentPage();
+
+        $tours = TourType::get()->toArray();
+
+        $types = [];
+        foreach($tours as $tour){
+            $types[] = $tour;
+        }
+        $this['types'] = $types;
+    }
+
+    function onEnd(){
+        $this->page->meta_title = "Travel";
+    }";s:5:"title";s:6:"Travel";s:3:"url";s:7:"/travel";s:6:"layout";s:9:"Travel365";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:4:"Tour";a:0:{}s:6:"search";a:0:{}}}

@@ -1,0 +1,83 @@
+{%if hotel|length%}
+	{%for value in hotel%}
+		<div class="col-md-4 col-sm-6">
+			<div class="product">
+				{%if value.hot==1%}
+					<div class="sale">
+						<span>Hot</span>
+					</div>
+				{%endif%}
+				<div class="images">
+					<a href="/hotel/{{value.slug}}">
+						<img src="{{value.image_preview.path|resize(250, 140, { mode: 'crop', quality: '80', extension: 'png' })}}" title="{{value.name}}" alt="{{value.name}}" class="img-responsive">
+					</a>
+				</div>
+				<div class="caption">
+					<div class="rate_star">
+						{% if value.star==5%}
+		                    <p class="rating">
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                    </p>
+		                    {%elseif(value.star == 4)%}
+		                     <p class="rating">
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                    </p>
+		                    {%elseif(value.star==3)%}
+		                    <p class="rating">
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                    </p>
+		                    {%elseif(value.star == 2)%}
+		                     <p class="rating">
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                    </p>
+		                    {%elseif(value.star == 1)%}
+		                     <p class="rating">
+		                      <span><i class="fas fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                      <span><i class="far fa-star"></i></span>
+		                    </p>
+		                     {%else%}
+			                     <p class="rating">
+			                      <span><i class="far fa-star"></i></span>
+			                      <span><i class="far fa-star"></i></span>
+			                      <span><i class="far fa-star"></i></span>
+			                      <span><i class="far fa-star"></i></span>
+			                      <span><i class="far fa-star"></i></span>
+			                    </p>
+		                {%endif%}
+					</div>
+					<div class="title_post" style="text-align: left">
+						<h3><a href="/hotel/{{value.slug}}">{{value.name}}</a></h3>
+						<p style="margin-bottom: 12px"><i class="fas fa-map-marker-alt"></i> <span>{{value.locationdetail}}</span></p>
+					</div>
+					<div class="social_price">
+						<ul class="list-inline" style="padding-right: 10px">
+							<li><a href="#0"><i class="fas fa-briefcase"></i></a></li>
+							<li><a href="#0"><i class="fas fa-wifi"></i></a></li>
+							<li><a href="#0"><i class="fas fa-bed"></i></a></li>
+						</ul>
+						<span class="price">Price: <a href="javascript:void(0)">{{value.price|number_format()}} VNĐ</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	{%endfor%}
+{%endif%}

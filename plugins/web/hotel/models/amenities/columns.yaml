@@ -1,0 +1,51 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+        sortable: true
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: description
+        type: text
+        searchable: true
+        sortable: true
+    price:
+        label: price
+        type: number
+        searchable: true
+        sortable: true
+    discount:
+        label: discount
+        type: number
+        searchable: true
+        invisible: false
+        sortable: true
+    price_new:
+        label: 'price new'
+        type: number
+        searchable: true
+        invisible: false
+        sortable: true
+    active:
+        label: 'Trạng thái'
+        type: partial
+        invisible: true
+        sortable: true
+        path: ~/plugins/web/hotel/controllers/zcolumn/_status.htm
+    created_at:
+        label: created_at
+        type: datetime
+        invisible: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        invisible: true
+    deleted_at:
+        label: deleted_at
+        type: datetime
+        invisible: true

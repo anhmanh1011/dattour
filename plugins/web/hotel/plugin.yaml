@@ -1,0 +1,182 @@
+plugin:
+    name: 'web.hotel::lang.plugin.name'
+    description: 'web.hotel::lang.plugin.description'
+    author: web
+    icon: oc-icon-hotel
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Hotel
+        url: web/hotel/room
+        icon: icon-hotel
+        permissions:
+            - 'Hotel Manager'
+        sideMenu:
+            side-menu-item:
+                label: Room
+                url: web/hotel/room
+                icon: icon-hotel
+            side-menu-item2:
+                label: Hotel
+                url: web/hotel/hotel
+                icon: icon-building-o
+            side-menu-item3:
+                label: 'Room Amenities'
+                url: web/hotel/amenities
+                icon: icon-yelp
+                permissions:
+                    - 'System Control'
+            side-menu-item4:
+                label: 'Hotel Amenities'
+                url: web/hotel/amenitieshotel
+                icon: icon-soccer-ball-o
+                permissions:
+                    - 'System Control'
+            side-menu-item5:
+                label: Type
+                url: web/hotel/hoteltype
+                icon: icon-deviantart
+                permissions:
+                    - 'System Control'
+    main-menu-item2:
+        label: Travel
+        url: web/hotel/tour
+        icon: icon-plane
+        permissions:
+            - 'Tour Manager'
+        sideMenu:
+            side-menu-item:
+                label: Tour
+                url: web/hotel/tour
+                icon: icon-plane
+            side-menu-item5:
+                label: Activities
+                url: web/hotel/touractivities
+                icon: icon-angellist
+            side-menu-item3:
+                label: Tag
+                url: web/hotel/tag
+                icon: icon-tags
+                permissions:
+                    - 'System Control'
+            side-menu-item4:
+                label: Type
+                url: web/hotel/tourtype
+                icon: icon-deviantart
+                permissions:
+                    - 'System Control'
+            side-menu-item2:
+                label: Location
+                url: web/hotel/states
+                icon: icon-location-arrow
+                permissions:
+                    - 'System Control'
+    main-menu-item3:
+        label: Order
+        url: web/hotel/ordertour
+        icon: icon-check-square-o
+        permissions:
+            - 'Order Manager'
+        sideMenu:
+            side-menu-item:
+                label: Tour
+                url: web/hotel/ordertour
+                icon: icon-plane
+            side-menu-item2:
+                label: Hotel
+                url: web/hotel/orderroom
+                icon: icon-hotel
+            side-menu-item6:
+                label: 'F&B'
+                url: web/hotel/orderfb
+                icon: icon-beer
+            side-menu-item5:
+                label: Event
+                url: web/hotel/orderevent
+                icon: icon-connectdevelop
+            side-menu-item4:
+                label: Souvenir
+                url: web/hotel/ordersouvenir
+                icon: icon-cube
+            side-menu-item3:
+                label: Status
+                url: web/hotel/status
+                icon: icon-toggle-off
+                permissions:
+                    - 'System Control'
+    main-menu-item4:
+        label: 'F&B'
+        url: web/hotel/foodbeverage
+        icon: icon-beer
+        permissions:
+            - 'Service Manager'
+        sideMenu:
+            side-menu-item:
+                label: 'F&B'
+                url: web/hotel/foodbeverage
+                icon: icon-beer
+            side-menu-item2:
+                label: Kind
+                url: web/hotel/kindoffoodbeverage
+                icon: icon-spoon
+                permissions:
+                    - 'System Control'
+            side-menu-item3:
+                label: Type
+                url: web/hotel/typeoffoodbeverage
+                icon: icon-shirtsinbulk
+                permissions:
+                    - 'System Control'
+    main-menu-item5:
+        label: Event
+        url: web/hotel/event
+        icon: icon-connectdevelop
+        permissions:
+            - 'Service Manager'
+        sideMenu:
+            side-menu-item:
+                label: Event
+                url: web/hotel/event
+                icon: icon-connectdevelop
+            side-menu-item2:
+                label: Type
+                url: web/hotel/eventtype
+                icon: icon-star-o
+                permissions:
+                    - 'System Control'
+    main-menu-item6:
+        label: Souvenir
+        url: web/hotel/souvenir
+        icon: icon-cube
+        permissions:
+            - 'Service Manager'
+        sideMenu:
+            side-menu-item:
+                label: Souvenir
+                url: web/hotel/souvenir
+                icon: icon-cube
+            side-menu-item2:
+                label: Type
+                url: web/hotel/souvenirtype
+                icon: icon-cubes
+                permissions:
+                    - 'System Control'
+permissions:
+    'Hotel Manager':
+        tab: 'Quản lý'
+        label: 'Quản lý khách sạn'
+    'Tour Manager':
+        tab: 'Quản lý'
+        label: 'Quản lý tour'
+    'Order Manager':
+        tab: 'Quản lý'
+        label: 'Quản lý đơn hàng'
+    'Service Manager':
+        tab: 'Quản lý'
+        label: 'Quản lý dịch vụ'
+    'System Control':
+        tab: 'Quản lý'
+        label: 'Quản lý tác vụ hệ thống'
+    Delete:
+        tab: 'Quản lý cấp cao'
+        label: 'Quản lý quyền xóa'

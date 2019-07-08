@@ -1,0 +1,176 @@
+fields:
+    active:
+        label: Active
+        span: auto
+        hidden: 0
+        type: switch
+    hot:
+        label: Hot
+        span: auto
+        type: switch
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    address:
+        label: Location
+        span: auto
+        type: text
+    locations:
+        label: Position
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    price:
+        label: Price
+        span: auto
+        required: 1
+        type: number
+    sale:
+        label: 'Tour Sale'
+        span: auto
+        hidden: 1
+        type: checkbox
+    departure_date:
+        label: 'Departure date'
+        span: auto
+        required: 1
+        type: text
+    date_number:
+        label: 'Date number'
+        span: auto
+        required: 1
+        type: text
+    activities:
+        label: Activities
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation
+    discount:
+        label: Discount
+        span: left
+        hidden: 1
+        trigger:
+            action: show
+            field: sale
+            condition: checked
+        type: number
+    types:
+        label: Type
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    price_new:
+        label: 'Price new'
+        span: left
+        hidden: 1
+        trigger:
+            action: show
+            field: sale
+            condition: checked
+        type: number
+    start_date:
+        label: 'Start date'
+        mode: date
+        span: auto
+        type: datepicker
+    min_age:
+        label: 'Min age'
+        span: auto
+        type: number
+    maximum_seat:
+        label: 'Maximum seat'
+        span: auto
+        type: number
+        tab: 'About tour'
+    created_at:
+        label: 'Created time'
+        mode: date
+        span: left
+        type: datepicker
+tabs:
+    fields:
+        description:
+            label: 'Mô tả'
+            size: ''
+            span: full
+            type: textarea
+            tab: 'About tour'
+        content:
+            label: Content
+            size: tiny
+            span: full
+            hidden: 0
+            type: richeditor
+            tab: 'About tour'
+        content_day:
+            label: 'Content tour'
+            prompt: 'Add new day'
+            span: auto
+            type: repeater
+            tab: 'About tour'
+            form:
+                fields:
+                    title_day:
+                        label: 'Content tour'
+                        span: full
+                        type: text
+                    cont_day:
+                        label: Content
+                        size: small
+                        span: full
+                        type: richeditor
+        include:
+            label: Include
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: 'About tour'
+            form:
+                fields:
+                    name_include:
+                        label: Include
+                        span: full
+                        type: text
+        image_preview:
+            label: 'Image Preview'
+            mode: image
+            imageWidth: '200'
+            imageHeight: '200'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Image
+        album:
+            label: 'Album image'
+            mode: image
+            useCaption: 0
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Image
+        hotel:
+            label: 'Khách sạn phù hợp cho chuyến đi'
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Hotel relation'

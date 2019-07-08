@@ -1,0 +1,445 @@
+title = "Souvenir & Store"
+url = "/souvenir-store"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Souvenir]
+==
+<?php
+function onEnd(){
+    if($this->souvenir){
+        $this->page->meta_title = $this->souvenir->seo_title;
+        $this->page->meta_description = $this->souvenir->seo_description;
+        $this->page->meta_keyword = $this->souvenir->seo_keyword;
+        $this->page->canonical_url = $this->souvenir->canonical_url;
+        $this->page->redirect_url = $this->souvenir->redirect_url;
+    }else{
+    	$this->page->meta_title = $this->seo_title;
+        $this->page->meta_description = $this->seo_description;
+        $this->page->meta_keyword = $this->seo_keyword;
+        $this->page->canonical_url = $this->canonical_url;
+        $this->page->redirect_url = $this->redirect_url;
+	}
+  }
+?>
+==
+{% component 'Souvenir' %}
+
+
+    <div class="content">
+        <div class="wrap_pagination_top">
+            <div class="container">
+                <div class="info">
+                    <ul class="list-inline">
+                        <li><a href="#0">HOME</a></li>
+                        <li class="active"><a href="#0">SOUVENIR & STORE</a></li>
+                    </ul>
+                </div> <!-- /info -->
+            </div> <!-- /container -->
+        </div> <!-- /wrap_pagination_top -->
+        
+        <div class="wrap_main_accommodation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12">
+                        <div class="side_bar">
+                            <div class="top_sidebar">
+                                <div class="info">
+                                    <h3>Location</h3>
+                                    <label class="gloabal_custom">North Vietnam
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="gloabal_custom">Central Vietnam
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="gloabal_custom">South Vietnam
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div> <!-- /info -->
+
+                                <div class="info">
+                                    <h3>Type of accommodation</h3>
+                                    <label class="gloabal_custom">Fashion
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="gloabal_custom">Leather
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="gloabal_custom">Wooden products
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="gloabal_custom">Online music
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="gloabal_custom">Domain
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="gloabal_custom">Other
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div> <!-- /info -->
+                            </div> <!-- /top_sidebar -->
+
+                            <div class="bottom_sidebar">
+                                <h3>Promotion</h3>
+
+                                <div class="product">
+                                    <div class="images_info">
+                                        <a href="#0"><img src="images/sidebar_img.png" alt="" class="img-responsive"></a>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /images_info -->
+                                    <div class="caption_info">
+                                        <h3><a href="#0">Vietnam Highlights Package 10 Days 9 Nights</a></h3>
+                                        <p>
+                                            The most popular destinations in Vietnam with all the highlights — all in Vietnam itinerary 10 days. Discover Hanoi with many foods, structure architecture and the stunningly 
+                                        </p>
+                                        <span>Price <a href="#0">6.000.000 VND</a></span>
+                                        <span class="sele">Original price : <b>9.000.000 VND</b></span>
+                                    </div> <!-- /caption_info -->
+                                </div> <!-- /product -->
+
+                                <div class="product">
+                                    <div class="images_info">
+                                        <a href="#0"><img src="images/sidebar_img.png" alt="" class="img-responsive"></a>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /images_info -->
+                                    <div class="caption_info">
+                                        <h3><a href="#0">Vietnam Highlights Package 10 Days 9 Nights</a></h3>
+                                        <p>
+                                            The most popular destinations in Vietnam with all the highlights — all in Vietnam itinerary 10 days. Discover Hanoi with many foods, structure architecture and the stunningly 
+                                        </p>
+                                        <span>Price <a href="#0">6.000.000 VND</a></span>
+                                    </div> <!-- /caption_info -->
+                                </div> <!-- /product -->
+
+                                <div class="product">
+                                    <div class="images_info">
+                                        <a href="#0"><img src="images/sidebar_img.png" alt="" class="img-responsive"></a>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /images_info -->
+                                    <div class="caption_info">
+                                        <h3><a href="#0">Vietnam Highlights Package 10 Days 9 Nights</a></h3>
+                                        <p>
+                                            The most popular destinations in Vietnam with all the highlights — all in Vietnam itinerary 10 days. Discover Hanoi with many foods, structure architecture and the stunningly 
+                                        </p>
+                                        <span>Price <a href="#0">6.000.000 VND</a></span>
+                                    </div> <!-- /caption_info -->
+                                </div> <!-- /product -->
+                            </div> <!-- /bottom_sidebar -->
+                        </div> <!-- /side_bar -->
+                    </div> <!-- /col -->
+
+                    <div class="col-md-9 col-sm-12">
+                        <div class="wrap_main_product row_produc">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="sale new">
+                                            <span>Sale</span>
+                                        </div> <!-- /sale -->
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="sale">
+                                            <span>Sale</span>
+                                        </div> <!-- /sale -->
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="product product_event">
+                                        <div class="images">
+                                            <a href="#0"><img src="images/product_5.png" alt="" class="img-responsive"></a>
+                                        </div> <!-- /images -->
+                                        <div class="caption">
+                                            <div class="title_post">
+                                                <h3><a href="#0">Ao Dai</a></h3>
+                                                <p>One of the most popular of the Vietnamese souvenirs; there is really no finer ambassador for the beauty of Vietnam than a traditional long dress, or Ao Dai.</p>
+                                            </div> <!-- /title_post -->
+                                            <div class="price">
+                                                <p>Price<a href="#0">1.000.000 VND</a></p>
+                                            </div> <!-- /price -->
+                                        </div> <!-- /caption -->
+                                    </div> <!-- /product -->
+                                </div> <!-- /col -->
+
+                            </div> <!-- /row -->
+                        </div> <!-- /wrap_main_product -->
+
+                        <div class="panigation_categorie_grid">
+                            <ul class="pagination">
+                                <li><a href="#0"><i class="fas fa-angle-left"></i></a></li>
+                                <li><a href="#0">1</a></li>
+                                <li><a href="#0">2</a></li>
+                                <li><a href="#0">3</a></li>
+                                <li class="active"><a href="#0">4</a></li>
+                                <li><a href="#0">5</a></li>
+                                <li><a href="#0">6</a></li>
+                                <li><a href="#0">7</a></li>
+                                <li><a href="#0"><i class="fas fa-angle-right"></i></a></li>
+                            </ul>
+                        </div> <!-- / panigation_categorie_grid -->
+                    </div> <!-- /col -->
+                </div> <!-- /row -->
+            </div> <!-- /container -->
+        </div> <!-- /wrap_main_accommodation -->
+    </div> <!-- /content -->

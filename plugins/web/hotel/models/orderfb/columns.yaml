@@ -1,0 +1,48 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+    status_color:
+        label: color
+        type: partial
+        path: ~/plugins/web/hotel/controllers/zcolumn/_color.htm
+        select: color
+        relation: status
+    fb_title:
+        label: 'food & beverage'
+        type: text
+        select: name
+    name:
+        label: name
+        type: text
+    email:
+        label: email
+        type: text
+    phone:
+        label: phone
+        type: text
+    content:
+        label: content
+        type: text
+        invisible: true
+        sortable: true
+    status_id:
+        label: status
+        type: text
+        select: name
+        relation: status
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        format: 'h:m d/m/Y'
+        invisible: false
+        sortable: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        format: 'h:m d/m/Y'
+        invisible: true
+        ignoreTimezone: 'true'
+        sortable: true

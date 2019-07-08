@@ -1,0 +1,87 @@
+ {%if data_event|length %}
+    {%for value in data_event%}
+     <div class="col-md-4 col-sm-6">
+        <div class="product product_event">
+            {%if value.discount > 0 %}
+              <div class="sale new">
+                <span>Sale</span>
+              </div> <!-- /sale -->
+              {%endif%}
+            {%if value.hot == 1%}
+              <div class="sale hot" >
+                <span style="color: #f00">Hot</span>
+              </div>
+              {%endif%}
+
+            <div class="images">
+                <a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}"><img src="{{value.image_preview.path|resize(263, 140, { mode: 'crop', quality: '80', extension: 'jpg' })}}" alt="" class="img-responsive" ></a>
+                <div class="title_img">
+                   <!--  {%for citys in city %}
+                      {%if citys.id == value.location_id %}
+                        <span>{{ citys.name }}</span>
+                      {%endif%}
+                    {%endfor%} -->
+                </div> <!-- /title_img -->
+            </div> <!-- /images -->
+            <div class="caption">
+                <div class="rate_star">
+                  {% if value.star_4 > value.star_5%}
+                    <p class="rating">
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="far fa-star"></i></span>
+                    </p>
+                    {%elseif(value.star_4 == value.star_5)%}
+                     <p class="rating">
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="far fa-star"></i></span>
+                    </p>
+                    {%elseif(value.star_4 < value.star_5)%}
+                    <p class="rating">
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                      <span><i class="fas fa-star"></i></span>
+                    </p>
+                    {%elseif(value.star_4 =="" and value.star_5 =="")%}
+                     <p class="rating">
+                      <span><i class="far fa-star"></i></span>
+                      <span><i class="far fa-star"></i></span>
+                      <span><i class="far fa-star"></i></span>
+                      <span><i class="far fa-star"></i></span>
+                      <span><i class="far fa-star"></i></span>
+                    </p>
+                  {%endif%}
+                </div>
+                <div class="title_post">
+                    <h3><a href="{{'home'|page}}/product/{{cate_id}}/{{value.slug}}">{{value.name}}</a></h3>
+                   <!--  <p>{{html_limit(value.description,76)}}...</p> -->
+                </div>
+                <div class="price">
+                {%if cate_id == 4 %}
+                <div class="date_fix">
+                    <span class="date1">Start date:{{value.start_day |date('d-m-Y') }} </span>
+                    <span class="date2">End date: {{value.end_day |date('d-m-Y') }}</span>
+                </div>
+                {%endif%}
+                {%if value.discount > 0%}
+                    <p style="float: left; margin: 0">Price:<a href="{{'home'|page}}/product/{{cate_id}}/{{slug}}" >
+                    {{value.price_new|number_format}} VND</a></p>
+                    <p><span class="sele" style=" text-decoration: line-through;padding-left: 5px"> {{value.price|number_format}} VND</span></p>
+                {%else%}
+                    <p>Price:<a href="{{'home'|page}}/product/{{cate_id}}/{{slug}}">{{value.price|number_format}} VND</a></p>
+                {%endif%}
+                </div> <!-- /price -->
+            </div> <!-- /caption -->
+        </div> <!-- /product -->
+     </div> <!-- /col -->
+    {%endfor%}
+{% else %}
+  <h5>Updating ...</h5>
+{%endif%}

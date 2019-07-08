@@ -1,0 +1,70 @@
+<div class="produc_top row_produc">
+    <div class="title_all">
+        <h3>TRAVEL IN VIET NAM</h3>
+    </div> <!-- /title_all -->
+    <div class="row" id="up">
+{% if tours|length %}
+
+    {% for tour in tours %}
+        <div class="col-md-4 col-sm-6">
+            <div class="product">
+                {% if (tour.hot == 1) %}
+                <div class="sale">
+                    <span>Hot</span>
+                </div> <!-- /sale -->
+                {% endif %}
+                <div class="images">
+                    <a href="/travel/{{tour.slug}}"><img src="{{ tour.image_preview | resize(263,152, { mode: 'crop', quality: '90' }) }} " alt="" class="img-responsive"></a>
+                </div> <!-- /images -->
+                <div class="caption">
+                    <div class="top_caption">
+                        <h3 style="height: 70px"><a href="/travel/{{tour.slug}}">{{tour.name}}</a></h3>
+                        <p class="rating">
+                        {% if (tour.star_rate4+tour.star_rate5) %}
+                            {% if ((tour.star_rate4*4+tour.star_rate5*5)/(tour.star_rate4+tour.star_rate5) < 4.5) %}
+                                <span><i class="far fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                                <span><i class="fa fa-star-o"></i></span>
+                            {% else %}
+                                <span><i class="far fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                                <span><i class="far fa-star"></i></span>
+                            {% endif %}
+                        {% else %}
+                            <span><i class="far fa-star"></i></span>
+                            <span><i class="far fa-star"></i></span>
+                            <span><i class="far fa-star"></i></span>
+                            <span><i class="far fa-star"></i></span>
+                            <span><i class="far fa-star"></i></span>
+                        {% endif %}
+                        </p>
+                    </div> <!-- /top_caption -->
+                    <div class="bottom_caption">
+                        <div class="line_1" >
+                            <p><i class="fas fa-map-marker-alt"></i> <span>{{tour.locations.name}}</span></p>
+                        </div> <!-- /line_1 -->
+                        <div class="line_2">
+                            <p style="padding-right: 0"><i class="fas fa-calendar-alt"></i> <span>Số ngày: {{tour.date_number}} </span></p>
+                            <p style="padding-right: 0;padding: 0 0 0 10px">Giá: <a href="/travel/{{tour.slug}}">{{ tour.price|number_format() }} VND</a></p>
+                        </div> <!-- /line_2 -->
+                    </div> <!-- /bottom_caption -->
+                </div> <!-- /caption -->
+            </div> <!-- /product -->
+        </div> <!-- /col -->
+    {% endfor %}
+
+
+{% else %}
+
+    <div class="ui message text-center">
+        <p>
+            Không có tour nào phù hợp!
+        </p>
+    </div>
+    </div> <!-- /row -->
+{% endif %}
+

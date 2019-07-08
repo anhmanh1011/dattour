@@ -1,0 +1,37 @@
+columns:
+    id:
+        label: STT
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: 'Tên slider'
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: 'Mô tả'
+        type: text
+        searchable: true
+        sortable: true
+    active:
+        label: 'Hiển thị'
+        type: switch
+        sortable: true
+    link:
+        label: 'Đường dẫn'
+        type: text
+        sortable: true
+    img_slider:
+        label: 'Ảnh slider'
+        type: partial
+        sortable: true
+        path: ~/plugins/web/slider/models/slider/_slider.htm
+    created_at:
+        label: 'Thời gian tạo'
+        type: date
+        sortable: true
+    updated_at:
+        label: 'Thời gian cập nhật'
+        type: date
+        sortable: true

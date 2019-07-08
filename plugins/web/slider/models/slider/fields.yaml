@@ -1,0 +1,33 @@
+tabs:
+    fields:
+        active:
+            label: 'Trạng thái'
+            span: auto
+            type: switch
+            tab: Slider
+        name:
+            label: 'Tên slider'
+            span: left
+            type: text
+            tab: Slider
+        link:
+            label: 'Đường dẫn'
+            span: auto
+            type: text
+            tab: Slider
+        description:
+            label: 'Mô tả'
+            size: small
+            span: auto
+            type: textarea
+            tab: Slider
+        img_slider:
+            label: 'Ảnh slider'
+            span: left
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: Slider

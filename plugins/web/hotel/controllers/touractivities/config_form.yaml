@@ -1,0 +1,10 @@
+name: TourActivities
+form: $/web/hotel/models/touractivities/fields.yaml
+modelClass: Web\Hotel\Models\TourActivities
+defaultRedirect: web/hotel/touractivities
+create:
+    redirect: 'web/hotel/touractivities/update/:id'
+    redirectClose: web/hotel/touractivities
+update:
+    redirect: web/hotel/touractivities
+    redirectClose: web/hotel/touractivities

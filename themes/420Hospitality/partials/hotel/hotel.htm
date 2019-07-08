@@ -1,0 +1,32 @@
+{%if hotel|length%}
+	{%for value in hotel%}
+		<div class="col-md-4 col-sm-6">
+			<div class="product">
+				{%if value.hot==1%}
+					<div class="sale">
+						<span>{{'Hot'|_}}</span>
+					</div>
+				{%endif%}
+				<div class="images">
+					<a href="/hotel/{{value.slug}}">
+						<img src="{{value.image_preview|resize(260, 140, { mode: 'crop', quality: '80', extension: 'jpg' })}}" title="{{value.name}}" alt="{{value.name}}" class="img-responsive">
+					</a>
+				</div>
+				<div class="caption">
+					<div class="title_post" style="text-align: left">
+						<h3><a href="/hotel/{{value.slug}}">{{value.name}}</a></h3>
+						<p style="margin-bottom: 12px"><i class="fas fa-map-marker-alt"></i> <span>{{value.locationdetail}}</span></p>
+					</div>
+					<div class="social_price">
+						<ul class="list-inline" style="padding-right: 10px">
+							<li><a href="javascript:"><i class="fas fa-briefcase"></i></a></li>
+							<li><a href="javascript:"><i class="fas fa-wifi"></i></a></li>
+							<li><a href="javascript:"><i class="fas fa-bed"></i></a></li>
+						</ul>
+						<span class="price">{{'Price from'|_}}: <a href="javascript:void(0)">{{value.price|number_format()}} VNĐ</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	{%endfor%}
+{%endif%}

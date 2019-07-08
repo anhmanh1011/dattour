@@ -1,0 +1,36 @@
+fields:
+    active:
+        label: 'Trạng thái'
+        span: full
+        hidden: 1
+        type: switch
+        comment: 'Bật để hiển thị trạng thái này'
+    name:
+        label: Name
+        span: auto
+        type: text
+    price:
+        label: Price
+        span: auto
+        type: number
+    discount:
+        label: Discount
+        span: auto
+        type: number
+    price_new:
+        label: 'Price new'
+        span: auto
+        type: number
+    description:
+        label: Description
+        size: small
+        span: full
+        type: textarea
+    icon:
+        label: icon
+        mode: image
+        imageWidth: '50'
+        imageHeight: '50'
+        span: auto
+        hidden: 1
+        type: mediafinder

@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table web_slider_silder'
+    - builder_table_create_web_slider_silder.php
+1.0.3:
+    - 'Updated table web_slider_silder'
+    - builder_table_update_web_slider_silder.php
+1.0.4:
+    - 'Updated table web_slider_silder'
+    - builder_table_update_web_slider_silder_2.php
+1.0.5:
+    - 'Created table web_slider_bookup'
+    - builder_table_create_web_slider_bookup.php
+1.0.6:
+    - 'Created table web_slider_product'
+    - builder_table_create_web_slider_product.php

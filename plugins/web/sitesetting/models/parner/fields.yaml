@@ -1,0 +1,10 @@
+fields:
+    name:
+        label: 'Tên đối tác'
+        span: full
+        type: text
+    image:
+        label: 'Hình ảnh'
+        mode: image
+        span: auto
+        type: mediafinder

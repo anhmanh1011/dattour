@@ -1,0 +1,307 @@
+title = "Trang chủ"
+url = "/"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[getHome]
+
+[SliderProduct]
+
+[editable contenthotel]
+file = "Home-content/Hotel-content.htm"
+
+[editable foodcontent]
+file = "Home-content/FB-content.htm"
+
+[editable eventcontent]
+file = "Home-content/Event-content.htm"
+
+[editable souvernircontent]
+file = "Home-content/Souvernir-content.htm"
+
+[editable tourcontent]
+file = "Home-content/Tour.htm"
+==
+<!--About Section-->
+{% set Tour = getHome.getTour %}
+<section id="travel" class="about bg-yellow roomy-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 head_title">
+                <h2 class="text-uppercase" style="border-left: 3px solid #fff;"><strong>Travel</strong></h2>
+            </div>
+            <div class="col-md-12" style="color: #16293b; text-align: justify; margin-bottom: 20px">
+            	{% component 'tourcontent' %}
+            </div>
+            <div class="col-md-12">
+                <div class="produc_mid row_produc">
+                    {% for item in Tour %}
+                    <div class="col-md-4 col-sm-12">
+                        <div class="product">
+                            {% if (item.hot == 1) %}
+                            <div class="sale">
+                                <span>Hot</span>
+                            </div> <!-- /sale -->
+                            {% endif %}
+                            <div class="images">
+                                <a href="/travel/{{item.slug}}"><img src="{{ item.image_preview | resize(350,180, { mode: 'crop', quality: '90' }) }} " alt="" class="img-responsive"></a>
+                            </div> <!-- /images -->
+                            <div class="caption">
+                                <div class="top_caption">
+                                    <h3 style="padding-bottom: 0"><a href="/travel/{{item.slug}}">{{item.name}}</a></h3>
+                                </div> <!-- /top_caption -->
+                                <div class="bottom_caption">
+                                    <div class="line_2 text-center">
+                                        <p><span>Duration: {{item.date_number}} </span></p>
+                                        <p><a href="/travel/{{item.slug}}">{{ item.price|number_format() }} VND</a></p>
+                                    </div> <!-- /line_2 -->
+                                </div> <!-- /bottom_caption -->
+                            </div> <!-- /caption -->
+                        </div> <!-- /product -->
+                    </div>
+                    {% endfor %}
+                    <div class="col-md-12 text-center">
+                        <a href="/travels" class="btn btn-default m-top-20" style="color: #fff; border-color: #fff">Show more...</a>
+                    </div>
+                </div>
+            </div><!-- End off col-md-6 -->
+        </div>
+    </div>
+</section>
+
+
+
+{% set Hotel = getHome.getHotel %}
+<!--Featured Section-->
+<section id="accommodation" class="features bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="main_features fix roomy-50">
+
+                <div class="col-md-3">
+                    <div class="features_item">
+                        <div class="head_title">
+                            <h2 class="text-uppercase"><strong>Accommodation</strong></h2>
+                        </div>
+                        <div class="featured_content">
+                            {% component 'contenthotel' %}
+                            <div class="col-md-12 text-center de">
+                                <a href="/hotel" class="btn btn-default m-top-20">Show more...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="features_item2_area">
+                        <div class="features_item2 text-center">
+                            <!-- <div class="divider_horizontal"></div>
+                            <div class="divider_vertical"></div> -->
+                            {% for key, value in Hotel %}
+                            <div class="wrap_main_product  row_produc col-md-4" style="padding-top: 0px">
+                                <div class="product">
+                                    {%if value.hot==1%}
+                                    <div class="sale">
+                                        <span>Hot</span>
+                                    </div>
+                                    {%endif%}
+                                    <div class="images">
+                                        <a href="/hotels/{{value.slug}}">
+                                            <img src="{{value.image_preview|resize(250, 140, { mode: 'crop', quality: '80', extension: 'png' })}}" title="{{value.name}}" alt="{{value.name}}" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <div class="title_post" style="text-align: left">
+                                            <h3><a href="/hotels/{{value.slug}}">{{value.name}}</a></h3>
+                                            <p style="margin-bottom: 12px;font-size: 14px"><i class="fas fa-map-marker-alt"></i> <span>{{value.locationdetail}}</span></p>
+                                        </div>
+                                        <div class="social_price">
+                                            <ul class="list-inline" style="padding-right: 10px;float: left;">
+                                                <li><a href="#0"><i class="fas fa-briefcase"></i></a></li>
+                                                <li><a href="#0"><i class="fas fa-wifi"></i></a></li>
+                                                <li><a href="#0"><i class="fas fa-bed"></i></a></li>
+                                            </ul>
+                                            <span class="price"><a href="javascript:void(0)">{{value.price|number_format()}} VNĐ</a></span>
+                                            <div style="clear: both"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            <div class="col-md-12 text-center mo">
+                                <a href="/hotel" class="btn btn-default m-top-20">Show more...</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End off row -->
+    </div><!-- End off container -->
+</section><!-- End off Featured Section-->
+
+
+{% set Food = getHome.getFood %}
+<!--Business Section-->
+<section id="food_beverage" class="service bg-grey roomy-70">
+    <div class="container">
+        <div class="row">
+            <div class="main_service">
+                <div class="col-md-5 col-md-offset-1 mo">
+                    <div class="service_item sm-m-top-50">
+                        <div class="head_title">
+                            <h2 class="text-uppercase"><strong>Food & Beverage</strong></h2>
+                        </div>
+                        <div class="service_content">
+                            {% component 'foodcontent' %}
+
+                            <a href="/list/cuisine" class="btn btn-default m-top-20">Show more...</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="service_slid">
+                        <div class="service_slid_item text-center">
+                            {% for item in Food %}
+                            <div class="service_slid_text">
+                                <a href="/product/3/{{item.slug}}" title="{{item.name}}"><img src="{{item.image_preview|resize(558, 337, { mode: 'crop', quality: '80', extension: 'jpg' })}}" alt="{{item.name}}"  class="lazyloadz"></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-1 de">
+                    <div class="service_item sm-m-top-50">
+                        <div class="head_title">
+                            <h2 class="text-uppercase"><strong>Food & Beverage</strong></h2>
+                        </div>
+                        <div class="service_content">
+                            {% component 'foodcontent' %}
+
+                            <div class="col-md-12 text-center">
+                                <a href="/list/cuisine" class="btn btn-default m-top-20">Show more...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End off Business section -->
+
+
+{% set Event = getHome.getEvent %}
+<!--Team And Skill Section-->
+<section id="event" class="teams roomy-80">
+    <div class="container">
+        <div class="row">
+            <div class="main_teams_content fix">
+                <div class="col-md-4">
+                    <div class="teams_item">
+                        <div class="head_title">
+                            <h2 class="text-uppercase"><strong>Event</strong></h2>
+                        </div>
+                        {% component 'eventcontent' %}
+                        <div class="col-md-12 text-center">
+                            <a href="/list/event" class="btn btn-default m-top-20 de">Show more...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="teams_item text-center sm-m-top-50">
+                        <div class="row">
+                            {% for item in Event %}
+                            <div class="col-sm-4">
+                                <a href="/product/4/{{item.slug}}" title="{{item.name}}"><img src="{{item.image_preview|resize(558, 337, { mode: 'crop', quality: '80', extension: 'jpg' })}}" alt="{{item.name}}"  class="lazyloadz">
+                                <h5 class="m-top-20"> <strong>{{html_limit(item.name,25)}}</h5>
+                                <div class="separator"></div></a>
+                            </div><!-- End off col-md-4 -->
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <a href="/list/event" class="btn btn-default m-top-20 mo">Show more...</a>
+                        </div>
+                    </div>
+                </div><!-- End off col-md-6 -->
+            </div><!-- End off main Team -->
+
+        </div><!-- End off row -->
+    </div><!-- End off container -->
+</section><!-- End off Team & Skill section -->
+
+
+{% set Souvenir = getHome.getSouvenir %}
+<!--Choose section-->
+<section id="service_store" class="choose bg-grey roomy-80">
+    <div class="container">
+        <div class="row">
+            <div class="main_choose">
+
+                <div class="col-md-5 col-md-offset-1 mo">
+                    <div class="choose_content sm-m-top-40">
+                        <div class="head_title">
+                            <h2 class="text-uppercase"><strong>Souvenir </strong></h2>
+                        </div>
+                        {% component 'souvernircontent' %}
+                    </div>
+                </div><!-- End off col-md-6 -->
+                <div class="col-md-6">
+                    <div class="service_slid">
+                        <div class="service_slid_item text-center">
+                            {% for item in Souvenir %}
+                            <div class="service_slid_text">
+                                <a href="/product/5/{{item.slug}}" title="{{item.name}}"><img src="{{item.image_preview|resize(558, 337, { mode: 'crop', quality: '80', extension: 'jpg' })}}" alt="{{item.name}}"  class="lazyloadz"></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div><!-- End off col-md-6 -->
+
+                <div class="col-md-5 col-md-offset-1 de">
+                    <div class="choose_content sm-m-top-40">
+                        <div class="head_title">
+                            <h2 class="text-uppercase"><strong>Souvenir</strong></h2>
+                        </div>
+                        {% component 'souvernircontent' %}
+                        <div class="col-md-12 text-center">
+                            <a href="/list/service-store" class="btn btn-default m-top-20">Show more...</a>
+                        </div>
+                    </div>
+                </div><!-- End off col-md-6 -->
+            </div>
+        </div><!-- End off row -->
+    </div><!-- End off container -->
+</section><!-- End off choose section -->
+
+
+<!--Portfolio Section-->
+
+{% set Parner = getHome.getParner %}
+<!--Test section-->
+<section id="test" class="test  fix" style="padding: 25px 0">
+    <div class="container">
+        <div class="row">
+            <div class="main_test fix">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-md-1 col-xs-12 text-center">
+                            <div class="text-center" style="line-height: 30px;margin: 10px 0">
+                                Parner:
+                            </div>
+                        </div>
+                        {% for item in Parner %}
+                        <div class="col-md-2 col-xs-4 text-center" style="margin: 10px 0">
+                            <img src="{{item.image|media|resize(88, 30, { mode: 'portrait', quality: '80', extension: 'png' })}}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End off test section -->

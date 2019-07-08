@@ -1,0 +1,63 @@
+name: 'Menu header'
+items:
+    -
+        title: Travel
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: travel
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Accommodation
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: accommodation
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Food & Beverage'
+        nesting: ''
+        type: url
+        url: /list/food-beverage
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Event today'
+        nesting: ''
+        type: url
+        url: /list/event
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Service & Store'
+        type: url
+        url: /list/service-store
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

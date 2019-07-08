@@ -1,0 +1,21 @@
+
+<form data-request="{{ __SELF__ }}::onSearch" data-request-update="'{{ __SELF__ }}::result': '#searchResult'">
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input id="inputSearch" type="text" class="form-control" placeholder="Tìm kiếm">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+</form>
+<div class="container">
+	<div class="row">
+		<div class="col-12" style="position: absolute; padding:5px 40px">
+			<ul id="searchResult">
+			</ul>
+			
+		</div>
+	</div>
+</div>

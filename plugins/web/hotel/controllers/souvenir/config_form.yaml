@@ -1,0 +1,10 @@
+name: Souvenir
+form: $/web/hotel/models/souvenir/fields.yaml
+modelClass: Web\Hotel\Models\Souvenir
+defaultRedirect: web/hotel/souvenir
+create:
+    redirect: 'web/hotel/souvenir/update/:id'
+    redirectClose: web/hotel/souvenir
+update:
+    redirect: web/hotel/souvenir
+    redirectClose: web/hotel/souvenir

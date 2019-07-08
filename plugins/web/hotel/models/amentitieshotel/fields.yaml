@@ -1,0 +1,12 @@
+fields:
+    name:
+        label: Name
+        span: left
+        type: text
+    icon:
+        label: Icon
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        span: left
+        type: mediafinder

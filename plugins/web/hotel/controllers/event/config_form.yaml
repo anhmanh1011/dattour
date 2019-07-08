@@ -1,0 +1,10 @@
+name: Event
+form: $/web/hotel/models/event/fields.yaml
+modelClass: Web\Hotel\Models\Event
+defaultRedirect: web/hotel/event
+create:
+    redirect: 'web/hotel/event/update/:id'
+    redirectClose: web/hotel/event
+update:
+    redirect: web/hotel/event
+    redirectClose: web/hotel/event

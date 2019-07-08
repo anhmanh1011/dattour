@@ -1,0 +1,13 @@
+1558411339a:1:{s:20:"hotel/pagination.htm";a:5:{s:8:"fileName";s:20:"hotel/pagination.htm";s:7:"content";s:280:"{% if (pages > 1) %}
+    {% for i in 1..pages %}
+    <label class="gloabal_custom"  {% if ( i == page) %} style="color: #aaa;border:1px solid #aaa" {% endif %}>{{ i }}
+        <input type="radio" name="Filter[page]" value="{{ i }}">
+    </label>
+    {% endfor %}
+{% endif %}";s:5:"mtime";i:1553650586;s:6:"markup";s:280:"{% if (pages > 1) %}
+    {% for i in 1..pages %}
+    <label class="gloabal_custom"  {% if ( i == page) %} style="color: #aaa;border:1px solid #aaa" {% endif %}>{{ i }}
+        <input type="radio" name="Filter[page]" value="{{ i }}">
+    </label>
+    {% endfor %}
+{% endif %}";s:4:"code";N;}}

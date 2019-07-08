@@ -1,0 +1,428 @@
+1558413233a:1:{s:14:"roomDetail.htm";a:13:{s:8:"fileName";s:14:"roomDetail.htm";s:7:"content";s:8007:"title = "Chi tiết phòng"
+url = "/room/:slug"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[DetailRoom]
+
+[search]
+==
+<?php
+function onEnd(){
+ $this->page->meta_title     = $this->meta_title;
+ $this->page->meta_description = $this->meta_description;
+ $this->page->meta_keyword   = $this->meta_keyword;
+ $this->page->robot_follow   = $this->robot_follow;
+ $this->page->robot_index    = $this->robot_index;
+}
+?>
+==
+<div class="sub_banner_page">
+	<img alt="" src="assets/pic/banner_duc5.jpg" />
+	<div class="describe_banner">
+		<div class="container_duc">
+			<h1>
+				<span class="title_page">{{'Room Detail'|_}}</span>
+			</h1>
+		</div>
+	</div>
+	<div class="duongdanlink">
+		<div class="container_duc">
+			<ul class="duongdan_link">
+				<li><a href="/">{{'Home'|_}}</a></li>
+				<li><a href="{{'hotel'|page}}">{{'Hotel'|_}}</a></li>
+				<li><a href="/hotel/{{hotel.slug}}">{{hotel.name}}</a></li>
+				<li class="active"><a href="javascript:void(0)">{{meta_title}}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="content up_here">
+	<div class="sub_pagedetail_tour">
+		<div class="container_duc">
+			<div class="PageContentLoadControl">
+				<div class="left">
+					<div class="slide_image_room">
+						{% for item in room_detail.album_images %}
+						<div class="item_room_detal">
+							<div class="frame_image">
+								<span class="frame_image_Crop">
+									<img alt="" class="drift-demo-trigger" src="{{ item | resize(863,574, { mode: 'crop', quality: '90' }) }}" />
+								</span>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="title_price_room">
+						<span class="title_room">{{room_detail.name}}</span>
+						<span class="price_room">{{'Price from'|_}}: {{room_detail.price|number_format()}} đ</span>
+						/ {{'Night'|_}}
+					</div>
+					<div class="slide_icon_room">
+						{% for item in room_detail.album_images %}
+						<div class="item_room_detal">
+							<div class="frame_image">
+								<a class="frame_image_Crop"><img alt="" src="{{ item | resize(155,107, { mode: 'crop', quality: '90' }) }}" /></a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="information_detail_sp">
+						<ul class="tabpick">
+							<li class="active"><a href="#thongtin01" class="bgln">{{'Room Detail'|_}}</a></li>
+							<li><a href="#thongtin02" class="bgln">{{'Reviews'|_}}</a></li>
+						</ul>
+						<div class="tabcontent">
+							<div class="tabcon active" id="thongtin01">
+								<div class="room_detail_one">
+									<div class="lst_info_inroom">
+										<div class="item_info_inroom">
+											{{'Room Size'|_}}: <span class="number_info">{{room_detail.acreage}} m2</span>
+										</div>
+										<div class="item_info_inroom">
+											{{'Bed Number'|_}}: <span class="number_info">{{room_detail.number_of_bed}}</span>
+										</div>
+										<div class="item_info_inroom">
+											{{'Maximum people'|_}}: <span class="number_info">{{room_detail.max_people}}</span>
+										</div>
+									</div>
+									<div class="lst_info_inroom_two">
+										{% for item in room_detail.amenities %}
+										<div class="item_info_inroom_two">
+											<i class="fa fa-check" aria-hidden="true"></i>
+											{{item.name}}
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+							<div class="tabcon" id="thongtin02">
+								<div class="evaluate_tour_one">
+									<div class="post_review">
+										<div class="top">
+											<h5 class="title">{{'Reviews'|_}}</h5>
+											<div class="rate_star">
+												<div class="rateit" id="rateit" data-rateit-mode="font" data-rateit-value="
+													{% if ((room_detail.star_4 + room_detail.star_5)) %}
+														{{ (((room_detail.star_4)*4 + room_detail.star_5*5)/(room_detail.star_4 + room_detail.star_5))|number_format(1, '.', ',') }}
+													{% else %} 0
+													{% endif %}" data-productid="{{ room_detail.id }}" data-num4="{{ room_detail.star_4 }}" data-num5="{{ room_detail.star_5 }}"></div>
+												<span id="result">
+													({%if (room_detail.star_4 + room_detail.star_5) != 0 %}
+													{{ (((room_detail.star_4)*4 + room_detail.star_5*5)/(room_detail.star_4 + room_detail.star_5))|number_format(1, '.', ',') }}/5 (90%) {{ room_detail.star_4 + room_detail.star_5 }}
+													{%endif%} {{'vote'|_}})
+												</span>
+											</div> 
+										</div>
+										<div class="bottom">
+                      <div class="line">
+                        <span>{{'Excellent'|_}}</span>
+                        <div class="rateit" data-rateit-mode="font" data-rateit-value="5"></div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                            aria-valuemin="0" aria-valuemax="100" style="width:87%">
+                          </div>
+                        </div>
+                        <span>87% ({{  room_detail.star_4 }} {{'vote'|_}})</span>
+                      </div>
+      
+                      <div class="line line_2">
+                        <span>{{'Good'|_}}</span>
+                        <div class="rateit" data-rateit-mode="font" data-rateit-value="4"></div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                            aria-valuemin="0" aria-valuemax="100" style="width:65%">
+                          </div>
+                        </div>
+                        <span>65% ({{  room_detail.star_5 }} {{'vote'|_}})</span>
+                      </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="right">
+					{% component 'DetailRoom' %}
+				</div>
+			</div>
+			<div class="sub_section_related">
+				<div class="title_related">{{'Other Rooms'|_}}</div>
+				<div class="lst_room_related">
+					{% for item in hotel_cate %}
+					<div class="item_room_related">
+						<div class="frame_image">
+							<a class="frame_image_Crop" href="/hotel/{{item.slug}}">
+								<img alt="" src="{{ item.image_preview | resize(370,247, { mode: 'crop', quality: '90' }) }}" />
+							</a>
+						</div>
+						<div class="info_room_related">
+							<div class="ngoaia">
+								<h3>
+									<a class="title" href="/hotel/{{item.slug}}">
+										{{item.name}}
+									</a>
+								</h3>
+							</div>
+							<div class="price_room">
+								{{'Price'|_}}: <span class="number_price">{{item.price|number_format()}} đ<span class="fotcam">/{{'Night'|_}}</span></span>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% put scripts %}
+<script>
+  $( document ).ready(function() {
+      $('html, body').animate({
+          scrollTop: $('.up_here').offset().top-80
+      }, 1000);
+  });
+	$('#rateit').click('rated reset', function (e) {
+		var ri = $(this);
+		var value = ri.rateit('value');
+		var id = ri.data('productid');
+		var star_4 = ri.data('num4');
+		var star_5 = ri.data('num5');
+		var rated = false
+		if (value > 3 && rated == false) {
+			ri.rateit('readonly', true);
+
+			$.request('onGetStarRate', {
+				data: {
+					id,
+					value,
+          star_4,
+          star_5
+				},
+				success: function (data) {
+					if (value == 4) {
+						$('#result').html('(' + (((star_4 + 1) * 4 + star_5 * 5) / (star_4 + star_5 + 1)).toFixed(1) + '/5 ' +
+							(star_4 + star_5 + 1) + ' {{'vote'|_}} )' );
+					}
+					if (value == 5) {
+						$('#result').html('(' + ((star_4 * 4 + (star_5 + 1) * 5) / (star_4 + star_5 + 1)).toFixed(1) + '/5 ' +
+							(star_4 + star_5 + 1) + ' {{'vote'|_}} )' );
+					}
+          rated = true;
+				},
+			});
+		}
+	});
+</script>
+{% endput %}
+";s:5:"mtime";i:1557158540;s:6:"markup";s:7533:"<div class="sub_banner_page">
+	<img alt="" src="assets/pic/banner_duc5.jpg" />
+	<div class="describe_banner">
+		<div class="container_duc">
+			<h1>
+				<span class="title_page">{{'Room Detail'|_}}</span>
+			</h1>
+		</div>
+	</div>
+	<div class="duongdanlink">
+		<div class="container_duc">
+			<ul class="duongdan_link">
+				<li><a href="/">{{'Home'|_}}</a></li>
+				<li><a href="{{'hotel'|page}}">{{'Hotel'|_}}</a></li>
+				<li><a href="/hotel/{{hotel.slug}}">{{hotel.name}}</a></li>
+				<li class="active"><a href="javascript:void(0)">{{meta_title}}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="content up_here">
+	<div class="sub_pagedetail_tour">
+		<div class="container_duc">
+			<div class="PageContentLoadControl">
+				<div class="left">
+					<div class="slide_image_room">
+						{% for item in room_detail.album_images %}
+						<div class="item_room_detal">
+							<div class="frame_image">
+								<span class="frame_image_Crop">
+									<img alt="" class="drift-demo-trigger" src="{{ item | resize(863,574, { mode: 'crop', quality: '90' }) }}" />
+								</span>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="title_price_room">
+						<span class="title_room">{{room_detail.name}}</span>
+						<span class="price_room">{{'Price from'|_}}: {{room_detail.price|number_format()}} đ</span>
+						/ {{'Night'|_}}
+					</div>
+					<div class="slide_icon_room">
+						{% for item in room_detail.album_images %}
+						<div class="item_room_detal">
+							<div class="frame_image">
+								<a class="frame_image_Crop"><img alt="" src="{{ item | resize(155,107, { mode: 'crop', quality: '90' }) }}" /></a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="information_detail_sp">
+						<ul class="tabpick">
+							<li class="active"><a href="#thongtin01" class="bgln">{{'Room Detail'|_}}</a></li>
+							<li><a href="#thongtin02" class="bgln">{{'Reviews'|_}}</a></li>
+						</ul>
+						<div class="tabcontent">
+							<div class="tabcon active" id="thongtin01">
+								<div class="room_detail_one">
+									<div class="lst_info_inroom">
+										<div class="item_info_inroom">
+											{{'Room Size'|_}}: <span class="number_info">{{room_detail.acreage}} m2</span>
+										</div>
+										<div class="item_info_inroom">
+											{{'Bed Number'|_}}: <span class="number_info">{{room_detail.number_of_bed}}</span>
+										</div>
+										<div class="item_info_inroom">
+											{{'Maximum people'|_}}: <span class="number_info">{{room_detail.max_people}}</span>
+										</div>
+									</div>
+									<div class="lst_info_inroom_two">
+										{% for item in room_detail.amenities %}
+										<div class="item_info_inroom_two">
+											<i class="fa fa-check" aria-hidden="true"></i>
+											{{item.name}}
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+							<div class="tabcon" id="thongtin02">
+								<div class="evaluate_tour_one">
+									<div class="post_review">
+										<div class="top">
+											<h5 class="title">{{'Reviews'|_}}</h5>
+											<div class="rate_star">
+												<div class="rateit" id="rateit" data-rateit-mode="font" data-rateit-value="
+													{% if ((room_detail.star_4 + room_detail.star_5)) %}
+														{{ (((room_detail.star_4)*4 + room_detail.star_5*5)/(room_detail.star_4 + room_detail.star_5))|number_format(1, '.', ',') }}
+													{% else %} 0
+													{% endif %}" data-productid="{{ room_detail.id }}" data-num4="{{ room_detail.star_4 }}" data-num5="{{ room_detail.star_5 }}"></div>
+												<span id="result">
+													({%if (room_detail.star_4 + room_detail.star_5) != 0 %}
+													{{ (((room_detail.star_4)*4 + room_detail.star_5*5)/(room_detail.star_4 + room_detail.star_5))|number_format(1, '.', ',') }}/5 (90%) {{ room_detail.star_4 + room_detail.star_5 }}
+													{%endif%} {{'vote'|_}})
+												</span>
+											</div> 
+										</div>
+										<div class="bottom">
+                      <div class="line">
+                        <span>{{'Excellent'|_}}</span>
+                        <div class="rateit" data-rateit-mode="font" data-rateit-value="5"></div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                            aria-valuemin="0" aria-valuemax="100" style="width:87%">
+                          </div>
+                        </div>
+                        <span>87% ({{  room_detail.star_4 }} {{'vote'|_}})</span>
+                      </div>
+      
+                      <div class="line line_2">
+                        <span>{{'Good'|_}}</span>
+                        <div class="rateit" data-rateit-mode="font" data-rateit-value="4"></div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                            aria-valuemin="0" aria-valuemax="100" style="width:65%">
+                          </div>
+                        </div>
+                        <span>65% ({{  room_detail.star_5 }} {{'vote'|_}})</span>
+                      </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="right">
+					{% component 'DetailRoom' %}
+				</div>
+			</div>
+			<div class="sub_section_related">
+				<div class="title_related">{{'Other Rooms'|_}}</div>
+				<div class="lst_room_related">
+					{% for item in hotel_cate %}
+					<div class="item_room_related">
+						<div class="frame_image">
+							<a class="frame_image_Crop" href="/hotel/{{item.slug}}">
+								<img alt="" src="{{ item.image_preview | resize(370,247, { mode: 'crop', quality: '90' }) }}" />
+							</a>
+						</div>
+						<div class="info_room_related">
+							<div class="ngoaia">
+								<h3>
+									<a class="title" href="/hotel/{{item.slug}}">
+										{{item.name}}
+									</a>
+								</h3>
+							</div>
+							<div class="price_room">
+								{{'Price'|_}}: <span class="number_price">{{item.price|number_format()}} đ<span class="fotcam">/{{'Night'|_}}</span></span>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% put scripts %}
+<script>
+  $( document ).ready(function() {
+      $('html, body').animate({
+          scrollTop: $('.up_here').offset().top-80
+      }, 1000);
+  });
+	$('#rateit').click('rated reset', function (e) {
+		var ri = $(this);
+		var value = ri.rateit('value');
+		var id = ri.data('productid');
+		var star_4 = ri.data('num4');
+		var star_5 = ri.data('num5');
+		var rated = false
+		if (value > 3 && rated == false) {
+			ri.rateit('readonly', true);
+
+			$.request('onGetStarRate', {
+				data: {
+					id,
+					value,
+          star_4,
+          star_5
+				},
+				success: function (data) {
+					if (value == 4) {
+						$('#result').html('(' + (((star_4 + 1) * 4 + star_5 * 5) / (star_4 + star_5 + 1)).toFixed(1) + '/5 ' +
+							(star_4 + star_5 + 1) + ' {{'vote'|_}} )' );
+					}
+					if (value == 5) {
+						$('#result').html('(' + ((star_4 * 4 + (star_5 + 1) * 5) / (star_4 + star_5 + 1)).toFixed(1) + '/5 ' +
+							(star_4 + star_5 + 1) + ' {{'vote'|_}} )' );
+					}
+          rated = true;
+				},
+			});
+		}
+	});
+</script>
+{% endput %}";s:4:"code";s:291:"
+function onEnd(){
+ $this->page->meta_title     = $this->meta_title;
+ $this->page->meta_description = $this->meta_description;
+ $this->page->meta_keyword   = $this->meta_keyword;
+ $this->page->robot_follow   = $this->robot_follow;
+ $this->page->robot_index    = $this->robot_index;
+}";s:5:"title";s:17:"Chi tiết phòng";s:3:"url";s:11:"/room/:slug";s:6:"layout";s:9:"Travel365";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:10:"DetailRoom";a:0:{}s:6:"search";a:0:{}}}

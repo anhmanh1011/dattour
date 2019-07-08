@@ -1,0 +1,12 @@
+list: $/web/hotel/models/orderroom/columns.yaml
+modelClass: Web\Hotel\Models\OrderRoom
+title: OrderRoom
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'web/hotel/orderroom/update/:id'

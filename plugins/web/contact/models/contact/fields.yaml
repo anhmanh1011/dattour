@@ -1,0 +1,7 @@
+tabs:
+    fields:
+        email:
+            label: Email
+            span: auto
+            type: text
+            tab: 'Thông tin liên hệ'

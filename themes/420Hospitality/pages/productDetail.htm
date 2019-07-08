@@ -1,0 +1,40 @@
+title = "Sản phẩm"
+url = "/product/:id/:slug"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ProductDetail]
+
+==
+<?php
+function onEnd(){
+	  $this->page->meta_title = $this->meta_title;
+      $this->page->meta_description = $this->meta_description;
+      $this->page->meta_keyword = $this->meta_keyword;
+      $this->page->canonical_url = $this->canonical_url;
+      $this->page->robot_follow = $this->robot_follow;
+      $this->page->robot_index = $this->robot_index;
+	}
+?>
+==
+<div class="sub_banner_page">
+  <img alt="" src="assets/pic/banner_duc4.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <h1>
+        <span class="title_page">{{titte_page}}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="duongdanlink">
+    <div class="container_duc">
+      <ul class="duongdan_link">
+        <li><a href="{{'home'|page}}">HOME</a></li>
+        <li class="active"><a href="javascript:void(0)">{{titte_page}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% component 'ProductDetail' %}

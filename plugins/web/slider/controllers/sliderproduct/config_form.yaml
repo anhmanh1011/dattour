@@ -1,0 +1,10 @@
+name: Sliderproduct
+form: $/web/slider/models/sliderproduct/fields.yaml
+modelClass: Web\Slider\Models\SliderProduct
+defaultRedirect: web/slider/sliderproduct
+create:
+    redirect: 'web/slider/sliderproduct/update/:id'
+    redirectClose: web/slider/sliderproduct
+update:
+    redirect: web/slider/sliderproduct
+    redirectClose: web/slider/sliderproduct

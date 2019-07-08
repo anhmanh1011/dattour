@@ -1,0 +1,85 @@
+tabs:
+    fields:
+        active:
+            label: 'Trạng thái'
+            span: auto
+            type: switch
+            tab: 'Chi tiết khách sạn'
+        hot:
+            label: 'Hot?'
+            span: auto
+            type: switch
+            tab: 'Chi tiết khách sạn'
+        name:
+            label: Name
+            span: auto
+            type: text
+            tab: 'Chi tiết khách sạn'
+        slug:
+            label: Slug
+            span: auto
+            preset:
+                field: name
+                type: slug
+            type: text
+            tab: 'Chi tiết khách sạn'
+        locationdetail:
+            label: Location
+            span: auto
+            type: text
+            tab: 'Chi tiết khách sạn'
+        types:
+            label: Type
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Chi tiết khách sạn'
+        description:
+            label: 'Giới thiệu'
+            size: small
+            span: auto
+            type: textarea
+            tab: 'Chi tiết khách sạn'
+        phone:
+            label: Phone
+            span: auto
+            type: text
+            tab: 'Chi tiết khách sạn'
+        created_at:
+            label: 'Created time'
+            mode: datetime
+            span: right
+            type: datepicker
+            tab: 'Chi tiết khách sạn'
+        amenities:
+            label: 'Tiện ích khách sạn'
+            nameFrom: name
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Chi tiết khách sạn'
+        image_preview:
+            label: 'Image preview'
+            mode: image
+            imageWidth: '150'
+            imageHeight: '150'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Chi tiết khách sạn'
+        album_images:
+            label: 'Abum room'
+            mode: image
+            imageWidth: '150'
+            imageHeight: '150'
+            useCaption: 0
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Chi tiết khách sạn'

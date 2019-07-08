@@ -1,0 +1,10 @@
+name: Room
+form: $/web/hotel/models/room/fields.yaml
+modelClass: Web\Hotel\Models\Room
+defaultRedirect: web/hotel/room
+create:
+    redirect: 'web/hotel/room/update/:id'
+    redirectClose: web/hotel/room
+update:
+    redirect: web/hotel/room
+    redirectClose: web/hotel/room

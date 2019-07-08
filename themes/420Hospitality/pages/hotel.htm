@@ -1,0 +1,156 @@
+title = "Khách sạn"
+url = "/hotel"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+[ListHotel]
+==
+<?php
+    use Web\Hotel\Models\Hotel as Hotel;
+    use Web\Hotel\Models\HotelType as Type;
+    use Web\Hotel\Models\AmentitiesHotel as Amenities;
+    use Web\Hotel\Models\Location as Location;
+    use Web\Hotel\Models\States as States;
+
+    function onStart(){ $this->prepareVars();}
+    function onFilterHotel() { $this->prepareVars(); }
+    function onPagination() { $this->prepareVars(); }
+    function prepareVars() {
+        $options = post('Filter', []);
+
+        $this['hotel']      = Hotel::listFrontEnd($options);
+        $this['states']     = States::get()->toArray();
+        $this['amenities']  = Amenities::get()->toArray();
+        $this['types']      = Type::get()->toArray();
+        $this['pages']      = $this['hotel']->lastPage();
+        $this['page']       = $this['hotel']->currentPage();
+    }
+    function onEnd(){
+        $this->page->meta_title = "Hotel";
+    }
+?>
+==
+<div class="sub_banner_page">
+    <img alt="" src="assets/pic/banner_duc5.jpg" />
+    <div class="describe_banner">
+        <div class="container_duc">
+            <h1>
+                <span class="title_page">{{'HOTEL'|_}}</span>
+            </h1>
+        </div>
+    </div>
+    <div class="duongdanlink">
+        <div class="container_duc">
+            <ul class="duongdan_link">
+                <li><a href="{{'home'|page}}">{{'HOME'|_}}</a></li>
+                <li class="active"><a href="javascript:void(0)">{{'HOTEL'|_}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content up_here">
+    <div class="wrap_main_accommodation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    {{ form_ajax('onFilterHotel', { update: { 'hotel/hotel': '#listHotel', 'hotel/pagination': '#Pagination'} }) }}
+                    <div class="side_bar" id="hotelFilter">
+                        <div class="top_sidebar">
+                            <div class="info">
+                                <h3 class="click_colapse">{{'Type of hotel'|_}}</h3>
+                                <div class="open_colapse">
+                                    {% for type in types %}
+                                    <label class="gloabal_custom">{{type.name}}
+                                        <input type="checkbox" name="Filter[type][]" value="{{type.id}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h3 class="click_colapse fix9">{{'Facilities'|_}}</h3>
+                                <div class="open_colapse">
+                                    {%if amenities %}
+                                    {%for tiennghi in amenities%}
+                                    <label class="gloabal_custom">{{tiennghi.name}}
+                                        <input type="checkbox" name="Filter[amenities][]" value="{{ tiennghi.id }}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    {%endfor%}
+                                    {%endif%}
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="bottom_sidebar">
+                            <h3 class="click_colapse">{{'Hotel Promotion'|_}}</h3>
+                            <div class="open_colapse">
+                                {%if sale %}
+                                {%for value in sale%}
+                                <div class="product">
+                                    <div class="images_info">
+                                        <a href="{{'Home'|page}}/travel/{{value.slug}}"  title="{{value.name}}" ><img
+                                                src="{{value.image_preview|media|resize(240,160)}}"
+                                               alt="{{value.name}}" class="img-responsive"></a>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div>
+                                    <div class="caption_info">
+                                        <h3><a href="{{'Home'|page}}/travel/{{value.slug}}">{{value.name}}</a></h3>
+                                        <p>{{value.description}}</p>
+                                        <span>{{'Price from'|_}} <a href="{{'Home'|page}}/travel/{{value.slug}}">{{value.price|number_format()}} VNĐ</a></span>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                                {%endif%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-sm-12">
+                    <div class="wrap_main_product row_produc">
+                        <div class="row" id="listHotel">
+
+                            {% partial 'hotel/hotel'%}
+                        </div>
+                    </div>
+                    {{ form_close() }}
+                    <div class="panigation_categorie_grid">
+                        {% partial 'hotel/pagination'%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% put scripts %}
+<script>
+    // Ajax Tour
+    (function ($) {
+
+        $('#hotelFilter').on('change', 'input, select', function () {
+            var $form = $(this).closest('form');
+            $form.request();
+            $('html, body').animate({
+                scrollTop: $('.up_here').offset().top - 80
+            }, 1000);
+        });
+        $('#Pagination').on('change', 'input, select', function () {
+            $('html, body').animate({
+                scrollTop: $('.up_here').offset().top - 80
+            }, 1000);
+
+            var $form = $(this).closest('form');
+            $form.request();
+        });
+    })(jQuery);
+</script>
+{% endput %}

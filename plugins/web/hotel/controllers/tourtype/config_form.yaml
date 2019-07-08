@@ -1,0 +1,10 @@
+name: Tourtype
+form: $/web/hotel/models/tourtype/fields.yaml
+modelClass: Web\Hotel\Models\TourType
+defaultRedirect: web/hotel/tourtype
+create:
+    redirect: 'web/hotel/tourtype/update/:id'
+    redirectClose: web/hotel/tourtype
+update:
+    redirect: web/hotel/tourtype
+    redirectClose: web/hotel/tourtype

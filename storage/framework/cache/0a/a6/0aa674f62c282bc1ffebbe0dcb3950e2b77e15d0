@@ -1,0 +1,66 @@
+1558413233a:1:{s:17:"productDetail.htm";a:12:{s:8:"fileName";s:17:"productDetail.htm";s:7:"content";s:1093:"title = "Sản phẩm"
+url = "/product/:id/:slug"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ProductDetail]
+
+==
+<?php
+function onEnd(){
+	  $this->page->meta_title = $this->meta_title;
+      $this->page->meta_description = $this->meta_description;
+      $this->page->meta_keyword = $this->meta_keyword;
+      $this->page->canonical_url = $this->canonical_url;
+      $this->page->robot_follow = $this->robot_follow;
+      $this->page->robot_index = $this->robot_index;
+	}
+?>
+==
+<div class="sub_banner_page">
+  <img alt="" src="assets/pic/banner_duc4.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <h1>
+        <span class="title_page">{{titte_page}}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="duongdanlink">
+    <div class="container_duc">
+      <ul class="duongdan_link">
+        <li><a href="{{'home'|page}}">HOME</a></li>
+        <li class="active"><a href="javascript:void(0)">{{titte_page}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% component 'ProductDetail' %}";s:5:"mtime";i:1555789918;s:6:"markup";s:556:"<div class="sub_banner_page">
+  <img alt="" src="assets/pic/banner_duc4.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <h1>
+        <span class="title_page">{{titte_page}}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="duongdanlink">
+    <div class="container_duc">
+      <ul class="duongdan_link">
+        <li><a href="{{'home'|page}}">HOME</a></li>
+        <li class="active"><a href="javascript:void(0)">{{titte_page}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% component 'ProductDetail' %}";s:4:"code";s:361:"
+function onEnd(){
+	  $this->page->meta_title = $this->meta_title;
+      $this->page->meta_description = $this->meta_description;
+      $this->page->meta_keyword = $this->meta_keyword;
+      $this->page->canonical_url = $this->canonical_url;
+      $this->page->robot_follow = $this->robot_follow;
+      $this->page->robot_index = $this->robot_index;
+	}";s:5:"title";s:12:"Sản phẩm";s:3:"url";s:18:"/product/:id/:slug";s:6:"layout";s:9:"Travel365";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:13:"ProductDetail";a:0:{}}}

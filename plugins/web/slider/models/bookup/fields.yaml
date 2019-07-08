@@ -1,0 +1,33 @@
+tabs:
+    fields:
+        active:
+            label: 'Trạng thái'
+            span: auto
+            type: switch
+            tab: Bookup
+        name:
+            label: 'Tên bookup'
+            span: left
+            type: text
+            tab: Bookup
+        link:
+            label: 'Đường dẫn'
+            span: auto
+            type: text
+            tab: Bookup
+        description:
+            label: 'Mô tả'
+            size: small
+            span: auto
+            type: textarea
+            tab: Bookup
+        img_bookup:
+            label: 'Ảnh bookup'
+            span: left
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: Bookup

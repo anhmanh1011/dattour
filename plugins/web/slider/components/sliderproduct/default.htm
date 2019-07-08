@@ -1,0 +1,10 @@
+{% set sliderproduct = __SELF__.slider_product %}
+<div class="banner">
+	<div class="owl-carousel owl-theme custom_owl_2">
+		{% for key,value in sliderproduct %}
+	    <div class="item">
+	    	<img src="{{value.slider_product.path| resize(1920, auto, { mode: 'crop', quality: '80', extension: 'jpg' }) }}" alt="" class="img-responsive">
+	    </div>
+	    {%endfor%}
+	</div>
+</div> 

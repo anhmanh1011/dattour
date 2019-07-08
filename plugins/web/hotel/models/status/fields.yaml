@@ -1,0 +1,9 @@
+fields:
+    name:
+        label: 'Tên trạng thái'
+        span: auto
+        type: text
+    color:
+        label: 'Màu sắc'
+        span: auto
+        type: colorpicker

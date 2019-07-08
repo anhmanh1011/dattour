@@ -1,0 +1,117 @@
+title = "Danh sách phòng"
+url = "/hotels/:slug"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Hotel]
+
+[search]
+==
+<?php
+function onEnd(){
+	 $this->page->meta_title     = $this->meta_title;
+     $this->page->meta_description = $this->meta_description;
+     $this->page->meta_keyword   = $this->meta_keyword;
+     $this->page->robot_follow   = $this->robot_follow;
+     $this->page->robot_index    = $this->robot_index;
+}
+?>
+==
+<div class="content up_here">
+	<div class="wrap_pagination_top">
+		<div class="container">
+			<div class="info">
+				<ul class="list-inline">
+					<li><a href="{{'home'|page}}">HOME</a></li>
+					<li><a href="{{'hotel'|page}}">ACCOMMODATION </a></li>
+					<li class="active"><a href="javascript:void(0)">{{meta_title}}</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div> 
+	
+	<div class="wrap_main_accommodation_details">
+		<div class="container">
+			<div class="title">
+				<h2>{{meta_title}}</h2>
+				<div class="address_title">
+					<p><i class="fas fa-map-marker-alt"></i><span>Address: {{address}}</span></p>
+					<p><i class="fas fa-phone"></i> <span>Phone: {{hotel.phone}}</span></p>
+					<p><i class="far fa-envelope"></i> <span>Email: {{hotel.email}}</span></p>
+				</div> 
+			</div> 
+			<div class="wrap_slider">
+				<div class="outer">
+					<div id="big" class="owl-carousel owl-theme">
+						{%set list_image = hotel.album_images%}
+
+						{%for value in list_image%}
+							<div class="item">
+							    <img src="{{value.path|resize(1140,639,{ mode: 'crop', quality: '100', extension: 'auto' })}}"
+							    title="{{value.name}}" alt="{{value.name}}" class="img-responsive">
+							</div>
+						{%endfor%}
+					</div>
+					<div id="thumbs" class="owl-carousel owl-theme">
+
+						{%for value in list_image%}
+							<div class="item">
+						    	<img src="{{value.path|resize(158,88,{ mode: 'crop', quality: '100', extension: 'jpg'})}}"  title="{{value.name}}" alt="{{value.name}}" class="img-responsive">
+						 	</div>
+						{%endfor%}
+					</div>
+				</div>
+			</div> 
+			<div class="wrap_product_accommodation_details">
+				<div class="title">
+					<h2>Type of room</h2>
+				</div>
+				<div class="row">
+					{%if list_room%}
+						{%for value in list_room%}
+							<div class="col-md-6  col-sm-6">
+								<div class="product_info">
+									<div class="images">
+										<a href="/hotel/{{value.slug}}"><img src="{{value.image_preview.path|resize(247,144,{ mode: 'crop', quality: '55', extension: 'auto' })}}" title="{{value.name}}" alt="{{value.name}}"" alt="" class="img-responsive"></a>
+									</div> 
+									<div class="caption">
+										<div class="title_top">
+											<h3><a href="/hotel/{{value.slug}}">{{value.name}}</a></h3>
+											<p>{{value.description}}</p>
+										</div> 
+										<div class="middle_button" style="color: #9d4003;font-weight: bold;font-size: 12px; ">
+											<i class="fas fa-magic"></i>
+											{% if utilities %}
+												{% for value_1 in utilities %}
+													{% if value.id == value_1.room_id %}
+														{% if key != null %}, {% endif %}{{value_1.name}}
+														{% set key = 1 %}
+													{% endif %}
+												{% endfor %}
+											{% endif %}
+										</div>
+										<div class="row">
+											<div class="col-xs-12 price text-left" style="line-height:35px"><i class="fas fa-dollar-sign"></i> {{value.price|number_format()}} vnđ/day</div>
+											<div class="col-xs-12"><a href="/hotel/{{value.slug}}" class="btn">Book</a></div>
+										</div>
+									</div> 
+								</div> 
+							</div>
+						{%endfor%}
+					{%endif%}
+				</div> 
+			</div> 
+			<div class="wrap_bottom_accommodation_details">
+				<div class="text_post">
+					<h3>{{meta_title}}</h3>
+					<div class="index_text_post">
+						<p>{{content|raw}}</p>
+							
+					</div>
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+</div>

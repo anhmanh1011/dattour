@@ -1,0 +1,29 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+        sortable: true
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    slug:
+        label: slug
+        type: text
+        invisible: true
+        sortable: false
+    active:
+        label: Active
+        type: partial
+        sortable: true
+        path: ~/plugins/web/hotel/controllers/zcolumn/_status.htm
+    created_at:
+        label: created_at
+        type: datetime
+        invisible: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        invisible: true

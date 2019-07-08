@@ -1,0 +1,4 @@
+title: FoodBeverage
+modelClass: Web\Hotel\Models\FoodBeverage
+toolbar:
+    buttons: reorder_toolbar

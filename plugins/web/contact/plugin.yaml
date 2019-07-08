@@ -1,0 +1,17 @@
+plugin:
+    name: 'web.contact::lang.plugin.name'
+    description: 'web.contact::lang.plugin.description'
+    author: web
+    icon: oc-icon-comment
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Contact
+        url: web/contact/contact
+        icon: icon-comments
+        permissions:
+            - 'Contact Manager'
+permissions:
+    'Contact Manager':
+        tab: 'Quản lý'
+        label: 'Quản lý liên hệ'

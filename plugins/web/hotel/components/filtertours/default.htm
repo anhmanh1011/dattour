@@ -1,0 +1,702 @@
+{% set tours = __SELF__.tours %}
+{% set locations = __SELF__.locations %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <div class="side_bar">
+                <div class="top_sidebar">
+			    <form action="{{ url('travel')}}" method="get" accept-charset="utf-8">
+                    <div class="info">
+                        <h3>Location</h3>
+                        <label class="gloabal_custom">North Vietnam
+                            <input type="checkbox" name="state" value="1" onchange="this.form.submit()">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="gloabal_custom">Central Vietnam
+                            <input type="checkbox" name="state" value="2" onchange="this.form.submit()">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="gloabal_custom">South Vietnam
+                            <input type="checkbox" name="state" value="3" onchange="this.form.submit()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div> <!-- /info -->
+
+                    <div class="info">
+                        <h3>Type of tour</h3>
+                        <label class="gloabal_custom">Open tour
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="gloabal_custom">Private tour
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div> <!-- /info -->
+
+                    <div class="info">
+                        <h3>Duration</h3>
+                        <label class="gloabal_custom">1 day
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="gloabal_custom">2 day
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="gloabal_custom">3 day
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="gloabal_custom">More than 3 days
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div> <!-- /info -->
+
+                    <div class="info value_none">
+                        <h3>Value Rate</h3>
+                        <div class="fillter">
+                            <section class="range-slider" id="facet-price-range-slider" data-options='{"output":{"prefix":""},"maxSymbol":""}'>
+                                <input name="range-1" value="0" min="0" max="30000000" step="1" type="range">
+                                <input name="range-2" value="0" min="0" max="30000000" step="1" type="range">
+                            </section>
+                            <span class="left">0 VND</span>
+                            <span class="right">30.000.000 VND</span>
+                        </div> <!-- /fillter -->
+                    </div> <!-- /info -->
+			    </form>
+
+                </div> <!-- /top_sidebar -->
+
+                <div class="bottom_sidebar">
+                    <h3>Promotion</h3>
+                    {%if sale%}
+                        {%for value in sale%}
+                            <div class="product">
+                                <div class="images_info">
+                                    <a href="#0"><img src="images/sidebar_img.png" alt="" class="img-responsive"></a>
+                                    <p class="rating">
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                    </p>
+                                </div> 
+                                <div class="caption_info">
+                                    <h3><a href="#0">Vietnam Highlights Package 10 Days 9 Nights</a></h3>
+                                    <p>
+                                        The most popular destinations in Vietnam with all the highlights — all in Vietnam itinerary 10 days. Discover Hanoi with many foods, structure architecture and the stunningly 
+                                    </p>
+                                    <span>Price <a href="#0">6.000.000 VND</a></span>
+                                </div>
+                            </div> 
+                        {%endfor%}
+                    {%endif%}
+                </div> 
+            </div> <!-- /side_bar -->
+        </div> 
+
+        <div class="col-md-9 col-sm-12">
+            <div class="wrap_product">
+                <div class="produc_top row_produc">
+                    <div class="title_all">
+                        <h3>North Vietnam</h3>
+                    </div> <!-- /title_all -->
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+                    </div> <!-- /row -->
+                    <div class="show_more">
+                        <a href="#0">show more <i class="fas fa-angle-right"></i></a>
+                    </div> <!-- /show_more -->
+                </div> <!-- /produc_top -->
+
+                <div class="produc_mid row_produc">
+                    <div class="title_all">
+                        <h3>Central Vietnam</h3>
+                    </div> <!-- /title_all -->
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+                    </div> <!-- /row -->
+                    <div class="show_more">
+                        <a href="#0">show more <i class="fas fa-angle-right"></i></a>
+                    </div> <!-- /show_more -->
+                </div> <!-- /produc_mid -->
+
+                <div class="produc_bottom row_produc">
+                    <div class="title_all">
+                        <h3>South Vietnam</h3>
+                    </div> <!-- /title_all -->
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="sale">
+                                    <span>New</span>
+                                </div> <!-- /sale -->
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="product">
+                                <div class="images">
+                                    <a href="#0"><img src="images/product.png" alt="" class="img-responsive"></a>
+                                </div> <!-- /images -->
+                                <div class="caption">
+                                    <div class="top_caption">
+                                        <h3><a href="#0">Ha Noi - Hoan Kiem Lake - West Lake</a></h3>
+                                        <p class="rating">
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                            <span><i class="fas fa-star"></i></span>
+                                        </p>
+                                    </div> <!-- /top_caption -->
+                                    <div class="bottom_caption">
+                                        <div class="line_1">
+                                            <p><i class="fas fa-map-marker-alt"></i> <span>My Son Sanctuary, Duy Xuyen District, Quang Nam Province, Vietnam</span></p>
+                                        </div> <!-- /line_1 -->
+                                        <div class="line_2">
+                                            <p><i class="fas fa-calendar-alt"></i> <span> 6 Day 5 Night</span></p>
+
+                                            <p>price <a href="#0">6.000.000 VND</a></p>
+                                        </div> <!-- /line_2 -->
+                                    </div> <!-- /bottom_caption -->
+                                </div> <!-- /caption -->
+                            </div> <!-- /product -->
+                        </div> <!-- /col -->
+                    </div> <!-- /row -->
+                    <div class="show_more">
+                        <a href="#0">show more <i class="fas fa-angle-right"></i></a>
+                    </div> <!-- /show_more -->
+                </div> <!-- /produc_bottom -->
+            </div> <!--  /wrap_product -->
+        </div> <!-- /col -->
+    </div> <!-- /row -->
+</div> <!-- /container -->

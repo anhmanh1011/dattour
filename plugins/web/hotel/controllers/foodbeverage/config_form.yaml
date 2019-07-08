@@ -1,0 +1,10 @@
+name: FoodBeverage
+form: $/web/hotel/models/foodbeverage/fields.yaml
+modelClass: Web\Hotel\Models\FoodBeverage
+defaultRedirect: web/hotel/foodbeverage
+create:
+    redirect: 'web/hotel/foodbeverage/update/:id'
+    redirectClose: web/hotel/foodbeverage
+update:
+    redirect: web/hotel/foodbeverage
+    redirectClose: web/hotel/foodbeverage

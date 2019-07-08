@@ -1,0 +1,137 @@
+[staticPage]
+useContent = 1
+default = 0
+
+[staticMenu]
+code = "menu-header"
+
+[Setting]
+
+[Tour]
+
+[contact]
+
+
+==
+
+<!-- Thẻ spaceless nén code được đặt ở đầu trang -->
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<title>{{this.page.meta_title}}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="title" content="{{ this.page.meta_title}}">
+	<meta name=”keywords” content="{{this.page.meta_keyword }}">
+	<meta name="description" content="{{this.page.meta_description}}">
+	<meta name="robots" content="{{this.page.robot_index}},{{this.page.robot_follow}}">
+	<meta property="fb:app_id" content="263967094322118" />
+	<link rel="stylesheet" href="{{ [
+		'assets/lib/animate/animate.min.css',
+		'assets/lib/bootstrap/bootstrap.min.css',
+		'assets/lib/owl-carousel/owl.carousel.min.css',
+		'assets/lib/owl-carousel/owl.theme.default.css',
+		'assets/lib/rateit/rateit.css',
+		'assets/css/style.css',
+		'assets/css/all.min.css',
+		'assets/lib/jquery-ui/jquery-ui.min.css'
+	]|theme}}">
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=vietnamese" rel="stylesheet">
+
+	{% styles %}
+	<link rel="icon" type="image/png" href="{{logo_favicon.path}}">
+</head>
+<body>
+
+ 	{% component 'Bookup' %}
+	<div class="md-overlay"></div>
+    {%set pages = this.page.title%}
+	{%if pages == "Home"%}
+	    {% partial 'header' %}
+	{%else%}
+	    {% partial 'headerSlider' %}
+	{%endif%}
+
+	<section>
+
+       {% page %}
+
+    </section>
+    {%set pages = this.page.title%}
+	{%if  pages =="Home"%}
+		 <footer>
+			{% partial 'footer' %}
+	     </footer>
+     {%else%}
+	      <footer>
+			{% partial 'footer_product' %}
+	     </footer>
+	{%endif%}
+
+
+	<script src="{{ [
+		'assets/lib/jquery/jquery-3.3.1.min.js',
+		'assets/lib/bootstrap/bootstrap.js',
+		'assets/lib/wowjs/wow.min.js',
+		'assets/lib/owl-carousel/owl.carousel.min.js',
+		'assets/lib/jquery-ui/jquery-ui.js',
+		'assets/lib/wowjs/wow.min.js',
+		'assets/lib/rateit/jquery.rateit.js',
+		'assets/js/index.js'
+	]|theme}}"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '263967094322118',
+      xfbml      : true,
+      version    : 'v3.2'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+	<!-- Your customer chat code -->
+	<div class="fb-customerchat"
+	  attribution=setup_tool
+	  page_id="263967094322118"
+	  theme_color="#9D4003"
+	  logged_in_greeting="Xin chào! Chúng tôi có thể giúp gì được cho bạn?"
+	  logged_out_greeting="Xin chào! Chúng tôi có thể giúp gì được cho bạn?">
+	</div>
+
+
+	
+    {% framework extras %}{% scripts %}
+    <script>
+		$(document).ready(function(){
+		    $('#checkstar').bind('rated reset', function (e) {
+		     	 var cate_id = $(this).attr('data-cate');
+		     	 var id = $(this).attr('data-id');
+		         var ri = $(this);
+		         var value = ri.rateit('value');
+		         // var productID = ri.data('productid');
+		        ri.rateit('readonly', true);
+		        $.request('onStar',{
+		            data: {id,cate_id,value},
+		            success: function(data) {
+		            	$('.addStar').text(data);
+		            }
+		        });
+		    });
+		})
+	</script>
+</body>
+</html>
+
+{% endspaceless %}

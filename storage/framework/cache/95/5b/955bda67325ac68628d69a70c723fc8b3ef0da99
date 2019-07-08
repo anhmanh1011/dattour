@@ -1,0 +1,413 @@
+1558413233a:1:{s:12:"listRoom.htm";a:13:{s:8:"fileName";s:12:"listRoom.htm";s:7:"content";s:6747:"title = "Danh sách phòng"
+url = "/hotel/:slug"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Hotel]
+
+[search]
+==
+<?php
+function onEnd(){
+	$this->page->meta_title     = $this->meta_title;
+	$this->page->meta_description = $this->meta_description;
+	$this->page->meta_keyword   = $this->meta_keyword;
+	$this->page->robot_follow   = $this->robot_follow;
+	$this->page->robot_index    = $this->robot_index;
+}
+?>
+==
+<div class="sub_banner_page">
+	<img alt="" src="assets/pic/banner_duc5.jpg" />
+	<div class="describe_banner">
+		<div class="container_duc">
+			<h1>
+				<span class="title_page">{{meta_title}}</span>
+			</h1>
+		</div>
+	</div>
+	<div class="duongdanlink">
+		<div class="container_duc">
+			<ul class="duongdan_link">
+				<li><a href="{{'home'|page}}">{{'HOME'|_}}</a></li>
+				<li><a href="{{'hotel'|page}}">{{'Hotel'|_}} </a></li>
+				<li class="active"><a href="javascript:void(0)">{{meta_title}}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="content up_here">
+	<div class="sub_listhotel">
+		<div class="container_duc">
+			<div class="lst_title_star">
+				<div class="title_hotel">
+					{{meta_title}}
+				</div>
+				<div class="rateit" id="rateit" data-rateit-mode="font" data-rateit-value="4" data-productid="21"
+					data-num4="4" data-num5="1" data-rateit-readonly="true"></div>
+			</div>
+			<div class="address_hotel">
+				<i class="fas fa-map-marker-alt"></i><span> {{'Address'|_}}: {{address}}</span>
+			</div>
+			<div class="lst_image_hotel">
+				{% if hotel.album_images[0] %}
+				<div class="item_hotel_one">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[0] | resize(570,345, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[1] %}
+				<div class="item_hotel_two">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[1] | resize(280,345, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[2] %}
+				<div class="item_hotel_two">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[2] | resize(280,345, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[3] %}
+				<div class="item_hotel_three">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[3] | resize(376,234, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[4] %}
+				<div class="item_hotel_three">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[4] | resize(376,234, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[5] %}
+				<div class="item_hotel_three">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[5] | resize(376,234, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			</div>
+			<div class="lst_info_hotel">
+				<div class="item_info_hotel">
+					<div class="name_category">
+						{{'Recommend about'|_}} {{meta_title}}
+					</div>
+					<div class="information_category">
+						<div class="note_category">
+							{{hotel.description}}
+						</div>
+						<div class="ngoaibtn">
+							<span class="btn_readmore_compact"><span class="btn_readmore">{{'Read more'|_}}</span><span
+									class="btn_compact">{{'Compact'|_}}</span></span>
+						</div>
+					</div>
+				</div>
+				<div class="item_info_hotel">
+					<div class="name_category">
+						{{'Amenities'|_}} {{meta_title}}
+					</div>
+					<div class="information_category">
+						<div class="lst_utilities_hotel">
+							{% for value in hotel.amenities %}
+							<div class="item_utilities_hotel">
+								<img alt=""
+									src="{{ value.icon |media| resize(50,50, { mode: 'crop', quality: '90' }) }}" />
+								<span class="title">{{ value.name }}</span>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub_dsroom">
+				<div class="listcate2">
+					<h2>
+						<span class="title_listcate2">{{'List Room'|_}}</span>
+					</h2>
+				</div>
+				<div class="lst_dsroom">
+					{%for value in list_room%}
+					<div class="item_room">
+						<div class="frame_image">
+							<a class="frame_image_Crop" href="/room/{{value.slug}}">
+								<img alt="{{value.name}}"
+									src="{{value.image_preview.path|resize(422,237,{ mode: 'crop', quality: '55', extension: 'auto' })}}" />
+							</a>
+						</div>
+						<div class="information_room">
+							<div class="ngoaia">
+								<h3>
+									<a class="title_room" href="/room/{{value.slug}}">
+										{{value.name}}
+									</a>
+								</h3>
+							</div>
+							<div class="info_small_room">
+								{{'Acreage'|_}}: <span class="number_room">{%if value.acreage %}{{value.acreage}} m2{%else%}{{'Not
+									set'|_}}{%endif%}</span>
+							</div>
+							<div class="info_small_room">
+								{{'Bed number'|_}}: <span
+									class="number_room">{%if value.number_of_bed %}{{value.number_of_bed}} {%else%}{{'Not set'|_}}{%endif%}</span>
+							</div>
+							<div class="info_small_room">
+								{{'Maximum people'|_}}: <span
+									class="number_room">{%if value.max_people %}{{value.max_people}}
+									{{'Person(s)'|_}}{%else%}{{'Not set'|_}}{%endif%}</span>
+							</div>
+							<div class="price_room">
+								{{'Price from'|_}}:
+								<span class="fotcamdam"> {{value.price|number_format()}}đ/</span>
+								<span class="fotcamnhat">{{'Night'|_}}</span>
+							</div>
+							<div class="ngoaibtn">
+								<a class="btn_view_detail" href="/room/{{value.slug}}">
+									{{'View Detail'|_}}
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					{%endfor%}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>";s:5:"mtime";i:1557158571;s:6:"markup";s:6279:"<div class="sub_banner_page">
+	<img alt="" src="assets/pic/banner_duc5.jpg" />
+	<div class="describe_banner">
+		<div class="container_duc">
+			<h1>
+				<span class="title_page">{{meta_title}}</span>
+			</h1>
+		</div>
+	</div>
+	<div class="duongdanlink">
+		<div class="container_duc">
+			<ul class="duongdan_link">
+				<li><a href="{{'home'|page}}">{{'HOME'|_}}</a></li>
+				<li><a href="{{'hotel'|page}}">{{'Hotel'|_}} </a></li>
+				<li class="active"><a href="javascript:void(0)">{{meta_title}}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="content up_here">
+	<div class="sub_listhotel">
+		<div class="container_duc">
+			<div class="lst_title_star">
+				<div class="title_hotel">
+					{{meta_title}}
+				</div>
+				<div class="rateit" id="rateit" data-rateit-mode="font" data-rateit-value="4" data-productid="21"
+					data-num4="4" data-num5="1" data-rateit-readonly="true"></div>
+			</div>
+			<div class="address_hotel">
+				<i class="fas fa-map-marker-alt"></i><span> {{'Address'|_}}: {{address}}</span>
+			</div>
+			<div class="lst_image_hotel">
+				{% if hotel.album_images[0] %}
+				<div class="item_hotel_one">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[0] | resize(570,345, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[1] %}
+				<div class="item_hotel_two">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[1] | resize(280,345, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[2] %}
+				<div class="item_hotel_two">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[2] | resize(280,345, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[3] %}
+				<div class="item_hotel_three">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[3] | resize(376,234, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[4] %}
+				<div class="item_hotel_three">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[4] | resize(376,234, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if hotel.album_images[5] %}
+				<div class="item_hotel_three">
+					<div class="item_image_hotel">
+						<div class="frame_image">
+							<span class="frame_image_Crop">
+								<img alt=""
+									src="{{ hotel.album_images[5] | resize(376,234, { mode: 'crop', quality: '90' }) }}" />
+							</span>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			</div>
+			<div class="lst_info_hotel">
+				<div class="item_info_hotel">
+					<div class="name_category">
+						{{'Recommend about'|_}} {{meta_title}}
+					</div>
+					<div class="information_category">
+						<div class="note_category">
+							{{hotel.description}}
+						</div>
+						<div class="ngoaibtn">
+							<span class="btn_readmore_compact"><span class="btn_readmore">{{'Read more'|_}}</span><span
+									class="btn_compact">{{'Compact'|_}}</span></span>
+						</div>
+					</div>
+				</div>
+				<div class="item_info_hotel">
+					<div class="name_category">
+						{{'Amenities'|_}} {{meta_title}}
+					</div>
+					<div class="information_category">
+						<div class="lst_utilities_hotel">
+							{% for value in hotel.amenities %}
+							<div class="item_utilities_hotel">
+								<img alt=""
+									src="{{ value.icon |media| resize(50,50, { mode: 'crop', quality: '90' }) }}" />
+								<span class="title">{{ value.name }}</span>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub_dsroom">
+				<div class="listcate2">
+					<h2>
+						<span class="title_listcate2">{{'List Room'|_}}</span>
+					</h2>
+				</div>
+				<div class="lst_dsroom">
+					{%for value in list_room%}
+					<div class="item_room">
+						<div class="frame_image">
+							<a class="frame_image_Crop" href="/room/{{value.slug}}">
+								<img alt="{{value.name}}"
+									src="{{value.image_preview.path|resize(422,237,{ mode: 'crop', quality: '55', extension: 'auto' })}}" />
+							</a>
+						</div>
+						<div class="information_room">
+							<div class="ngoaia">
+								<h3>
+									<a class="title_room" href="/room/{{value.slug}}">
+										{{value.name}}
+									</a>
+								</h3>
+							</div>
+							<div class="info_small_room">
+								{{'Acreage'|_}}: <span class="number_room">{%if value.acreage %}{{value.acreage}} m2{%else%}{{'Not
+									set'|_}}{%endif%}</span>
+							</div>
+							<div class="info_small_room">
+								{{'Bed number'|_}}: <span
+									class="number_room">{%if value.number_of_bed %}{{value.number_of_bed}} {%else%}{{'Not set'|_}}{%endif%}</span>
+							</div>
+							<div class="info_small_room">
+								{{'Maximum people'|_}}: <span
+									class="number_room">{%if value.max_people %}{{value.max_people}}
+									{{'Person(s)'|_}}{%else%}{{'Not set'|_}}{%endif%}</span>
+							</div>
+							<div class="price_room">
+								{{'Price from'|_}}:
+								<span class="fotcamdam"> {{value.price|number_format()}}đ/</span>
+								<span class="fotcamnhat">{{'Night'|_}}</span>
+							</div>
+							<div class="ngoaibtn">
+								<a class="btn_view_detail" href="/room/{{value.slug}}">
+									{{'View Detail'|_}}
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					{%endfor%}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>";s:4:"code";s:291:"
+function onEnd(){
+	$this->page->meta_title     = $this->meta_title;
+	$this->page->meta_description = $this->meta_description;
+	$this->page->meta_keyword   = $this->meta_keyword;
+	$this->page->robot_follow   = $this->robot_follow;
+	$this->page->robot_index    = $this->robot_index;
+}";s:5:"title";s:17:"Danh sách phòng";s:3:"url";s:12:"/hotel/:slug";s:6:"layout";s:9:"Travel365";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:5:"Hotel";a:0:{}s:6:"search";a:0:{}}}

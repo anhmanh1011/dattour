@@ -1,0 +1,97 @@
+fields:
+    active:
+        label: Active
+        span: auto
+        hidden: 0
+        type: switch
+    hot:
+        label: 'Hot?'
+        span: auto
+        type: switch
+    name:
+        label: Name
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    hotels:
+        label: Hotel
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    amenities:
+        label: Amenities
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        required: 1
+        type: relation
+    price:
+        label: Price
+        span: left
+        type: number
+    discount:
+        label: Discount
+        span: left
+        type: number
+    new_price:
+        label: 'New price'
+        span: left
+        type: number
+    acreage:
+        label: Acreage
+        span: auto
+        type: number
+    number_of_bed:
+        label: 'Number of bed'
+        span: auto
+        type: number
+    max_people:
+        label: 'Max people'
+        span: auto
+        type: number
+tabs:
+    fields:
+        image_preview:
+            label: 'Image preview'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            imageWidth: '150'
+            imageHeight: '150'
+            type: fileupload
+            tab: Image
+        album_images:
+            label: 'Album image'
+            mode: image
+            useCaption: 0
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Image
+        description:
+            label: Description
+            size: small
+            span: full
+            type: textarea
+            tab: Content
+        content:
+            label: Content
+            size: large
+            span: full
+            type: richeditor
+            tab: Content

@@ -1,0 +1,33 @@
+tabs:
+    fields:
+        active:
+            label: Active
+            span: auto
+            type: switch
+            tab: 'Slider Product'
+        name:
+            label: Name
+            span: left
+            type: text
+            tab: 'Slider Product'
+        link:
+            label: Link
+            span: auto
+            type: text
+            tab: 'Slider Product'
+        description:
+            label: Description
+            size: small
+            span: auto
+            type: textarea
+            tab: 'Slider Product'
+        slider_product:
+            label: 'Ảnh upload'
+            span: auto
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: 'Slider Product'

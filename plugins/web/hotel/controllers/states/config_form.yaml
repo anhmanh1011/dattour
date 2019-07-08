@@ -1,0 +1,10 @@
+name: States
+form: $/web/hotel/models/states/fields.yaml
+modelClass: Web\Hotel\Models\States
+defaultRedirect: web/hotel/states
+create:
+    redirect: 'web/hotel/states/update/:id'
+    redirectClose: web/hotel/states
+update:
+    redirect: web/hotel/states
+    redirectClose: web/hotel/states

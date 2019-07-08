@@ -1,0 +1,10 @@
+name: OrderTour
+form: $/web/hotel/models/ordertour/fields.yaml
+modelClass: Web\Hotel\Models\OrderTour
+defaultRedirect: web/hotel/ordertour
+create:
+    redirect: 'web/hotel/ordertour/update/:id'
+    redirectClose: web/hotel/ordertour
+update:
+    redirect: web/hotel/ordertour
+    redirectClose: web/hotel/ordertour

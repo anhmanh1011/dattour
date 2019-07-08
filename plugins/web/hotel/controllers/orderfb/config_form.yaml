@@ -1,0 +1,10 @@
+name: OrderFB
+form: $/web/hotel/models/orderfb/fields.yaml
+modelClass: Web\Hotel\Models\OrderFB
+defaultRedirect: web/hotel/orderfb
+create:
+    redirect: 'web/hotel/orderfb/update/:id'
+    redirectClose: web/hotel/orderfb
+update:
+    redirect: web/hotel/orderfb
+    redirectClose: web/hotel/orderfb

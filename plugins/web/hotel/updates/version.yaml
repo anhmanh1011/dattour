@@ -1,0 +1,488 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table web_hotel_tour'
+    - builder_table_create_web_hotel_tour.php
+1.0.3:
+    - 'Created table web_hotel_amenities'
+    - builder_table_create_web_hotel_amenities.php
+1.0.4:
+    - 'Created table web_hotel_type_room'
+    - builder_table_create_web_hotel_type_room.php
+1.0.5:
+    - 'Created table web_hotel_'
+    - builder_table_create_web_hotel_.php
+1.0.6:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel_.php
+1.0.7:
+    - 'Created table web_hotel_location'
+    - builder_table_create_web_hotel_location.php
+1.0.8:
+    - 'Updated table web_hotel_location'
+    - builder_table_update_web_hotel_location.php
+1.0.9:
+    - 'Updated table web_hotel_type_room'
+    - builder_table_update_web_hotel_typeroom.php
+1.0.10:
+    - 'Updated table web_hotel_typeroom'
+    - builder_table_update_web_hotel_type_room.php
+1.0.11:
+    - 'Updated table web_hotel_type_room'
+    - builder_table_update_web_hotel_type_room_2.php
+1.0.12:
+    - 'Updated table web_hotel_type_room'
+    - builder_table_update_web_hotel_type_room_3.php
+1.0.13:
+    - 'Updated table web_hotel_type_room'
+    - builder_table_update_web_hotel_type_room_4.php
+1.0.14:
+    - 'Created table web_hotel_relation_tour_location'
+    - builder_table_create_web_hotel_relation_tour_location.php
+1.0.15:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour.php
+1.0.16:
+    - 'Updated table web_hotel_relation_tour_location'
+    - builder_table_update_web_hotel_relation_tour_location.php
+1.0.17:
+    - 'Updated table web_hotel_location'
+    - builder_table_update_web_hotel_location_2.php
+1.0.18:
+    - 'Updated table web_hotel_relation_tour_location'
+    - builder_table_update_web_hotel_relation_tour_location_2.php
+1.0.19:
+    - 'Updated table web_hotel_relation_tour_location'
+    - builder_table_update_web_hotel_relation_tour_location_3.php
+1.0.20:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_2.php
+1.0.21:
+    - 'Created table web_hotel_relation_hotel_location'
+    - builder_table_create_web_hotel_relation_hotel_location.php
+1.0.22:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__2.php
+1.0.23:
+    - 'Created table web_hotel_type_room_amenities'
+    - builder_table_create_web_hotel_type_room_amenities.php
+1.0.24:
+    - 'Updated table web_hotel_type_room_amenities'
+    - builder_table_update_web_hotel_relation_type_room_amenities.php
+1.0.25:
+    - 'Updated table web_hotel_relation_type_room_amenities'
+    - builder_table_update_web_hotel_relation_type_room_amenities_2.php
+1.0.26:
+    - 'Updated table web_hotel_type_room'
+    - builder_table_update_web_hotel_type_room_5.php
+1.0.27:
+    - 'Created table web_hotel_tag'
+    - builder_table_create_web_hotel_tag.php
+1.0.28:
+    - 'Created table web_hotel_relation_tag_room'
+    - builder_table_create_web_hotel_relation_tag_room.php
+1.0.29:
+    - 'Created table web_hotel_relation_tag_hotel'
+    - builder_table_create_web_hotel_relation_tag_hotel.php
+1.0.30:
+    - 'Created table web_hotel_relation_hotel_room'
+    - builder_table_create_web_hotel_relation_hotel_room.php
+1.0.31:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__3.php
+1.0.32:
+    - 'Updated table web_hotel_relation_tag_hotel'
+    - builder_table_update_web_hotel_relation_tag_hotel.php
+1.0.33:
+    - 'Created table web_hotel_relation_tag_tour'
+    - builder_table_create_web_hotel_relation_tag_tour.php
+1.0.34:
+    - 'Updated table web_hotel_amenities'
+    - builder_table_update_web_hotel_amenities.php
+1.0.35:
+    - 'Updated table web_hotel_type_room'
+    - builder_table_update_web_hotel_type_room_6.php
+1.0.36:
+    - 'Updated table web_hotel_type_room'
+    - builder_table_update_web_hotel_type_room_7.php
+1.0.37:
+    - 'Created table web_hotel_order_tour'
+    - builder_table_create_web_hotel_order_tour.php
+1.0.38:
+    - 'Created table web_hotel_order_room'
+    - builder_table_create_web_hotel_order_room.php
+1.0.39:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour.php
+1.0.40:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room.php
+1.0.41:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room_2.php
+1.0.42:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_2.php
+1.0.43:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_3.php
+1.0.44:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_4.php
+1.0.45:
+    - 'Created table web_hotel_status'
+    - builder_table_create_web_hotel_status.php
+1.0.46:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room_3.php
+1.0.47:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_5.php
+1.0.48:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_6.php
+1.0.49:
+    - 'Updated table web_hotel_status'
+    - builder_table_update_web_hotel_status.php
+1.0.50:
+    - 'Updated table web_hotel_status'
+    - builder_table_update_web_hotel_status_2.php
+1.0.51:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_7.php
+1.0.52:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room_4.php
+1.0.53:
+    - 'Created table web_hotel_event'
+    - builder_table_create_web_hotel_event.php
+1.0.54:
+    - 'Created table web_hotel_event_type'
+    - builder_table_create_web_hotel_event_type.php
+1.0.55:
+    - 'Updated table web_hotel_event_type'
+    - builder_table_update_web_hotel_event_type.php
+1.0.56:
+    - 'Updated table web_hotel_kind_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_kind.php
+1.0.57:
+    - 'Updated table web_hotel_type_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_type.php
+1.0.58:
+    - 'Created table web_hotel_relation_event_type'
+    - builder_table_create_web_hotel_relation_event_type.php
+1.0.59:
+    - 'Created table web_hotel_souvenir'
+    - builder_table_create_web_hotel_souvenir.php
+1.0.60:
+    - 'Created table web_hotel_souvenir_type'
+    - builder_table_create_web_hotel_souvenir_type.php
+1.0.61:
+    - 'Updated table web_hotel_souvenir'
+    - builder_table_update_web_hotel_souvenir.php
+1.0.62:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_6.php
+1.0.63:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_7.php
+1.0.64:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__4.php
+1.0.65:
+    - 'Updated table web_hotel_type_room'
+    - builder_table_update_web_hotel_room.php
+1.0.66:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__5.php
+1.0.67:
+    - 'Updated table web_hotel_food_beverage_type'
+    - builder_table_update_web_hotel_food_beverage_type_2.php
+1.0.68:
+    - 'Created table web_hotel_order_souvenir'
+    - builder_table_create_web_hotel_order_souvenir.php
+1.0.69:
+    - 'Created table web_hotel_order_f_b'
+    - builder_table_create_web_hotel_order_f_b.php
+1.0.70:
+    - 'Created table web_hotel_order_event'
+    - builder_table_create_web_hotel_order_event.php
+1.0.71:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_8.php
+1.0.72:
+    - 'Created table web_hotel_tour_type'
+    - builder_table_create_web_hotel_tour_type.php
+1.0.73:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_10.php
+1.0.74:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_11.php
+1.0.75:
+    - 'Drop table web_hotel_relation_tour_type'
+    - builder_table_delete_web_hotel_relation_tour_type_2.php
+1.0.76:
+    - 'Drop table web_hotel_relation_tour_location'
+    - builder_table_delete_web_hotel_relation_tour_location.php
+1.0.77:
+    - 'Created table web_hotel_relation_tour_type'
+    - builder_table_create_web_hotel_relation_tour_type_3.php
+1.0.78:
+    - 'Updated table web_hotel_relation_tour_type'
+    - builder_table_update_web_hotel_relation_tour_type_3.php
+1.0.79:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_8.php
+1.0.80:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_9.php
+1.0.81:
+    - 'Updated table web_hotel_order_event'
+    - builder_table_update_web_hotel_order_event.php
+1.0.82:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__6.php
+1.0.83:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__7.php
+1.0.84:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_12.php
+1.0.85:
+    - 'Updated table web_hotel_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_3.php
+1.0.86:
+    - 'Updated table web_hotel_event'
+    - builder_table_update_web_hotel_event.php
+1.0.87:
+    - 'Updated table web_hotel_souvenir'
+    - builder_table_update_web_hotel_souvenir_2.php
+1.0.88:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__8.php
+1.0.89:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__9.php
+1.0.90:
+    - 'Updated table web_hotel_amenities'
+    - builder_table_update_web_hotel_amenities_2.php
+1.0.91:
+    - 'Updated table web_hotel_event'
+    - builder_table_update_web_hotel_event_2.php
+1.0.92:
+    - 'Updated table web_hotel_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_4.php
+1.0.93:
+    - 'Updated table web_hotel_souvenir'
+    - builder_table_update_web_hotel_souvenir_3.php
+1.0.94:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_13.php
+1.0.95:
+    - 'Created table web_hotel_amenities_hotel'
+    - builder_table_create_web_hotel_amenities_hotel.php
+1.0.96:
+    - 'Updated table web_hotel_amenities_hotel'
+    - builder_table_update_web_hotel_amenities_hotel.php
+1.0.97:
+    - 'Created table web_hotel_tour_activities'
+    - builder_table_create_web_hotel_tour_activities.php
+1.0.98:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_14.php
+1.0.99:
+    - 'Created table web_hotel_hotel_type'
+    - builder_table_create_web_hotel_hotel_type.php
+1.0.100:
+    - 'Updated table web_hotel_hotel_type'
+    - builder_table_update_web_hotel_hotel_type.php
+1.0.101:
+    - 'Created table web_hotel_relation_hotel_type'
+    - builder_table_create_web_hotel_relation_hotel_type.php
+1.0.102:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__10.php
+1.0.103:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__11.php
+1.0.104:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room_5.php
+1.0.105:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room_6.php
+1.0.106:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room_7.php
+1.0.107:
+    - 'Updated table web_hotel_order_event'
+    - builder_table_update_web_hotel_order_event_2.php
+1.0.108:
+    - 'Updated table web_hotel_order_event'
+    - builder_table_update_web_hotel_order_event_3.php
+1.0.109:
+    - 'Updated table web_hotel_order_event'
+    - builder_table_update_web_hotel_order_event_4.php
+1.0.110:
+    - 'Updated table web_hotel_order_event'
+    - builder_table_update_web_hotel_order_event_5.php
+1.0.111:
+    - 'Updated table web_hotel_order_event'
+    - builder_table_update_web_hotel_order_event_6.php
+1.0.112:
+    - 'Updated table web_hotel_order_f_b'
+    - builder_table_update_web_hotel_order_f_b.php
+1.0.113:
+    - 'Updated table web_hotel_order_souvenir'
+    - builder_table_update_web_hotel_order_souvenir.php
+1.0.114:
+    - 'Updated table web_hotel_order_souvenir'
+    - builder_table_update_web_hotel_order_souvenir_2.php
+1.0.115:
+    - 'Created table web_hotel_relation_tag_souvenir'
+    - builder_table_create_web_hotel_relation_tag_souvenir.php
+1.0.116:
+    - 'Created table web_hotel_relation_tag_event'
+    - builder_table_create_web_hotel_relation_tag_event.php
+1.0.117:
+    - 'Created table web_hotel_relation_tag_fb'
+    - builder_table_create_web_hotel_relation_tag_fb.php
+1.0.118:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_15.php
+1.0.119:
+    - 'Updated table web_hotel_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_5.php
+1.0.120:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_10.php
+1.0.121:
+    - 'Updated table web_hotel_order_tour'
+    - builder_table_update_web_hotel_order_tour_11.php
+1.0.122:
+    - 'Updated table web_hotel_event'
+    - builder_table_update_web_hotel_event_3.php
+1.0.123:
+    - 'Updated table web_hotel_amenities'
+    - builder_table_update_web_hotel_amenities_3.php
+1.0.124:
+    - 'Updated table web_hotel_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_6.php
+1.0.125:
+    - 'Updated table web_hotel_souvenir'
+    - builder_table_update_web_hotel_souvenir_4.php
+1.0.126:
+    - 'Updated table web_hotel_room'
+    - builder_table_update_web_hotel_room_2.php
+1.0.127:
+    - 'Updated table web_hotel_event'
+    - builder_table_update_web_hotel_event_4.php
+1.0.128:
+    - 'Updated table web_hotel_event'
+    - builder_table_update_web_hotel_event_5.php
+1.0.129:
+    - 'Created table web_hotel_states'
+    - builder_table_create_web_hotel_states.php
+1.0.130:
+    - 'Updated table web_hotel_location'
+    - builder_table_update_web_hotel_location_3.php
+1.0.131:
+    - 'Created table web_hotel_relation_location_states'
+    - builder_table_create_web_hotel_relation_location_states.php
+1.0.132:
+    - 'Updated table web_hotel_location'
+    - builder_table_update_web_hotel_location_4.php
+1.0.133:
+    - 'Updated table web_hotel_location'
+    - builder_table_update_web_hotel_location_5.php
+1.0.134:
+    - 'Updated table web_hotel_location'
+    - builder_table_update_web_hotel_location_6.php
+1.0.135:
+    - 'Updated table web_hotel_room'
+    - builder_table_update_web_hotel_room_3.php
+1.0.136:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_16.php
+1.0.137:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_17.php
+1.0.138:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__12.php
+1.0.139:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room_8.php
+1.0.140:
+    - 'Updated table web_hotel_order_room'
+    - builder_table_update_web_hotel_order_room_9.php
+1.0.141:
+    - 'Updated table web_hotel_room'
+    - builder_table_update_web_hotel_room_4.php
+1.0.142:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_18.php
+1.0.143:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_19.php
+1.0.144:
+    - 'Updated table web_hotel_amenities_hotel'
+    - builder_table_update_web_hotel_amenities_hotel_2.php
+1.0.145:
+    - 'Updated table web_hotel_amenities'
+    - builder_table_update_web_hotel_amenities_4.php
+1.0.146:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_20.php
+1.0.147:
+    - 'Drop table web_hotel_relation_location_states'
+    - builder_table_delete_web_hotel_relation_location_states.php
+1.0.148:
+    - 'Drop table web_hotel_relation_tag_fb'
+    - builder_table_delete_web_hotel_relation_tag_fb.php
+1.0.149:
+    - 'Drop table web_hotel_relation_tag_event'
+    - builder_table_delete_web_hotel_relation_tag_event.php
+1.0.150:
+    - 'Drop table web_hotel_relation_tag_hotel'
+    - builder_table_delete_web_hotel_relation_tag_hotel.php
+1.0.151:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_21.php
+1.0.152:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_22.php
+1.0.153:
+    - 'Updated table web_hotel_room'
+    - builder_table_update_web_hotel_room_5.php
+1.0.154:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__13.php
+1.0.155:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__14.php
+1.0.156:
+    - 'Updated table web_hotel_states'
+    - builder_table_update_web_hotel_states.php
+1.0.157:
+    - 'Created table web_hotel_relation_tour_hotel'
+    - builder_table_create_web_hotel_relation_tour_hotel.php
+1.0.158:
+    - 'Updated table web_hotel_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_7.php
+1.0.159:
+    - 'Updated table web_hotel_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_8.php
+1.0.160:
+    - 'Updated table web_hotel_food_beverage'
+    - builder_table_update_web_hotel_food_beverage_9.php
+1.0.161:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_23.php
+1.0.162:
+    - 'Updated table web_hotel_tour'
+    - builder_table_update_web_hotel_tour_24.php
+1.0.163:
+    - 'Updated table web_hotel_'
+    - builder_table_update_web_hotel__15.php

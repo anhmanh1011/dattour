@@ -1,0 +1,25 @@
+title = "Chi tiết tour"
+url = "/travel/:slug"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[TourDetail]
+
+[search]
+
+[Booktour]
+==
+<?php
+function onEnd(){
+      $this->page->meta_title = $this->meta_title;
+      $this->page->meta_description = $this->meta_description;
+      $this->page->meta_keyword = $this->meta_keyword;
+      $this->page->canonical_url = $this->canonical_url;
+      $this->page->robot_follow = $this->robot_follow;
+      $this->page->robot_index = $this->robot_index;
+  }
+?>
+==
+{% component 'TourDetail' %}

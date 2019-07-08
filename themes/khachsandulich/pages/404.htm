@@ -1,0 +1,27 @@
+title = 404
+url = "/404"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+	function onEnd(){
+      $this->page->meta_title = '404';
+  	}
+?>
+==
+<div class="content">
+	<div class="container">
+		<div class="wrap_page_404 text-center" style="padding: 100px;">
+			<div class="images" style="display: inline-block">
+				<img src="{{'assets/images/404.jpg'|theme}}" alt="404" class="img-responsive">
+			</div> <!-- /images -->
+			<div class="caption" style="margin-top: 50px;">
+				<h3>Website Đang Nâng Cấp</h3>
+				<p>Quý khách vui lòng quay lại sau !</p>
+			</div>
+			<a href="{{'home'|page}}" class="back_home"><i class="fas fa-home"></i>  Quay lại trang chủ</a>
+		</div> <!-- /wrap_page_404 -->
+	</div> <!-- /container -->
+</div>

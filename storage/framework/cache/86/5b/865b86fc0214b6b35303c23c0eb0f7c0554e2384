@@ -1,0 +1,121 @@
+1558413233a:1:{s:10:"footer.htm";a:6:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:2423:"[viewBag]
+==
+<div id="footer">
+  <div class="footercontent">
+    <div class="container_duc">
+      <div class="lst_footercontent">
+        <div class="item_footercontent">
+          <a href="/" class="logo_footer">{{title_web}}</a>
+          <div class="note_footer">{{description}}</div>
+          <div class="address_footer">
+            <span class="icon_contact_ft">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </span>
+            <span class="number_contact_ft"> {{address}}</span>
+          </div>
+          <div class="hotline_footer">
+            <span class="icon_contact_ft">
+              <i class="fa fa-phone-square" aria-hidden="true"></i>
+            </span>
+            <span class="number_contact_ft"> {{hotline}}</span>
+          </div>
+          <div class="email_footer">
+            <span class="icon_contact_ft">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+            <span class="number_contact_ft">{{email}}</span>
+          </div>
+        </div>
+        <div class="item_footercontent_two">
+          <div class="title_footer">{{'CATEGORIES'|_}}</div>
+          <ul class="lst_dsfooter">
+            <li><a href="/travels">{{'Travel'|_}}</a></li>
+            <li><a href="/hotel">{{'Hotel'|_}}</a></li>
+            <li><a href="/list/cuisine">{{'Cuisine'|_}}</a></li>
+            <li><a href="/list/event">{{'Event'|_}}</a></li>
+            <li><a href="/list/service-store">{{'Service'|_}}</a></li>
+          </ul>
+        </div>
+        <div class="item_footercontent_father">
+          <div class="title_footer">{{'GET YOU OFFER'|_}}</div>
+          <div class="signup_receive">
+            <input id="Text1" type="text" placeholder="Email...">
+            <button type="button" class="btn_signup">{{'Register'|_}}</button>
+          </div>
+          <div class="note_footer">{{description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="commonfootercontent">
+    <div class="container_duc">
+      <div class="banquyen">
+        Product with
+        <i class="fa fa-heart"></i>
+        Powered by
+        <a class="fotcam" target="_blank" href="https://thienvietjsc.vn/">ThienVietJSC</a> &
+        <a class="fotcam" target="_blank" href="javascript:">QAkita</a>
+        - 2018. All Rights Reserved
+      </div>
+    </div>
+  </div>
+</div>";s:5:"mtime";i:1555243830;s:6:"markup";s:2408:"<div id="footer">
+  <div class="footercontent">
+    <div class="container_duc">
+      <div class="lst_footercontent">
+        <div class="item_footercontent">
+          <a href="/" class="logo_footer">{{title_web}}</a>
+          <div class="note_footer">{{description}}</div>
+          <div class="address_footer">
+            <span class="icon_contact_ft">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </span>
+            <span class="number_contact_ft"> {{address}}</span>
+          </div>
+          <div class="hotline_footer">
+            <span class="icon_contact_ft">
+              <i class="fa fa-phone-square" aria-hidden="true"></i>
+            </span>
+            <span class="number_contact_ft"> {{hotline}}</span>
+          </div>
+          <div class="email_footer">
+            <span class="icon_contact_ft">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+            <span class="number_contact_ft">{{email}}</span>
+          </div>
+        </div>
+        <div class="item_footercontent_two">
+          <div class="title_footer">{{'CATEGORIES'|_}}</div>
+          <ul class="lst_dsfooter">
+            <li><a href="/travels">{{'Travel'|_}}</a></li>
+            <li><a href="/hotel">{{'Hotel'|_}}</a></li>
+            <li><a href="/list/cuisine">{{'Cuisine'|_}}</a></li>
+            <li><a href="/list/event">{{'Event'|_}}</a></li>
+            <li><a href="/list/service-store">{{'Service'|_}}</a></li>
+          </ul>
+        </div>
+        <div class="item_footercontent_father">
+          <div class="title_footer">{{'GET YOU OFFER'|_}}</div>
+          <div class="signup_receive">
+            <input id="Text1" type="text" placeholder="Email...">
+            <button type="button" class="btn_signup">{{'Register'|_}}</button>
+          </div>
+          <div class="note_footer">{{description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="commonfootercontent">
+    <div class="container_duc">
+      <div class="banquyen">
+        Product with
+        <i class="fa fa-heart"></i>
+        Powered by
+        <a class="fotcam" target="_blank" href="https://thienvietjsc.vn/">ThienVietJSC</a> &
+        <a class="fotcam" target="_blank" href="javascript:">QAkita</a>
+        - 2018. All Rights Reserved
+      </div>
+    </div>
+  </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,4 @@
+title: Tour
+modelClass: Web\Hotel\Models\Tour
+toolbar:
+    buttons: reorder_toolbar

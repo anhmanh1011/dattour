@@ -1,0 +1,35 @@
+columns:
+    id:
+        label: Number
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: Description
+        type: text
+        searchable: true
+        sortable: true
+    link:
+        label: Link
+        type: text
+        sortable: true
+    active:
+        label: Status
+        type: switch
+    slider_product:
+        label: 'Images Slider Product'
+        type: partial
+        path: ~/plugins/web/slider/models/sliderproduct/_sliderproduct.htm
+    created_at:
+        label: Create
+        type: date
+        sortable: true
+    updated_at:
+        label: Update
+        type: date
+        sortable: true

@@ -1,0 +1,5 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table web_contact_contact'
+    - builder_table_create_web_contact_contact.php

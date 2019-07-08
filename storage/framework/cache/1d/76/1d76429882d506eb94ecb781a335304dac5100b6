@@ -1,0 +1,72 @@
+1558413233a:1:{s:15:"tour-detail.htm";a:14:{s:8:"fileName";s:15:"tour-detail.htm";s:7:"content";s:1153:"title = "Chi tiết tour"
+url = "/travel/:slug"
+layout = "Travel365"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[TourDetail]
+
+[search]
+
+[Booktour]
+==
+<?php
+function onEnd(){
+      $this->page->meta_title = $this->meta_title;
+      $this->page->meta_description = $this->meta_description;
+      $this->page->meta_keyword = $this->meta_keyword;
+      $this->page->canonical_url = $this->canonical_url;
+      $this->page->robot_follow = $this->robot_follow;
+      $this->page->robot_index = $this->robot_index;
+  }
+?>
+==
+<div class="sub_banner_page">
+  <img alt="" src="assets/pic/banner_duc4.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <h1>
+        <span class="title_page">{{tour_detail.name}}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="duongdanlink">
+    <div class="container_duc">
+      <ul class="duongdan_link">
+        <li><a href="/">Home</a></li>
+        <li><a href="/travel">Travel</a></li>
+        <li class="active"><a href="javascript:">{{tour_detail.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% component 'TourDetail' %}
+";s:5:"mtime";i:1554135234;s:6:"markup";s:591:"<div class="sub_banner_page">
+  <img alt="" src="assets/pic/banner_duc4.jpg" />
+  <div class="describe_banner">
+    <div class="container_duc">
+      <h1>
+        <span class="title_page">{{tour_detail.name}}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="duongdanlink">
+    <div class="container_duc">
+      <ul class="duongdan_link">
+        <li><a href="/">Home</a></li>
+        <li><a href="/travel">Travel</a></li>
+        <li class="active"><a href="javascript:">{{tour_detail.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% component 'TourDetail' %}";s:4:"code";s:365:"
+function onEnd(){
+      $this->page->meta_title = $this->meta_title;
+      $this->page->meta_description = $this->meta_description;
+      $this->page->meta_keyword = $this->meta_keyword;
+      $this->page->canonical_url = $this->canonical_url;
+      $this->page->robot_follow = $this->robot_follow;
+      $this->page->robot_index = $this->robot_index;
+  }";s:5:"title";s:15:"Chi tiết tour";s:3:"url";s:13:"/travel/:slug";s:6:"layout";s:9:"Travel365";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:10:"TourDetail";a:0:{}s:6:"search";a:0:{}s:8:"Booktour";a:0:{}}}

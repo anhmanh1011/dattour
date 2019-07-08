@@ -1,0 +1,294 @@
+1558413233a:1:{s:13:"Travel365.htm";a:9:{s:8:"fileName";s:13:"Travel365.htm";s:7:"content";s:4785:"[SeoCmsPage]
+
+[Setting]
+
+[SliderProduct]
+
+[localePicker]
+forceUrl = 0
+
+==
+<?php
+use Web\Hotel\Models\Tour as Tours;
+    
+    function onSearch(){ 
+        $key = post('searchKey');
+        $this['search'] = Tours::where('name', 'like', '%'.$key.'%')->where('active', '=', 1)->take(10)->get();
+    }
+?>
+==
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  {% component 'SeoCmsPage' %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <base href="{{' '|theme}}">
+  <base src="{{' '|theme}}">
+  <link rel="icon" type="image/png" href="{{logo_favicon.path}}">
+
+
+
+  <!-- <link rel="stylesheet" href="assets/lib/animate/animate.min.css"> -->
+  <link rel="stylesheet" href="assets/lib/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/lib/rateit/rateit.css">
+  <link rel="stylesheet" href="assets/css2/style.css">
+  <link rel="stylesheet" href="assets/css2/all.min.css">
+  <link rel="stylesheet" href="assets/lib/jquery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="assets/css/Pattaya.css"> -->
+
+  {%if this.page.title == "Chi tiết tour"%}
+  <link rel="stylesheet" href="assets/lib/datepicker/jquery-ui.css" />
+  {%endif%}
+
+  <link rel="stylesheet" href="assets/css/khunganh.css" />
+
+
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/slick-theme.css">
+  <link rel="stylesheet" href="assets/css/ducstyle.css" />
+  <link rel="stylesheet" href="assets/css/fix.css">
+
+
+  {% styles %}
+  <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="100">
+
+
+  <div class="culmn">
+
+    {% partial 'header' %}
+
+    {%if this.page.title == "Trang chủ"%}
+    {% partial 'navbar' %}
+    {%endif%}
+
+    {% page %}
+
+    {% partial 'footer' %}
+  </div>
+
+  <!-- JS includes -->
+
+  <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+
+  <!-- <script src="assets/js/jquery.magnific-popup.js"></script> -->
+  <!--<script src="assets/js/jquery.easypiechart.min.js"></script>-->
+  <!-- <script src="assets/js/jquery.easing.1.3.js"></script> -->
+  <!-- <script src="assets/js/slick.js"></script> -->
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/js.isotope.js"></script>
+  <script src="assets/js/jquery.collapse.js"></script>
+  <script src="assets/lib/rateit/jquery.rateit.js"></script>
+  <!-- <script src="assets/js/bootsnav.js"></script> -->
+  <!-- <script src="assets/js/lazyload.min.js"></script> -->
+
+  <!-- <script src="assets/js/plugins.js"></script> -->
+  <!-- <script src="assets/js/index.js"></script> -->
+  <script src="assets/js/ducjsindex.js"></script>
+
+
+  {%if this.page.title != "Trang chủ"%}
+  <script>
+  $('html, body').animate({
+      scrollTop: $('.up_here').offset().top-80
+  }, 1000);
+  </script>
+  {%endif%}
+
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Your customer chat code -->
+  <div class="fb-customerchat" attribution=setup_tool page_id="524052388109467" theme_color="#FDDC57">
+  </div>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5ba1a8b3c9abba579677ae13/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+    <!--End of Tawk.to Script-->
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138696380-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-138696380-1');
+    </script>
+    <!-- End Global site tag (gtag.js) - Google Analytics -->
+  {% framework extras %}{% scripts %}
+
+</body>
+
+</html>";s:5:"mtime";i:1557463752;s:6:"markup";s:4461:"<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  {% component 'SeoCmsPage' %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <base href="{{' '|theme}}">
+  <base src="{{' '|theme}}">
+  <link rel="icon" type="image/png" href="{{logo_favicon.path}}">
+
+
+
+  <!-- <link rel="stylesheet" href="assets/lib/animate/animate.min.css"> -->
+  <link rel="stylesheet" href="assets/lib/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/lib/rateit/rateit.css">
+  <link rel="stylesheet" href="assets/css2/style.css">
+  <link rel="stylesheet" href="assets/css2/all.min.css">
+  <link rel="stylesheet" href="assets/lib/jquery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="assets/css/Pattaya.css"> -->
+
+  {%if this.page.title == "Chi tiết tour"%}
+  <link rel="stylesheet" href="assets/lib/datepicker/jquery-ui.css" />
+  {%endif%}
+
+  <link rel="stylesheet" href="assets/css/khunganh.css" />
+
+
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/slick-theme.css">
+  <link rel="stylesheet" href="assets/css/ducstyle.css" />
+  <link rel="stylesheet" href="assets/css/fix.css">
+
+
+  {% styles %}
+  <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="100">
+
+
+  <div class="culmn">
+
+    {% partial 'header' %}
+
+    {%if this.page.title == "Trang chủ"%}
+    {% partial 'navbar' %}
+    {%endif%}
+
+    {% page %}
+
+    {% partial 'footer' %}
+  </div>
+
+  <!-- JS includes -->
+
+  <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/lib/jquery-ui/jquery-ui.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+
+  <!-- <script src="assets/js/jquery.magnific-popup.js"></script> -->
+  <!--<script src="assets/js/jquery.easypiechart.min.js"></script>-->
+  <!-- <script src="assets/js/jquery.easing.1.3.js"></script> -->
+  <!-- <script src="assets/js/slick.js"></script> -->
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/js.isotope.js"></script>
+  <script src="assets/js/jquery.collapse.js"></script>
+  <script src="assets/lib/rateit/jquery.rateit.js"></script>
+  <!-- <script src="assets/js/bootsnav.js"></script> -->
+  <!-- <script src="assets/js/lazyload.min.js"></script> -->
+
+  <!-- <script src="assets/js/plugins.js"></script> -->
+  <!-- <script src="assets/js/index.js"></script> -->
+  <script src="assets/js/ducjsindex.js"></script>
+
+
+  {%if this.page.title != "Trang chủ"%}
+  <script>
+  $('html, body').animate({
+      scrollTop: $('.up_here').offset().top-80
+  }, 1000);
+  </script>
+  {%endif%}
+
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Your customer chat code -->
+  <div class="fb-customerchat" attribution=setup_tool page_id="524052388109467" theme_color="#FDDC57">
+  </div>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5ba1a8b3c9abba579677ae13/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+    <!--End of Tawk.to Script-->
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138696380-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-138696380-1');
+    </script>
+    <!-- End Global site tag (gtag.js) - Google Analytics -->
+  {% framework extras %}{% scripts %}
+
+</body>
+
+</html>";s:4:"code";s:226:"
+use Web\Hotel\Models\Tour as Tours;
+    
+    function onSearch(){ 
+        $key = post('searchKey');
+        $this['search'] = Tours::where('name', 'like', '%'.$key.'%')->where('active', '=', 1)->take(10)->get();
+    }";s:10:"SeoCmsPage";a:0:{}s:7:"Setting";a:0:{}s:13:"SliderProduct";a:0:{}s:12:"localePicker";a:1:{s:8:"forceUrl";s:1:"0";}}}

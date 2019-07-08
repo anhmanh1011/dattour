@@ -1,0 +1,25 @@
+title: Setting
+modelClass: Web\Sitesetting\Models\Settings
+list: $/web/sitesetting/models/settings/columns.yaml
+recordUrl: 'web/sitesetting/sitesetting/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+# title: Setting
+# modelClass: Web\Setting\Models\Settings
+# list: $/web/setting/models/settings/columns.yaml
+# recordUrl: 'web/setting/setting/update/:id'
+# noRecordsMessage: 'backend::lang.list.no_records'
+# recordsPerPage: 20
+# showSetup: true
+# showCheckboxes: true
+# toolbar:
+#     buttons: list_toolbar
+#     search:
+#         prompt: 'backend::lang.list.search_prompt'
+
